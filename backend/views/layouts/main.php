@@ -25,7 +25,28 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+    <?php
+use kartik\sidenav\SideNav;
+     
+echo SideNav::widget([
+	'type' => SideNav::TYPE_DEFAULT,
+	'heading' => 'Options',
+	'items' => [
+		[
+			'url' => '#',
+			'label' => 'Home',
+			'icon' => 'home'
+		],
+		[
+			'label' => 'Help',
+			'icon' => 'question-sign',
+			'items' => [
+				['label' => 'About', 'icon'=>'info-sign', 'url'=>'#'],
+				['label' => 'Contact', 'icon'=>'phone', 'url'=>'#'],
+			],
+		],
+	],
+]);?>
 <div class="wrap">
     <?php
     NavBar::begin([
@@ -41,6 +62,15 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Tipo Jogo', 'url' => ['/tipojogo/index']];
+        $menuItems[] = ['label' => 'Jogos', 'url' => ['/jogos/index']];
+        $menuItems[] = ['label' => 'User', 'url' => ['/user/index']];
+        $menuItems[] = ['label' => 'Comentarios', 'url' => ['/comentarios/index']];
+        $menuItems[] = ['label' => 'Review', 'url' => ['/review/index']];
+        $menuItems[] = ['label' => 'Creports', 'url' => ['/comentariosreports/index']];
+        $menuItems[] = ['label' => 'Cutilizador', 'url' => ['/comentariosutilizador/index']];
+        $menuItems[] = ['label' => 'Rutilizador', 'url' => ['/reviewutilizador/index']];
+        $menuItems[] = ['label' => 'Rreports', 'url' => ['/reviewreports/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
