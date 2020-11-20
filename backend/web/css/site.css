@@ -137,3 +137,51 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+/* CODIGO PARA MAIN SIDEBAR + CONTENT_TEXT */
+.sidebarmain{
+    float:left;
+    width:15%;
+    height: 100%; 
+    min-height:400px; 
+    margin-bottom: -5000px; 
+    padding-bottom: 5000px; 
+    background-color: #222;
+    padding-top: 3%;
+}
+
+.content_text{
+    margin-left: 15%;
+    margin-top: 0%;
+    margin-bottom: -5000px; 
+    padding-bottom: 5000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.sidebarstyle{
+    border: 0px;
+    background-color:#222; 
+    border-radius: 0px;
+    border-color: #9d9d9d; 
+    color: white;
+}
+.sidebarmain a{
+    color: #9d9d9d;
+}
+.sidebarmain .table{
+    border: 0px;
+    border-radius: 0px;
+}
+.sidebarmain .panel{
+    background-color:#222; 
+}
+.panel-default{
+    background-color:#222!important;
+    border:0px;
+}
+.sidebarmain ul{
+    background-color:#222!important; 
+}
+.sidebarmain ul li ul{
+    background-color:black!important; 
+}
