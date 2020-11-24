@@ -12,29 +12,39 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="comentarios-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <p>
+    <div class="button-index-brackend col-md-2 col-xs-12">
         <?= Html::a('Create Comentarios', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    </div>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="search-index-brackend col-md-12 col-xs-12">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'Id',
-            'Data',
-            'Descricao:ntext',
-            'Id_utilizador',
-            'Id_jogo',
+    <div class="grid-index-brackend col-md-12 col-xs-12">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+               // ['class' => 'yii\grid\SerialColumn'],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+               //'Id',
+                'Data',
+                'Descricao:ntext',
+                'Id_utilizador',
+                [
+                    'attribute' => 'Id_utilizador',
+                    'value' => 'user.username',
+                ],
+                'Id_jogo',
 
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+    </div>
 
 </div>

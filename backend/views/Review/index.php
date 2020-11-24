@@ -10,32 +10,47 @@ use yii\grid\GridView;
 $this->title = 'Reviews';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="review-index">
+<div class="review-index row">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <p>
+    <div class="button-index-brackend col-md-2 col-xs-12">
         <?= Html::a('Create Review', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    </div>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="search-index-brackend col-md-12 col-xs-12">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
 
+    <div class="grid-index-brackend col-md-12 col-xs-12">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+           // ['class' => 'yii\grid\SerialColumn'],
 
-            'Id',
+           // 'Id',
             'Data',
             'Descricao:ntext',
             'Score',
-            'Id_Jogo',
+            //'Id_Jogo',
+            [
+                'attribute' => 'Id_Jogo',
+                'value'=>'jogos.Nome',
+                'label' => 'Nome do jogo',
+            ],
             //'Id_Utilizador',
+            [
+                'attribute' => 'Id_Utilizador',
+                'value'=>'user.username',
+                'label' => 'Nome de utilizador',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
+    </div>
 
 </div>

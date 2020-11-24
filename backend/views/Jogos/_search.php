@@ -15,23 +15,26 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Id') ?>
+    <!--< ?= $form->field($model, 'Id') ?>-->
 
+    <div class="col-md-10 col-xs-12">
     <?= $form->field($model, 'Nome') ?>
+    </div>
 
-    <?= $form->field($model, 'Descricao') ?>
+    <!--< ?= $form->field($model, 'Descricao') ?>-->
 
-    <?= $form->field($model, 'Data') ?>
+    <!--< ?= $form->field($model, 'Data') ?>-->
 
-    <?= $form->field($model, 'Trailer') ?>
+    <!--< ?= $form->field($model, 'Trailer') ?>-->
 
-    <?php // echo $form->field($model, 'Imagem') ?>
+    <!--< ?php // echo $form->field($model, 'Imagem') ?>-->
 
-    <?php // echo $form->field($model, 'Id_tipojogo') ?>
+   <!-- < ?php // echo $form->field($model, 'Id_tipojogo') ?>-->
 
-    <div class="form-group">
+    <div class="button-search form-group col-md-2 col-xs-12">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <!--< ?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>-->
+        <?= Html::a('Reset', ['index'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

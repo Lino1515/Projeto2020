@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use app\models\Jogos;
+use backend\models\Tipojogo;
 use app\models\JogosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

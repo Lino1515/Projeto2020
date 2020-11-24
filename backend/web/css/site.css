@@ -233,6 +233,8 @@ a.desc:after {
 }
 .button-search{    
     padding-bottom: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .button-search button{    
     width: 60%;

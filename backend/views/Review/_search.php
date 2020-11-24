@@ -15,21 +15,22 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Id') ?>
+    <!--< ?= $form->field($model, 'Id') ?>
 
-    <?= $form->field($model, 'Data') ?>
+    < ?= $form->field($model, 'Data') ?>-->
 
-    <?= $form->field($model, 'Descricao') ?>
+    <div class="col-md-10 col-xs-12">
+        <!-- < ?= $form->field($model, 'Descricao') ?>
 
-    <?= $form->field($model, 'Score') ?>
+    <!--< ?= $form->field($model, 'Score') ?>-->
 
-    <?= $form->field($model, 'Id_Jogo') ?>
+        <?= $form->field($model, 'Id_Jogo') ?>
+    </div>
 
-    <?php // echo $form->field($model, 'Id_Utilizador') ?>
-
-    <div class="form-group">
+    <div class="button-search form-group col-md-2 col-xs-12">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <!--< ?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>-->
+        <?= Html::a('Reset', ['index'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

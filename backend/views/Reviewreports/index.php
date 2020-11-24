@@ -7,33 +7,38 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ReviewreportsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Reviewreports';
+$this->title = 'Reports das reviews';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="reviewreports-index">
+<div class="reviewreports-index row">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <p>
-        <?= Html::a('Create Reviewreports', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="button-index-brackend col-md-2 col-xs-12">
+        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
+    </div>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="search-index-brackend col-md-12 col-xs-12">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="grid-index-brackend col-md-12 col-xs-12">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                //['class' => 'yii\grid\SerialColumn'],
 
-            'Id_review',
-            'Id_utilizador',
-            'Data',
-            'Descricao:ntext',
+                'Id_review',
+                'Id_utilizador',
+                'Data',
+                'Descricao:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+    </div>
 
 </div>

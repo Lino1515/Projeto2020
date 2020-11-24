@@ -3,6 +3,9 @@
 namespace backend\controllers;
 
 use Yii;
+
+use backend\models\Jogos;
+use backend\models\user;
 use app\models\Review;
 use app\models\ReviewSearch;
 use yii\web\Controller;

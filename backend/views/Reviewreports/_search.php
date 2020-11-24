@@ -15,17 +15,20 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Id_review') ?>
+    <!--< ?= $form->field($model, 'Id_review') ?>-->
 
-    <?= $form->field($model, 'Id_utilizador') ?>
+    <div class="col-md-10 col-xs-12">
+        <?= $form->field($model, 'Id_utilizador') ?>
+    </div>
+    <!-- < ?= $form->field($model, 'Data') ?>-->
 
-    <?= $form->field($model, 'Data') ?>
+     <!--< ?= $form->field($model, 'Descricao') ?>-->
 
-    <?= $form->field($model, 'Descricao') ?>
-
-    <div class="form-group">
+    <div class="button-search form-group col-md-2 col-xs-12">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <!--<? Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary'], ['value' => ''], ['type' => 'reset']) ?>-->
+        <!-- < ?= \yii\helpers\Html::a('Voltar', Yii::$app->request->referrer); ?>-->
+        <?= Html::a('Reset', ['index'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
