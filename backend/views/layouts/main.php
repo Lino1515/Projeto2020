@@ -23,7 +23,7 @@ AppAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body style="overflow:auto;">
+    <body style="overflow:auto; background-color: #ebebeb;">
         <?php $this->beginBody() ?>
 
         <div class="wrap">
@@ -68,40 +68,57 @@ AppAsset::register($this);
                                 'label' => 'Tipo Jogo',
                                 'items' => [
                                     ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/tipojogo/index']],
-                                    ['label' => 'Criar', 'icon' => 'phone',  'url' => ['/tipojogo/create']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/tipojogo/create']],
                                 ],
-                                'url' => ['/tipojogo/index'],
                             ],
                             [
                                 'label' => 'Jogos',
-                                'url' => ['/jogos/index']
-                            ],
-                            [
-                                'label' => 'User',
-                                'url' => ['/user/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/jogos/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/jogos/create']],
+                                ],
                             ],
                             [
                                 'label' => 'Comentarios',
-                                'url' => ['/comentarios/index']],
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentarios/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentarios/create']],
+                                ],
+                            ],
                             [
                                 'label' => 'Review',
-                                'url' => ['/review/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/review/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/review/create']],
+                                ],
                             ],
                             [
                                 'label' => 'Creports',
-                                'url' => ['/comentariosreports/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentariosreports/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentariosreports/create']],
+                                ],
                             ],
                             [
                                 'label' => 'Cutilizador',
-                                'url' => ['/comentariosutilizador/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentariosutilizador/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentariosutilizador/create']],
+                                ],
                             ],
                             [
                                 'label' => 'Rutilizador',
-                                'url' => ['/reviewutilizador/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/reviewutilizador/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/reviewutilizador/create']],
+                                ],
                             ],
                             [
                                 'label' => 'Rreports',
-                                'url' => ['/reviewreports/index']
+                                'items' => [
+                                    ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/reviewreports/index']],
+                                    ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/reviewreports/create']],
+                                ],
                             ],
                         ],
                     ]);

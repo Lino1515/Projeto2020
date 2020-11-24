@@ -78,3 +78,1435 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1605738015.979
     'REQUEST_TIME' => 1605738015
 ]
+2020-11-23 19:04:57 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\web\HttpException:405] yii\web\MethodNotAllowedHttpException: Method Not Allowed. This URL can only handle the following request methods: POST. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\filters\VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php(628): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(299): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Controller.php(207): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(178): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/delete', Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-11-23 19:04:57 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/delete'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '12119'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Fdelete'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Fdelete'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606158297.135
+    'REQUEST_TIME' => 1606158297
+]
+2020-11-23 22:53:21 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(30): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 22:53:21 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20242'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172001.173
+    'REQUEST_TIME' => 1606172001
+]
+2020-11-23 22:55:03 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][Error] Error: Class 'Button' not found in C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php:32
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(30): yii\base\View->render('_search', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\TipojogoController))
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\TipojogoController))
+#8 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\TipojogoController->actionIndex()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/index', Array)
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-11-23 22:55:03 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20319'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172103.313
+    'REQUEST_TIME' => 1606172103
+]
+2020-11-23 22:55:54 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][Error] Error: Class 'Button' not found in C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php:32
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(30): yii\base\View->render('_search', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\TipojogoController))
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\TipojogoController))
+#8 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\TipojogoController->actionIndex()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/index', Array)
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-11-23 22:55:54 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20350'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172154.829
+    'REQUEST_TIME' => 1606172154
+]
+2020-11-23 22:56:20 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][Error] Error: Class 'Url' not found in C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php:29
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(30): yii\base\View->render('_search', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\TipojogoController))
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\TipojogoController))
+#8 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\TipojogoController->actionIndex()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/index', Array)
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-11-23 22:56:20 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20370'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172180.346
+    'REQUEST_TIME' => 1606172180
+]
+2020-11-23 22:56:35 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][Error] Error: Class 'Url' not found in C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php:29
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(30): yii\base\View->render('_search', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\TipojogoController))
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\TipojogoController))
+#8 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\TipojogoController->actionIndex()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/index', Array)
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-11-23 22:56:35 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20383'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172195.766
+    'REQUEST_TIME' => 1606172195
+]
+2020-11-23 22:57:03 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "controller/action". in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('controller/acti...', Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-11-23 22:57:02 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'controller/action'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20407'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=controller%2Faction'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=controller%2Faction'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172222.912
+    'REQUEST_TIME' => 1606172222
+]
+2020-11-23 23:08:42 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:256] yii\base\ErrorException: Exception 'yii\base\InvalidArgumentException' with message 'Attribute name must contain word characters only.' 
+
+in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php:2291
+
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(1362): yii\helpers\BaseHtml::getInputName(Object(app\models\TipojogoSearch), 'Procurar por no...')
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(app\models\TipojogoSearch), 'Procurar por no...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(app\models\TipojogoSearch), 'Procurar por no...', Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\widgets\ActiveField.php(207): yii\widgets\ActiveField->textInput()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\widgets\ActiveField.php(176): yii\widgets\ActiveField->render()
+#5 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(22): yii\widgets\ActiveField->__toString()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#9 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\base\View->render('_search', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\TipojogoController))
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\TipojogoController))
+#14 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): yii\base\Controller->render('index', Array)
+#15 [internal function]: backend\controllers\TipojogoController->actionIndex()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#19 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('tipojogo/index', Array)
+#20 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#22 {main} in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\ErrorHandler.php:343
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\ErrorHandler.php(343): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\ErrorHandler.php(343): ::trigger_error()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\widgets\ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(22): yii\widgets\ActiveField->__toString()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:08:42 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=comentariosreports%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '20934'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606172922.816
+    'REQUEST_TIME' => 1606172922
+]
+2020-11-23 23:35:45 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex". in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('http://localhos...', Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-11-23 23:35:45 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex&TipojogoSearch%5BNome%5D='
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22055'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174545.74
+    'REQUEST_TIME' => 1606174545
+]
+2020-11-23 23:36:14 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex". in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('http://localhos...', Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-11-23 23:36:14 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex&TipojogoSearch%5BNome%5D='
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22080'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174574.463
+    'REQUEST_TIME' => 1606174574
+]
+2020-11-23 23:36:16 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:36:16 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22080'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174576.238
+    'REQUEST_TIME' => 1606174576
+]
+2020-11-23 23:36:30 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:36:30 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22098'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174590.718
+    'REQUEST_TIME' => 1606174590
+]
+2020-11-23 23:36:36 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:36:36 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22106'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174596.652
+    'REQUEST_TIME' => 1606174596
+]
+2020-11-23 23:36:52 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:36:52 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22116'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174612.062
+    'REQUEST_TIME' => 1606174612
+]
+2020-11-23 23:37:09 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:37:09 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22127'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174629.786
+    'REQUEST_TIME' => 1606174629
+]
+2020-11-23 23:37:11 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex". in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('http://localhos...', Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2020-11-23 23:37:11 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=tipojogo%2Findex&TipojogoSearch%5BNome%5D='
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22126'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174631.762
+    'REQUEST_TIME' => 1606174631
+]
+2020-11-23 23:37:14 [::1][1][mh7pmhfshs03gjvcf79usj30gq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php:99
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(99): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseUrl.php(214): yii\helpers\BaseUrl::toRoute()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\helpers\BaseHtml.php(412): yii\helpers\BaseUrl::to()
+#3 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\_search.php(29): yii\helpers\BaseHtml::a()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#7 C:\wamp64\www\Projeto2020\backend\views\Tipojogo\index.php(29): yii\web\View->render()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\web\View->render()
+#12 C:\wamp64\www\Projeto2020\backend\controllers\TipojogoController.php(43): backend\controllers\TipojogoController->render()
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\TipojogoController->actionIndex()
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#15 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#16 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\TipojogoController->runAction()
+#17 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#18 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#19 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#20 {main}
+2020-11-23 23:37:14 [::1][1][mh7pmhfshs03gjvcf79usj30gq][info][application] $_GET = [
+    'r' => 'tipojogo/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'mh7pmhfshs03gjvcf79usj30gq'
+    '_csrf-backend' => 'e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"0dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=http%3A%2F%2Flocalhost%3A8080%2FProjeto2020%2Fbackend%2Fweb%2Findex.php%3Fr%3Dtipojogo%252Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=mh7pmhfshs03gjvcf79usj30gq; _csrf-backend=e4496f672e70a23069c1979ac729c9c6f4914dfebb42b19551c938b1351d87e9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220dOnGN5QHzkxXl5mWKdrvlpdMw77QFX5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '22132'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipojogo%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606174634.498
+    'REQUEST_TIME' => 1606174634
+]

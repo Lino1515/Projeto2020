@@ -6,33 +6,43 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TipojogoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+?>
 
-$this->title = 'Tipojogos';
+<?php
+$this->title = 'Tipo de jogos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tipojogo-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Tipojogo', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<div class="tipojogo-index row" style="overflow:auto;">
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
+        <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    </div>
+    <div class="button-index-brackend col-md-2 col-xs-12">
+        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
+    </div>
 
-            'Id',
-            'Nome',
-            'Descricao:ntext',
+    <div class="search-index-brackend col-md-12 col-xs-12">
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+    
+    <div class="grid-index-brackend col-md-12 col-xs-12">
+        <?=
+        GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                // ['class' => 'yii\grid\SerialColumn'],
+                //'Id',
+                'Nome',
+                'Descricao:ntext',
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]);
+        ?>
+    </div>
 
 </div>
