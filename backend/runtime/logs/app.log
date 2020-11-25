@@ -3903,3 +3903,84 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1606236218.938
     'REQUEST_TIME' => 1606236218
 ]
+2020-11-25 18:22:07 [::1][1][8ijjdb432l0d4rmj78e4mptmig][error][Error] Error: Class 'yii\jui\DatePicker' not found in C:\wamp64\www\Projeto2020\backend\views\Jogos\_form.php:21
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#3 C:\wamp64\www\Projeto2020\backend\views\Jogos\create.php(16): yii\base\View->render('_form', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\JogosController))
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('create', Array, Object(backend\controllers\JogosController))
+#8 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(75): yii\base\Controller->render('create', Array)
+#9 [internal function]: backend\controllers\JogosController->actionCreate()
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#14 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-11-25 18:22:07 [::1][1][8ijjdb432l0d4rmj78e4mptmig][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => '8ijjdb432l0d4rmj78e4mptmig'
+    '_csrf-backend' => 'fd3c0415e4eebf28587598894d83e7caf7ba0c3df17d6e125408aef42344f891a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JXDAZb43H9C469DyvhMeqJz9rSkbTkxd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=8ijjdb432l0d4rmj78e4mptmig; _csrf-backend=fd3c0415e4eebf28587598894d83e7caf7ba0c3df17d6e125408aef42344f891a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JXDAZb43H9C469DyvhMeqJz9rSkbTkxd%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1574'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1606328526.999
+    'REQUEST_TIME' => 1606328526
+]
