@@ -24,28 +24,28 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
-
-            //'Id',
-            'Nome',
-            'Descricao:ntext',
-            'Data',
-            'Trailer',
-            //'Imagem',
-            //'Id_tipojogo',
-            [
-                'attribute' => 'Id_tipojogo',
-                'label' => 'Tipo de jogo',
-                'value' => 'tipojogo.Nome',
+        <?=
+        GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                //['class' => 'yii\grid\SerialColumn'],
+                //'Id',
+                'Nome',
+                'Descricao:ntext',
+                'Data',
+                'Trailer',
+                //'Imagem',
+                //'Id_tipojogo',
+                [
+                    'attribute' => 'Id_tipojogo',
+                    'label' => 'Tipo de jogo',
+                    'value' => 'tipojogo.Nome',
+                ],
+                ['class' => 'yii\grid\ActionColumn'],
             ],
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        ]);
+        ?>
     </div>
 
 
