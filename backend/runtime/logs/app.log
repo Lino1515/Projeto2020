@@ -9000,3 +9000,688 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1606347905.103
     'REQUEST_TIME' => 1606347905
 ]
+2020-12-04 14:21:48 [::1][1][fh6821jtd7ijk9b93pf6enl537][error][Error] Error: Class 'kartik\sidenav\SideNav' not found in C:\wamp64\www\Projeto2020\backend\views\layouts\main.php:62
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#4 C:\wamp64\www\Projeto2020\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#5 [internal function]: backend\controllers\SiteController->actionIndex()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-12-04 14:21:48 [::1][1][fh6821jtd7ijk9b93pf6enl537][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'fh6821jtd7ijk9b93pf6enl537'
+    '_identity-backend' => 'abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"8D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/Projeto2020/backend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=fh6821jtd7ijk9b93pf6enl537; _identity-backend=abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%228D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '8975'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607091708.272
+    'REQUEST_TIME' => 1607091708
+]
+2020-12-04 15:00:56 [::1][1][fh6821jtd7ijk9b93pf6enl537][error][Error] Error: Class 'kartik\sidenav\SideNav' not found in C:\wamp64\www\Projeto2020\backend\views\layouts\main.php:62
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#4 C:\wamp64\www\Projeto2020\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#5 [internal function]: backend\controllers\SiteController->actionIndex()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-12-04 15:00:56 [::1][1][fh6821jtd7ijk9b93pf6enl537][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'fh6821jtd7ijk9b93pf6enl537'
+    '_identity-backend' => 'abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"8D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=fh6821jtd7ijk9b93pf6enl537; _identity-backend=abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%228D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1485'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607094056.871
+    'REQUEST_TIME' => 1607094056
+]
+2020-12-04 15:01:23 [::1][1][fh6821jtd7ijk9b93pf6enl537][error][Error] Error: Class 'kartik\sidenav\SideNav' not found in C:\wamp64\www\Projeto2020\backend\views\layouts\main.php:62
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#4 C:\wamp64\www\Projeto2020\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#5 [internal function]: backend\controllers\SiteController->actionIndex()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-12-04 15:01:23 [::1][1][fh6821jtd7ijk9b93pf6enl537][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'fh6821jtd7ijk9b93pf6enl537'
+    '_identity-backend' => 'abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"8D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=fh6821jtd7ijk9b93pf6enl537; _identity-backend=abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%228D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1492'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607094083.784
+    'REQUEST_TIME' => 1607094083
+]
+2020-12-04 15:17:11 [::1][1][fh6821jtd7ijk9b93pf6enl537][error][Error] Error: Class 'kartik\sidenav\SideNav' not found in C:\wamp64\www\Projeto2020\backend\views\layouts\main.php:62
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#4 C:\wamp64\www\Projeto2020\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#5 [internal function]: backend\controllers\SiteController->actionIndex()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-12-04 15:17:11 [::1][1][fh6821jtd7ijk9b93pf6enl537][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'fh6821jtd7ijk9b93pf6enl537'
+    '_identity-backend' => 'abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"8D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=fh6821jtd7ijk9b93pf6enl537; _identity-backend=abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%228D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1787'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607095031.809
+    'REQUEST_TIME' => 1607095031
+]
+2020-12-04 16:42:05 [::1][1][fh6821jtd7ijk9b93pf6enl537][error][Error] Error: Class 'kartik\sidenav\SideNav' not found in C:\wamp64\www\Projeto2020\backend\views\layouts\main.php:62
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#4 C:\wamp64\www\Projeto2020\backend\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#5 [internal function]: backend\controllers\SiteController->actionIndex()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2020-12-04 16:42:05 [::1][1][fh6821jtd7ijk9b93pf6enl537][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'fh6821jtd7ijk9b93pf6enl537'
+    '_identity-backend' => 'abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"8D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=fh6821jtd7ijk9b93pf6enl537; _identity-backend=abc9c9c21e00f51de90291dcc10d8335ec357a9d3309af293e30ea71bbc13341a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=ca48ec47638fea551b3fc9ee9fbd815efe963e6efce011487e7f355c40beabd7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%228D-U9qz-hTeuP4Hi-LHc33MKdiApjIqE%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1412'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607100125.082
+    'REQUEST_TIME' => 1607100125
+]
+2020-12-04 17:19:08 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:84
+Stack trace:
+#0 [internal function]: backend\controllers\JogosController->actionCreate()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-12-04 17:19:08 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'df1lvpt0a5ceoircj9obn0dk5t'
+    '_identity-backend' => '8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"1PYAy-mT7gGGWJz978acKYANT96UMeZN\",2592000]\";}'
+    '_csrf-backend' => '39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"InTXwJWbhGFGsNExM07VtRxaQsITCyiB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/Projeto2020/backend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=df1lvpt0a5ceoircj9obn0dk5t; _identity-backend=8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%221PYAy-mT7gGGWJz978acKYANT96UMeZN%22%2C2592000%5D%22%3B%7D; _csrf-backend=39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22InTXwJWbhGFGsNExM07VtRxaQsITCyiB%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1968'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607102348.274
+    'REQUEST_TIME' => 1607102348
+]
+2020-12-04 17:29:46 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:50
+Stack trace:
+#0 [internal function]: backend\controllers\JogosController->actionIndex()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-12-04 17:29:46 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'df1lvpt0a5ceoircj9obn0dk5t'
+    '_identity-backend' => '8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"1PYAy-mT7gGGWJz978acKYANT96UMeZN\",2592000]\";}'
+    '_csrf-backend' => '39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"InTXwJWbhGFGsNExM07VtRxaQsITCyiB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/Projeto2020/backend/web/index.php?r=tipojogo%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=df1lvpt0a5ceoircj9obn0dk5t; _identity-backend=8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%221PYAy-mT7gGGWJz978acKYANT96UMeZN%22%2C2592000%5D%22%3B%7D; _csrf-backend=39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22InTXwJWbhGFGsNExM07VtRxaQsITCyiB%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '2127'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607102986.692
+    'REQUEST_TIME' => 1607102986
+]
+2020-12-04 17:29:49 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:95
+Stack trace:
+#0 [internal function]: backend\controllers\JogosController->actionCreate()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2020-12-04 17:29:49 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'df1lvpt0a5ceoircj9obn0dk5t'
+    '_identity-backend' => '8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"1PYAy-mT7gGGWJz978acKYANT96UMeZN\",2592000]\";}'
+    '_csrf-backend' => '39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"InTXwJWbhGFGsNExM07VtRxaQsITCyiB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=df1lvpt0a5ceoircj9obn0dk5t; _identity-backend=8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%221PYAy-mT7gGGWJz978acKYANT96UMeZN%22%2C2592000%5D%22%3B%7D; _csrf-backend=39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22InTXwJWbhGFGsNExM07VtRxaQsITCyiB%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '2127'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607102989.803
+    'REQUEST_TIME' => 1607102989
+]
+2020-12-04 17:29:57 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: id in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Controller.php:187
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(51): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/update', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#6 {main}
+2020-12-04 17:29:57 [::1][2][df1lvpt0a5ceoircj9obn0dk5t][info][application] $_GET = [
+    'r' => 'jogos/update'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'n334fnavluge8ksnumeu0bnhdk'
+    '_csrf-frontend' => '3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN\";}'
+    'advanced-backend' => 'df1lvpt0a5ceoircj9obn0dk5t'
+    '_identity-backend' => '8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"1PYAy-mT7gGGWJz978acKYANT96UMeZN\",2592000]\";}'
+    '_csrf-backend' => '39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"InTXwJWbhGFGsNExM07VtRxaQsITCyiB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/Projeto2020/backend/web/index.php'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=n334fnavluge8ksnumeu0bnhdk; _csrf-frontend=3d6a3f8498866ef9d0ca4a4cc3a8dc45c1cd8325c8bc4544e1d0295b41bd4eaba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MOFV8OOQfj-GRlskVFPLlzAidpXSpSYN%22%3B%7D; advanced-backend=df1lvpt0a5ceoircj9obn0dk5t; _identity-backend=8dba52ea2ffff9e41ee2d176c1df3a5478482fb49bee17f11337549f690552c3a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%221PYAy-mT7gGGWJz978acKYANT96UMeZN%22%2C2592000%5D%22%3B%7D; _csrf-backend=39590025e5baf313ef8e06ac0eaa4d192829afb7d41f24db52df9174b935fa52a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22InTXwJWbhGFGsNExM07VtRxaQsITCyiB%22%3B%7D'
+    'PATH' => 'C:\\oracle\\product\\11.2.0\\client_1\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Microsoft VS Code\\bin;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\PuTTY\\;C:\\Program Files\\MATLAB\\R2015b\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MEGA-X;C:\\Program Files\\TortoiseSVN\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '2139'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Fupdate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fupdate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1607102997.361
+    'REQUEST_TIME' => 1607102997
+]
