@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    background: #222222;
 }
 
 .wrap {
@@ -117,4 +118,42 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+#pagina_principal
+{
+   font-size: 20px;
+}
+#Search
+{
+    font-size:20px;
+    border-radius: 30px;
+}
+#box
+{
+    background-color: white;
+    width: 300px;
+    border: 20px red;
+    padding: 150px;
+    margin: 20px;
+}
+#box1
+{
+    background-color: white;
+    width: 300px;
+    border: 20px red;
+    padding: 150px;
+    margin: 20px;
+    display: inline-block;
+}
+#Adicionados
+{
+    color: white;
+}
+#Best_Games
+{
+    color: white;
+}
+#Coming_Soon
+{
+    color:white;
 }
