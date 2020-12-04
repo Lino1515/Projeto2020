@@ -17,7 +17,7 @@ use app\models\Tipojog;
 
     <?= $form->field($model, 'Nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Descricao')->textarea(['rows' => 6])->textArea() ?>
+    <?= $form->field($model, 'Descricao')->textarea(['rows' => 25]) ?>
 
     <!-- < ?= $form->field($model, 'Data')->textInput() ?>-->
     <?=

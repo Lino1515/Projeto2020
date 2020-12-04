@@ -231,6 +231,17 @@ a.desc:after {
     border: 1px #9D9C99 solid;
     border-radius: 5px;
 }
+.truncate{
+    max-width: 500px!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.truncate:hover{
+    overflow: visible;
+    white-space: normal;
+    width: auto;
+}
 .button-search{    
     padding-bottom: 32px;
     padding-left: 0px;
@@ -248,4 +259,21 @@ a.desc:after {
     border: 1px #9D9C99 solid;
     border-radius: 5px;
     margin-top: 24px;
+}
+.descricao-index-brackend{
+    text-indent: 50px;
+    line-height: 1.6;
+}
+.imagem-veiw-backend{
+    width: 60%;
+    background: white;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 20px;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+}
+.text-form{
+min-height: 100%;
 }

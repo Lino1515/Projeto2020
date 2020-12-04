@@ -51,7 +51,8 @@ class JogosController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id) {
-        $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();
+        $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();        
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
                     'tipojogo' => $tipojogo,
@@ -66,7 +67,8 @@ class JogosController extends Controller {
     public function actionCreate() {
         $model = new Jogos();
         $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();
-
+        $genero = 2;
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->Id]);
         }

@@ -9,13 +9,12 @@ use app\models\Tipojogo;
 /**
  * TipojogoSearch represents the model behind the search form of `app\models\Tipojogo`.
  */
-class TipojogoSearch extends Tipojogo
-{
+class TipojogoSearch extends Tipojogo {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['Id'], 'integer'],
             [['Nome', 'Descricao'], 'safe'],
@@ -25,8 +24,7 @@ class TipojogoSearch extends Tipojogo
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -38,8 +36,8 @@ class TipojogoSearch extends Tipojogo
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
+
         $query = Tipojogo::find();
 
         // add conditions that should always apply here
@@ -61,9 +59,14 @@ class TipojogoSearch extends Tipojogo
             'Id' => $this->Id,
         ]);
 
-        $query->andFilterWhere(['like', 'Nome', $this->Nome])
-            ->andFilterWhere(['like', 'Descricao', $this->Descricao]);
+        /* $query->andFilterWhere(['like', 'Nome', $this->Nome])
+          ->andFilterWhere(['like', 'Descricao', $this->Descricao]); */
+        $query->andFilterWhere(['OR',
+            ['like', 'LOWER(Nome)', strtolower($this->Nome)],
+            ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+        ]);
 
         return $dataProvider;
     }
+
 }

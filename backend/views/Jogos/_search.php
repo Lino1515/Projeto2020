@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
     <!--< ?= $form->field($model, 'Id') ?>-->
 
     <div class="col-md-10 col-xs-12">
-    <?= $form->field($model, 'Nome') ?>
+    <?= $form->field($model, 'Nome')->label('Procurar:') ?>
     </div>
 
     <!--< ?= $form->field($model, 'Descricao') ?>-->
@@ -32,9 +32,9 @@ use yii\widgets\ActiveForm;
    <!-- < ?php // echo $form->field($model, 'Id_tipojogo') ?>-->
 
     <div class="button-search form-group col-md-2 col-xs-12">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Procurar', ['class' => 'btn btn-primary']) ?>
         <!--< ?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>-->
-        <?= Html::a('Reset', ['index'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Limpar', ['index'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

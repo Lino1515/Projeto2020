@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="search-index-brackend col-md-12 col-xs-12">
         <?php echo $this->render('_search', ['model' => $searchModel]); ?>
     </div>
-    
+
     <div class="grid-index-brackend col-md-12 col-xs-12">
         <?=
         GridView::widget([
@@ -38,7 +38,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'Id',
                 'Nome',
                 'Descricao:ntext',
-                ['class' => 'yii\grid\ActionColumn'],
+                /* [
+                  'attribute' => 'Descricao',
+                  'label' => 'Descrição',
+                  'value' => 'Descricao',
+                  'contentOptions' => ['class' => 'truncate'],
+                  ], */
+                [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'buttons' => [
+                        'update' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                        'class' => 'btn btn-danger',
+                                        'data' => [
+                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'method' => 'post',
+                            ]]);
+                        },
+                        'view' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                        },
+                    ],
+                ],
             ],
         ]);
         ?>
