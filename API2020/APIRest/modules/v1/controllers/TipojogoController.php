@@ -60,10 +60,20 @@ class TipojogoController extends ActiveController {
     }
 
     public function checkAccess($action, $model = null, $params = []){
+
        /* if (Yii::$app->user->can('admin')) {*/
-           /* if ($action === 'post' or $action === 'delete'){
-                if (\Yii::$app->user->isGuest OR \Yii::$app->user->can('moderador'))
+        var_dump(\Yii::$app->user->can('Admin'));
+        if(\Yii::$app->user->can('Admin')){
+            echo "elo";
+            echo "". $action;
+
+        }
+        exit;
+            if ($action === 'create' or $action === 'delete'){
+
+                if (\Yii::$app->user->isGuest or \Yii::$app->user->can('admin'))
                 {
+
                     throw new ForbiddenHttpException('Apenas poderá'.$action.' utilizadores registados…');
                 }
             }
