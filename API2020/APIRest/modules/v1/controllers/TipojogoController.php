@@ -13,6 +13,7 @@ use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\User;
+use yii\web\ForbiddenHttpException;
 
 /**
  * TipojogoController implements the CRUD actions for Tipojogo model.
@@ -50,15 +51,34 @@ class TipojogoController extends ActiveController {
     }
 
     public function actionTipo($id) {
+        echo "elo";exit;
         $tipoJogo = Tipojogo::find()->where("Id=" . $id)->one();
-
         if ($tipoJogo) {
             return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => $tipoJogo->Nome];
         }
         return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => "erro!"];
     }
 
-    // /**
+    public function checkAccess($action, $model = null, $params = []){
+       /* if (Yii::$app->user->can('admin')) {*/
+           /* if ($action === 'post' or $action === 'delete'){
+                if (\Yii::$app->user->isGuest OR \Yii::$app->user->can('moderador'))
+                {
+                    throw new ForbiddenHttpException('Apenas poderá'.$action.' utilizadores registados…');
+                }
+            }
+       /* } else {
+            throw new ForbiddenHttpException;
+        }*/
+    }
+    public function actionTotal(){
+        $totalmodel = new $this->modelClass;
+        $recs = $totalmodel::find()->all();
+        return['total' => 'Tem um total de ' . count($recs) . ' generos inseridos na base de dados'];
+    }
+
+
+// /**
     // * {@inheritdoc}
     // */
     // public function behaviors()

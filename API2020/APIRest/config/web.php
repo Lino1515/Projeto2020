@@ -58,7 +58,7 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => [
+                    /*'controller' => [
                         'v1/tipoJogo',
                         'v1/comentarios',
                         'v1/comentariosreports',
@@ -66,12 +66,19 @@ $config = [
                         'v1/jogos', 'v1/review',
                         'v1/reviewreports',
                         'v1/reviewutilizador'
-                    ],
+                    ],*/
+                    'controller' => ['v1/tipojogo', 'v1/jogos','v1/comentarios','v1/comentariosreports','v1/comentariosutilizador','v1/review','v1/reviewreports','v1/reviewutilizador'],
+                   /* 'controller' => 'v1/comentariosreports',
+                    'controller' => 'v1/comentariosutilizador',
+                    'controller' => 'v1/jogos',
+                    'controller' => 'v1/review',
+                    'controller' => 'v1/reviewreports',
+                    'controller' => 'v1/reviewutilizador',*/
+                    'pluralize' => false,
                     'extraPatterns' => [
                         'GET total' => 'total', //Obtem total de clientes                        
                         'GET {id}/tipo' => 'tipo' //Obtem o tipo de jogo ActionTipo
                     ],
-                    'pluralize' => false
                 ],
             ],
         ],
