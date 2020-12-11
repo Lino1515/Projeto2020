@@ -5,6 +5,7 @@ namespace app\modules\v1\controllers;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\QueryParamAuth;
+use yii\base\ActionFilter;
 use Yii;
 use app\models\Tipojogo;
 use app\models\TipojogoSearch;
@@ -22,6 +23,8 @@ class TipojogoController extends ActiveController {
 
     public function behaviors() {
         $behaviors = parent::behaviors();
+        // remove authentication filter if there is one
+        unset($behaviors['authenticator']);
         $behaviors['authenticator'] = [
             'class' => CompositeAuth::className(),
             'authMethods' => [
@@ -38,7 +41,9 @@ class TipojogoController extends ActiveController {
     public function auth($username, $password) {
         $user = \app\models\User::findByUsername($username);
         if ($user && $user->validatePassword($password)) {
-           //$token = $user->getAuthKey();
+            //$token = $user->getAuthKey();
+            /* echo "" . $user->password_hash . "<br>" . $user->username . "<br>" . $user->auth_key . '<br>' . $user->verification_token;
+              exit; */
             return $user;
         }
         return null;
