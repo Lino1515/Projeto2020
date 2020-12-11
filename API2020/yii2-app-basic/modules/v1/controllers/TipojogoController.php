@@ -1,13 +1,17 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\v1\controllers;
 
+use yii\filters\auth\HttpBasicAuth;
+use yii\filters\auth\CompositeAuth;
+use yii\filters\auth\QueryParamAuth;
 use Yii;
 use app\models\Tipojogo;
 use app\models\TipojogoSearch;
 use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\User;
 
 /**
  * TipojogoController implements the CRUD actions for Tipojogo model.
@@ -16,11 +20,35 @@ class TipojogoController extends ActiveController {
 
     public $modelClass = 'app\models\tipojogo';
 
+    public function behaviors() {
+        $behaviors = parent::behaviors();
+        $behaviors['authenticator'] = [
+            'class' => CompositeAuth::className(),
+            'authMethods' => [
+                [
+                    'class' => HttpBasicAuth::className(),
+                    'auth' => [$this, 'auth']
+                ],
+                'class' => QueryParamAuth::className()
+            ],
+        ];
+        return $behaviors;
+    }
+
+    public function auth($username, $password) {
+        $user = \app\models\User::findByUsername($username);
+        if ($user && $user->validatePassword($password)) {
+           //$token = $user->getAuthKey();
+            return $user;
+        }
+        return null;
+    }
+
     public function actionTipo($id) {
         $tipoJogo = Tipojogo::find()->where("Id=" . $id)->one();
 
         if ($tipoJogo) {
-            return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => $tipoJogo ->Nome];
+            return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => $tipoJogo->Nome];
         }
         return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => "erro!"];
     }

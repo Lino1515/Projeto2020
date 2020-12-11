@@ -1,20 +1,21 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\v1\controllers;
 
 use Yii;
-use app\models\Comentariosutilizador;
-use app\models\ComentariosutilizadorSearch;
+use app\models\Comentarios;
+use app\models\ComentariosSearch;
 use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ComentariosutilizadorController implements the CRUD actions for Comentariosutilizador model.
+ * ComentariosController implements the CRUD actions for Comentarios model.
  */
-class ComentariosutilizadorController extends ActiveController
+class ComentariosController extends ActiveController
 {
-	public $modelClass = 'app\models\comentariosutilizador';
+	public $modelClass = 'app\models\Comentarios';
+    // /**
     // /**
      // * {@inheritdoc}
      // */
@@ -31,12 +32,12 @@ class ComentariosutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Lists all Comentariosutilizador models.
+     // * Lists all Comentarios models.
      // * @return mixed
      // */
     // public function actionIndex()
     // {
-        // $searchModel = new ComentariosutilizadorSearch();
+        // $searchModel = new ComentariosSearch();
         // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         // return $this->render('index', [
@@ -46,30 +47,29 @@ class ComentariosutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Displays a single Comentariosutilizador model.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * Displays a single Comentarios model.
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionView($Id_comentario, $Id_utilizador)
+    // public function actionView($id)
     // {
         // return $this->render('view', [
-            // 'model' => $this->findModel($Id_comentario, $Id_utilizador),
+            // 'model' => $this->findModel($id),
         // ]);
     // }
 
     // /**
-     // * Creates a new Comentariosutilizador model.
+     // * Creates a new Comentarios model.
      // * If creation is successful, the browser will be redirected to the 'view' page.
      // * @return mixed
      // */
     // public function actionCreate()
     // {
-        // $model = new Comentariosutilizador();
+        // $model = new Comentarios();
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+            // return $this->redirect(['view', 'id' => $model->Id]);
         // }
 
         // return $this->render('create', [
@@ -78,19 +78,18 @@ class ComentariosutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Updates an existing Comentariosutilizador model.
+     // * Updates an existing Comentarios model.
      // * If update is successful, the browser will be redirected to the 'view' page.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionUpdate($Id_comentario, $Id_utilizador)
+    // public function actionUpdate($id)
     // {
-        // $model = $this->findModel($Id_comentario, $Id_utilizador);
+        // $model = $this->findModel($id);
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+            // return $this->redirect(['view', 'id' => $model->Id]);
         // }
 
         // return $this->render('update', [
@@ -99,31 +98,29 @@ class ComentariosutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Deletes an existing Comentariosutilizador model.
+     // * Deletes an existing Comentarios model.
      // * If deletion is successful, the browser will be redirected to the 'index' page.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionDelete($Id_comentario, $Id_utilizador)
+    // public function actionDelete($id)
     // {
-        // $this->findModel($Id_comentario, $Id_utilizador)->delete();
+        // $this->findModel($id)->delete();
 
         // return $this->redirect(['index']);
     // }
 
     // /**
-     // * Finds the Comentariosutilizador model based on its primary key value.
+     // * Finds the Comentarios model based on its primary key value.
      // * If the model is not found, a 404 HTTP exception will be thrown.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
-     // * @return Comentariosutilizador the loaded model
+     // * @param integer $id
+     // * @return Comentarios the loaded model
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // protected function findModel($Id_comentario, $Id_utilizador)
+    // protected function findModel($id)
     // {
-        // if (($model = Comentariosutilizador::findOne(['Id_comentario' => $Id_comentario, 'Id_utilizador' => $Id_utilizador])) !== null) {
+        // if (($model = Comentarios::findOne($id)) !== null) {
             // return $model;
         // }
 

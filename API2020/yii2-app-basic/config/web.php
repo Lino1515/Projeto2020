@@ -11,6 +11,11 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'v1' => [
+            'class' => 'app\modules\v1\v1',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -52,7 +57,15 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => ['tipojogo', 'comentarios', 'comentariosreports', 'comentariosutilizador', 'jogos', 'review', 'reviewreports', 'reviewutilizador'],
+                    'controller' => [
+                        'v1/tipoJogo',
+                        'v1/comentarios',
+                        'v1/comentariosreports',
+                        'v1/comentariosutilizador',
+                        'v1/jogos', 'v1/review',
+                        'v1/reviewreports',
+                        'v1/reviewutilizador'
+                    ],
                     'extraPatterns' => [
                         'GET total' => 'total', //Obtem total de clientes                        
                         'GET {id}/tipo' => 'tipo' //Obtem o tipo de jogo ActionTipo

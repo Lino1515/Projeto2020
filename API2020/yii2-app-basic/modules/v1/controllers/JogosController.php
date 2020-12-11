@@ -1,22 +1,26 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\v1\controllers;
 
 use Yii;
-use app\models\Comentariosreports;
-use app\models\ComentariosreportsSearch;
-
+use app\models\Jogos;
+use app\models\JogosSearch;
 use yii\rest\ActiveController;
-
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ComentariosreportsController implements the CRUD actions for Comentariosreports model.
+ * JogosController implements the CRUD actions for Jogos model.
  */
-class ComentariosreportsController extends ActiveController
+class JogosController extends ActiveController
 {
-	public $modelClass = 'app\models\comentariosreports';
+	public $modelClass = 'app\models\jogos';
+	
+	public function actionTotal(){
+		$totalmodel = new $this->modelClass;
+		$recs = $totalmodel::find()->all();
+		return['total' => count($recs)];
+	}
     // /**
      // * {@inheritdoc}
      // */
@@ -33,12 +37,12 @@ class ComentariosreportsController extends ActiveController
     // }
 
     // /**
-     // * Lists all Comentariosreports models.
+     // * Lists all Jogos models.
      // * @return mixed
      // */
     // public function actionIndex()
     // {
-        // $searchModel = new ComentariosreportsSearch();
+        // $searchModel = new JogosSearch();
         // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         // return $this->render('index', [
@@ -48,30 +52,29 @@ class ComentariosreportsController extends ActiveController
     // }
 
     // /**
-     // * Displays a single Comentariosreports model.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * Displays a single Jogos model.
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionView($Id_comentario, $Id_utilizador)
+    // public function actionView($id)
     // {
         // return $this->render('view', [
-            // 'model' => $this->findModel($Id_comentario, $Id_utilizador),
+            // 'model' => $this->findModel($id),
         // ]);
     // }
 
     // /**
-     // * Creates a new Comentariosreports model.
+     // * Creates a new Jogos model.
      // * If creation is successful, the browser will be redirected to the 'view' page.
      // * @return mixed
      // */
     // public function actionCreate()
     // {
-        // $model = new Comentariosreports();
+        // $model = new Jogos();
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+            // return $this->redirect(['view', 'id' => $model->Id]);
         // }
 
         // return $this->render('create', [
@@ -80,19 +83,18 @@ class ComentariosreportsController extends ActiveController
     // }
 
     // /**
-     // * Updates an existing Comentariosreports model.
+     // * Updates an existing Jogos model.
      // * If update is successful, the browser will be redirected to the 'view' page.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionUpdate($Id_comentario, $Id_utilizador)
+    // public function actionUpdate($id)
     // {
-        // $model = $this->findModel($Id_comentario, $Id_utilizador);
+        // $model = $this->findModel($id);
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+            // return $this->redirect(['view', 'id' => $model->Id]);
         // }
 
         // return $this->render('update', [
@@ -101,31 +103,29 @@ class ComentariosreportsController extends ActiveController
     // }
 
     // /**
-     // * Deletes an existing Comentariosreports model.
+     // * Deletes an existing Jogos model.
      // * If deletion is successful, the browser will be redirected to the 'index' page.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
+     // * @param integer $id
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionDelete($Id_comentario, $Id_utilizador)
+    // public function actionDelete($id)
     // {
-        // $this->findModel($Id_comentario, $Id_utilizador)->delete();
+        // $this->findModel($id)->delete();
 
         // return $this->redirect(['index']);
     // }
 
     // /**
-     // * Finds the Comentariosreports model based on its primary key value.
+     // * Finds the Jogos model based on its primary key value.
      // * If the model is not found, a 404 HTTP exception will be thrown.
-     // * @param integer $Id_comentario
-     // * @param integer $Id_utilizador
-     // * @return Comentariosreports the loaded model
+     // * @param integer $id
+     // * @return Jogos the loaded model
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // protected function findModel($Id_comentario, $Id_utilizador)
+    // protected function findModel($id)
     // {
-        // if (($model = Comentariosreports::findOne(['Id_comentario' => $Id_comentario, 'Id_utilizador' => $Id_utilizador])) !== null) {
+        // if (($model = Jogos::findOne($id)) !== null) {
             // return $model;
         // }
 

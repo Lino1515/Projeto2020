@@ -1,20 +1,22 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\v1\controllers;
 
 use Yii;
-use app\models\Reviewutilizador;
-use app\models\ReviewutilizadorSearch;
+use app\models\Comentariosreports;
+use app\models\ComentariosreportsSearch;
+
 use yii\rest\ActiveController;
+
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ReviewutilizadorController implements the CRUD actions for Reviewutilizador model.
+ * ComentariosreportsController implements the CRUD actions for Comentariosreports model.
  */
-class ReviewutilizadorController extends ActiveController
+class ComentariosreportsController extends ActiveController
 {
-	public $modelClass ='app\models\reviewutilizador';
+	public $modelClass = 'app\models\comentariosreports';
     // /**
      // * {@inheritdoc}
      // */
@@ -31,12 +33,12 @@ class ReviewutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Lists all Reviewutilizador models.
+     // * Lists all Comentariosreports models.
      // * @return mixed
      // */
     // public function actionIndex()
     // {
-        // $searchModel = new ReviewutilizadorSearch();
+        // $searchModel = new ComentariosreportsSearch();
         // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         // return $this->render('index', [
@@ -46,30 +48,30 @@ class ReviewutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Displays a single Reviewutilizador model.
-     // * @param integer $Id_review
-     // * @param integer $Id_Utilizador
+     // * Displays a single Comentariosreports model.
+     // * @param integer $Id_comentario
+     // * @param integer $Id_utilizador
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionView($Id_review, $Id_Utilizador)
+    // public function actionView($Id_comentario, $Id_utilizador)
     // {
         // return $this->render('view', [
-            // 'model' => $this->findModel($Id_review, $Id_Utilizador),
+            // 'model' => $this->findModel($Id_comentario, $Id_utilizador),
         // ]);
     // }
 
     // /**
-     // * Creates a new Reviewutilizador model.
+     // * Creates a new Comentariosreports model.
      // * If creation is successful, the browser will be redirected to the 'view' page.
      // * @return mixed
      // */
     // public function actionCreate()
     // {
-        // $model = new Reviewutilizador();
+        // $model = new Comentariosreports();
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_Utilizador' => $model->Id_Utilizador]);
+            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
         // }
 
         // return $this->render('create', [
@@ -78,19 +80,19 @@ class ReviewutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Updates an existing Reviewutilizador model.
+     // * Updates an existing Comentariosreports model.
      // * If update is successful, the browser will be redirected to the 'view' page.
-     // * @param integer $Id_review
-     // * @param integer $Id_Utilizador
+     // * @param integer $Id_comentario
+     // * @param integer $Id_utilizador
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionUpdate($Id_review, $Id_Utilizador)
+    // public function actionUpdate($Id_comentario, $Id_utilizador)
     // {
-        // $model = $this->findModel($Id_review, $Id_Utilizador);
+        // $model = $this->findModel($Id_comentario, $Id_utilizador);
 
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            // return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_Utilizador' => $model->Id_Utilizador]);
+            // return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
         // }
 
         // return $this->render('update', [
@@ -99,31 +101,31 @@ class ReviewutilizadorController extends ActiveController
     // }
 
     // /**
-     // * Deletes an existing Reviewutilizador model.
+     // * Deletes an existing Comentariosreports model.
      // * If deletion is successful, the browser will be redirected to the 'index' page.
-     // * @param integer $Id_review
-     // * @param integer $Id_Utilizador
+     // * @param integer $Id_comentario
+     // * @param integer $Id_utilizador
      // * @return mixed
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // public function actionDelete($Id_review, $Id_Utilizador)
+    // public function actionDelete($Id_comentario, $Id_utilizador)
     // {
-        // $this->findModel($Id_review, $Id_Utilizador)->delete();
+        // $this->findModel($Id_comentario, $Id_utilizador)->delete();
 
         // return $this->redirect(['index']);
     // }
 
     // /**
-     // * Finds the Reviewutilizador model based on its primary key value.
+     // * Finds the Comentariosreports model based on its primary key value.
      // * If the model is not found, a 404 HTTP exception will be thrown.
-     // * @param integer $Id_review
-     // * @param integer $Id_Utilizador
-     // * @return Reviewutilizador the loaded model
+     // * @param integer $Id_comentario
+     // * @param integer $Id_utilizador
+     // * @return Comentariosreports the loaded model
      // * @throws NotFoundHttpException if the model cannot be found
      // */
-    // protected function findModel($Id_review, $Id_Utilizador)
+    // protected function findModel($Id_comentario, $Id_utilizador)
     // {
-        // if (($model = Reviewutilizador::findOne(['Id_review' => $Id_review, 'Id_Utilizador' => $Id_Utilizador])) !== null) {
+        // if (($model = Comentariosreports::findOne(['Id_comentario' => $Id_comentario, 'Id_utilizador' => $Id_utilizador])) !== null) {
             // return $model;
         // }
 
