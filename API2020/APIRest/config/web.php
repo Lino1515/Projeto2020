@@ -51,6 +51,11 @@ $config = [
                 ],
             ],
         ],
+        /*'authManager' =>
+        [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
+        ],*/
         'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -58,22 +63,22 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    /*'controller' => [
-                        'v1/tipoJogo',
-                        'v1/comentarios',
-                        'v1/comentariosreports',
-                        'v1/comentariosutilizador',
-                        'v1/jogos', 'v1/review',
-                        'v1/reviewreports',
-                        'v1/reviewutilizador'
-                    ],*/
-                    'controller' => ['v1/tipojogo', 'v1/jogos','v1/comentarios','v1/comentariosreports','v1/comentariosutilizador','v1/review','v1/reviewreports','v1/reviewutilizador'],
-                   /* 'controller' => 'v1/comentariosreports',
-                    'controller' => 'v1/comentariosutilizador',
-                    'controller' => 'v1/jogos',
-                    'controller' => 'v1/review',
-                    'controller' => 'v1/reviewreports',
-                    'controller' => 'v1/reviewutilizador',*/
+                    /* 'controller' => [
+                      'v1/tipoJogo',
+                      'v1/comentarios',
+                      'v1/comentariosreports',
+                      'v1/comentariosutilizador',
+                      'v1/jogos', 'v1/review',
+                      'v1/reviewreports',
+                      'v1/reviewutilizador'
+                      ], */
+                    'controller' => ['v1/tipojogo', 'v1/jogos', 'v1/comentarios', 'v1/comentariosreports', 'v1/comentariosutilizador', 'v1/review', 'v1/reviewreports', 'v1/reviewutilizador'],
+                    /* 'controller' => 'v1/comentariosreports',
+                      'controller' => 'v1/comentariosutilizador',
+                      'controller' => 'v1/jogos',
+                      'controller' => 'v1/review',
+                      'controller' => 'v1/reviewreports',
+                      'controller' => 'v1/reviewutilizador', */
                     'pluralize' => false,
                     'extraPatterns' => [
                         'GET total' => 'total', //Obtem total de clientes                        
@@ -82,11 +87,6 @@ $config = [
                 ],
             ],
         ],
-        'authManager' =>
-            [
-                'class' => 'yii\rbac\DbManager',
-                'defaultRoles' => ['guest'],
-            ]
     ],
     'params' => $params,
 ];

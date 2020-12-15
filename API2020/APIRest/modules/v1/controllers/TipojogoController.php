@@ -6,21 +6,22 @@ use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\base\ActionFilter;
+use yii\app;
+use app\models\User;
+use yii\web\ForbiddenHttpException;
 use Yii;
 use app\models\Tipojogo;
 use app\models\TipojogoSearch;
 use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\User;
-use yii\web\ForbiddenHttpException;
 
 /**
  * TipojogoController implements the CRUD actions for Tipojogo model.
  */
 class TipojogoController extends ActiveController {
 
-    public $modelClass = 'app\models\tipojogo';
+    public $modelClass = 'app\v1\models\tipojogo';
 
     public function behaviors() {
         $behaviors = parent::behaviors();
@@ -50,8 +51,19 @@ class TipojogoController extends ActiveController {
         return null;
     }
 
+    public function checkAccess($action, $model = null, $params = []) {
+        $user = \app\models\User::findByUsername(Yii::$app->user->identity->username);
+        $permisao = \app\models\AuthAssignment::findOne(['item_name' => 'admin']);
+
+        if ($action === 'create' or $action === 'delete' or $action === 'update') {
+            if (Yii::$app->user->isGuest || ($user->id == (int) $permisao->user_id) == false) {
+
+                throw new ForbiddenHttpException('Apenas poderá' . $action . ' utilizadores registados…');
+            }
+        }
+    }
+
     public function actionTipo($id) {
-        echo "elo";exit;
         $tipoJogo = Tipojogo::find()->where("Id=" . $id)->one();
         if ($tipoJogo) {
             return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => $tipoJogo->Nome];
@@ -59,34 +71,11 @@ class TipojogoController extends ActiveController {
         return ['Id pesquisado ' => $id, 'Tipo jogo encontrado' => "erro!"];
     }
 
-    public function checkAccess($action, $model = null, $params = []){
-
-       /* if (Yii::$app->user->can('admin')) {*/
-        var_dump(\Yii::$app->user->can('Admin'));
-        if(\Yii::$app->user->can('Admin')){
-            echo "elo";
-            echo "". $action;
-
-        }
-        exit;
-            if ($action === 'create' or $action === 'delete'){
-
-                if (\Yii::$app->user->isGuest or \Yii::$app->user->can('admin'))
-                {
-
-                    throw new ForbiddenHttpException('Apenas poderá'.$action.' utilizadores registados…');
-                }
-            }
-       /* } else {
-            throw new ForbiddenHttpException;
-        }*/
-    }
-    public function actionTotal(){
+    public function actionTotal() {
         $totalmodel = new $this->modelClass;
         $recs = $totalmodel::find()->all();
         return['total' => 'Tem um total de ' . count($recs) . ' generos inseridos na base de dados'];
     }
-
 
 // /**
     // * {@inheritdoc}

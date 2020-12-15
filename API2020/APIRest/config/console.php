@@ -10,7 +10,7 @@ $config = [
     'controllerNamespace' => 'app\commands',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
         '@tests' => '@app/tests',
     ],
     'components' => [
@@ -25,16 +25,21 @@ $config = [
                 ],
             ],
         ],
+        /*'authManager' =>
+        [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
+        ],*/
         'db' => $db,
     ],
     'params' => $params,
-    /*
-    'controllerMap' => [
-        'fixture' => [ // Fixture generation command line.
-            'class' => 'yii\faker\FixtureController',
-        ],
-    ],
-    */
+        /*
+          'controllerMap' => [
+          'fixture' => [ // Fixture generation command line.
+          'class' => 'yii\faker\FixtureController',
+          ],
+          ],
+         */
 ];
 
 if (YII_ENV_DEV) {
