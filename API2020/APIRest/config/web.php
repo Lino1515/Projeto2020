@@ -51,11 +51,11 @@ $config = [
                 ],
             ],
         ],
-        /*'authManager' =>
-        [
-            'class' => 'yii\rbac\DbManager',
-            'defaultRoles' => ['guest'],
-        ],*/
+        /* 'authManager' =>
+          [
+          'class' => 'yii\rbac\DbManager',
+          'defaultRoles' => ['guest'],
+          ], */
         'db' => $db,
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -82,7 +82,21 @@ $config = [
                     'pluralize' => false,
                     'extraPatterns' => [
                         'GET total' => 'total', //Obtem total de clientes                        
-                        'GET {id}/tipo' => 'tipo' //Obtem o tipo de jogo ActionTipo
+                        'GET {id}/tipo' => 'tipo', //Obtem o tipo de jogo ActionTipo
+                        //VAIS BUSCAR OS MAIS RECENTES E MAIS ANTIGOS PARA EXIBIR NA PAGINA PRINCIPAL
+                        'GET top' => 'top', //Obtem o top de jogos actionTop
+                        'GET bot' => 'bot', //Obtem o top de jogos actionTop
+                        //TOP REVIEWS DE DETERMINADO JOGO
+                        'GET topreview/{id}' => 'topreview', //Obtem o top de jogos actionTop
+                        //ORDENAÇÃO
+                        'GET dataasc' => 'dataasc', //Obtem todos os resultados em asc por data
+                        'GET datadesc' => 'datadesc', //Obtem todos os resultados em desc por data
+                        'GET nomeasc' => 'nomeasc', //Obtem todos os resultados em asc por nome
+                        'GET nomedesc' => 'nomedesc', //Obtem todos os resultados em desc por nome
+                    /* 'tokens' => [
+                      '{id}' => '<id:\\d+>', //Standard ID
+                      '{limit}' => '<limit:\\d+>', //limit de procuras
+                      ], */
                     ],
                 ],
             ],

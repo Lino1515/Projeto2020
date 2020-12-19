@@ -20,7 +20,7 @@ use yii\filters\VerbFilter;
  */
 class ReviewutilizadorController extends ActiveController {
 
-    public $modelClass = 'app\v1\models\reviewutilizador';
+    public $modelClass = 'app\modules\v1\models\reviewutilizador';
 
     public function behaviors() {
         $behaviors = parent::behaviors();
@@ -60,6 +60,61 @@ class ReviewutilizadorController extends ActiveController {
 
                 throw new ForbiddenHttpException('Apenas poderá dar' . $action . ' utilizadores registados…');
             }
+        }
+    }
+
+    public function afterSave($insert, $changedAttributes) {
+        parent::afterSave($insert, $changedAttributes);
+
+        //Obter dados do registo em causa
+        $Id_review = $changedAttributes["Id_review"];
+        $Id_Utilizador = $changedAttributes["Id_Utilizador"];
+        $Helpful_UnHelpful = $changedAttributes["Helpful_UnHelpful"];
+
+        $myObj = new \stdClass();
+
+        $myObj->tabela = "Review Utilizador";
+        $myObj->Id_review = $Id_review;
+        $myObj->Id_Utilizador = $Id_Utilizador;
+        $myObj->Helpful_UnHelpful = $Helpful_UnHelpful;
+
+        $myJSON = json_encode($myObj);
+
+        if ($insert) {
+            $this->FazPublish("INSERT", $myJSON);
+        } else {
+            $this->FazPublish("UPDATE", $myJSON);
+        }
+    }
+
+    public function afterDelete($changedAttributes) {
+        parent::afterDelete($changedAttributes);
+        $Id_review = $changedAttributes["Id_review"];
+        $Id_Utilizador = $changedAttributes["Id_Utilizador"];
+        $Helpful_UnHelpful = $changedAttributes["Helpful_UnHelpful"];
+
+        $myObj = new \stdClass();
+
+        $myObj->tabela = "Review Utilizador";
+        $myObj->Id_review = $Id_review;
+        $myObj->Id_Utilizador = $Id_Utilizador;
+        $myObj->Helpful_UnHelpful = $Helpful_UnHelpful;
+        $myJSON = json_encode($myObj);
+        $this->FazPublish("DELETE", $myJSON);
+    }
+
+    public function FazPublish($canal, $msg) {
+        $server = "127.0.0.1";
+        $port = 1883;
+        $username = "" . Yii::$app->user->identity->username; // set your username
+        $password = "" . Yii::$app->user->identity->password_hash; // set your password
+        $client_id = "phpMQTT-publisher"; // unique!
+        $mqtt = new \app\mosquitto\phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $mqtt->publish($canal, $msg, 0);
+            $mqtt->close();
+        } else {
+            file_put_contents("debug.output", "Time out!");
         }
     }
 

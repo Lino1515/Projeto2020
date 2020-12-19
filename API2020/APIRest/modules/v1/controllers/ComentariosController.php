@@ -21,7 +21,7 @@ use yii\filters\VerbFilter;
  */
 class ComentariosController extends ActiveController {
 
-    public $modelClass = 'app\v1\models\Comentarios';
+    public $modelClass = 'app\modules\v1\models\Comentarios';
 
     public function behaviors() {
         $behaviors = parent::behaviors();
@@ -62,6 +62,68 @@ class ComentariosController extends ActiveController {
 
                 throw new ForbiddenHttpException('Apenas poderá dar ' . $action . ' utilizadores registados…');
             }
+        }
+    }
+
+    public function afterSave($insert, $changedAttributes) {
+        parent::afterSave($insert, $changedAttributes);
+        
+       /* var_dump($changedAttributes);
+        exit;*/
+        //Obter dados do registo em causa
+        $nome = $changedAttributes["Data"];
+        $tipo = $changedAttributes["Descricao"];
+        $id_user = $changedAttributes["Id_utilizador"];
+        $id_jogo = $changedAttributes["Id_jogo"];
+
+        $myObj = new \stdClass();
+
+        $myObj->tabela = "Comentarios";
+        $myObj->nome = $nome;
+        $myObj->tipo = $tipo;
+        $myObj->Id_Utilizador = $id_user;
+        $myObj->Id_Jogo = $id_jogo;
+        
+
+        $myJSON = json_encode($myObj);
+
+        if ($insert) {
+            $this->FazPublish("INSERT", $myJSON);
+        } else {
+            $this->FazPublish("UPDATE", $myJSON);
+        }
+    }
+
+    public function afterDelete($changedAttributes) {
+         
+        parent::afterDelete($changedAttributes);
+        $prod_descricao = $changedAttributes["Descricao"];
+        $prod_data = $changedAttributes["Data"];
+        $prod_IdUser = $changedAttributes["Id_utilizador"];
+        $prod_IdJogo = $changedAttributes["Id_jogo"];
+        $myObj = new \stdClass();
+
+        $myObj->tabela = "Comentarios";
+        $myObj->descricao = $prod_descricao;
+        $myObj->data = $prod_data;
+        $myObj->Id_Utilizador = $prod_IdUser;
+        $myObj->Id_Jogo = $prod_IdJogo;
+        $myJSON = json_encode($myObj);
+        $this->FazPublish("DELETE", $myJSON);
+    }
+
+    public function FazPublish($canal, $msg) {
+        $server = "127.0.0.1";
+        $port = 1883;
+        $username = "" . Yii::$app->user->identity->username; // set your username
+        $password = "" . Yii::$app->user->identity->password_hash; // set your password
+        $client_id = "phpMQTT-publisher"; // unique!
+        $mqtt = new \app\mosquitto\phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $mqtt->publish($canal, $msg, 0);
+            $mqtt->close();
+        } else {
+            file_put_contents("debug.output", "Time out!");
         }
     }
 
