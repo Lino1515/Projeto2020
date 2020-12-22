@@ -6,7 +6,6 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\JogosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
 $this->title = 'Jogos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -45,11 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'Imagem',
                 //'Id_tipojogo',
                 [
-                    'attribute' => 'Id_tipojogo',
                     'label' => 'Tipo de jogo',
+                    'attribute' => 'Id_tipojogo',
                     'value' => 'tipojogo.Nome',
                 ],
-                [
+                    [
                     'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
                     'buttons' => [
                         'update' => function ($url, $model) {

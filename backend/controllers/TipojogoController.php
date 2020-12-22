@@ -8,6 +8,7 @@ use app\models\TipojogoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * TipojogoController implements the CRUD actions for Tipojogo model.
@@ -19,6 +20,25 @@ class TipojogoController extends Controller {
      */
     public function behaviors() {
         return [
+            'access' => [
+                'class' => AccessControl::classname(),
+                'only' => ['create', 'update', 'delete', 'login', 'logout'],
+                'rules' => [
+                        [
+                        'allow' => true,
+                        'actions' => ['logout', 'create', 'update', 'delete', 'login'],
+                        'roles' => ['@']
+                    ],
+                        [
+                        'allow' => true,
+                        'actions' => ['login'],
+                        'roles' => ['?']
+                    ],
+                    'denyCallback' => function ($rule, $action) {
+                        throw new \Exception('Não tem permissão para aceder a esta página.');
+                    }
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -103,7 +123,14 @@ class TipojogoController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id) {
-        $this->findModel($id)->delete();
+        $modelJogo = \app\models\Jogos::find()->where(['id_tipojogo' => $id])->all();
+        if ($modelJogo > 0) {
+            //throw new NotFoundHttpException('The requested page does not exist.');
+            throw new \yii\web\NotAcceptableHttpException('Existem jogos associados a esta categoria, por favor edite-os e proceda à eliminação.');
+            exit;
+        }
+        var_dump($this->findModel($id)->delete());
+        exit;
 
         return $this->redirect(['index']);
     }

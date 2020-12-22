@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\User;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ComentariosSearch */
@@ -26,25 +27,30 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
-        <?= GridView::widget([
+        <?=
+        GridView::widget([
             'dataProvider' => $dataProvider,
             //'filterModel' => $searchModel,
             'columns' => [
-               // ['class' => 'yii\grid\SerialColumn'],
-
-               //'Id',
+                // ['class' => 'yii\grid\SerialColumn'],
+                //'Id',
                 'Data',
                 'Descricao:ntext',
-                'Id_utilizador',
-                [
+                //'Id_utilizador',
+                    [
                     'attribute' => 'Id_utilizador',
-                    'value' => 'user.username',
+                    'label' => 'Username',
+                    'value' => 'utilizador.username',
                 ],
-                'Id_jogo',
-
-                ['class' => 'yii\grid\ActionColumn'],
+                    [
+                    'label' => 'Jogo',
+                    'attribute' => 'Id_jogo',
+                    'value' => 'jogo.Nome',
+                ],
+                    ['class' => 'yii\grid\ActionColumn'],
             ],
-        ]); ?>
+        ]);
+        ?>
     </div>
 
 </div>

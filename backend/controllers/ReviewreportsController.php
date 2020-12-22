@@ -8,18 +8,37 @@ use app\models\ReviewreportsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * ReviewreportsController implements the CRUD actions for Reviewreports model.
  */
-class ReviewreportsController extends Controller
-{
+class ReviewreportsController extends Controller {
+
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
+            'access' => [
+                'class' => AccessControl::classname(),
+                'only' => ['create', 'update', 'delete', 'login', 'logout'],
+                'rules' => [
+                        [
+                        'allow' => true,
+                        'actions' => ['logout', 'create', 'update', 'delete', 'login'],
+                        'roles' => ['@']
+                    ],
+                        [
+                        'allow' => true,
+                        'actions' => ['login'],
+                        'roles' => ['?']
+                    ],
+                    'denyCallback' => function ($rule, $action) {
+                        throw new \Exception('Não tem permissão para aceder a esta página.');
+                    }
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -33,15 +52,18 @@ class ReviewreportsController extends Controller
      * Lists all Reviewreports models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new ReviewreportsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    public function actionIndex() {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+            $searchModel = new ReviewreportsSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -51,11 +73,14 @@ class ReviewreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Id_review, $Id_utilizador)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($Id_review, $Id_utilizador),
-        ]);
+    public function actionView($Id_review, $Id_utilizador) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+            return $this->render('view', [
+                        'model' => $this->findModel($Id_review, $Id_utilizador),
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -63,17 +88,20 @@ class ReviewreportsController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
-        $model = new Reviewreports();
+    public function actionCreate() {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+            $model = new Reviewreports();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
+            }
+
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -84,17 +112,20 @@ class ReviewreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Id_review, $Id_utilizador)
-    {
-        $model = $this->findModel($Id_review, $Id_utilizador);
+    public function actionUpdate($Id_review, $Id_utilizador) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+            $model = $this->findModel($Id_review, $Id_utilizador);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
+            }
+
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -105,11 +136,14 @@ class ReviewreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Id_review, $Id_utilizador)
-    {
-        $this->findModel($Id_review, $Id_utilizador)->delete();
+    public function actionDelete($Id_review, $Id_utilizador) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+            $this->findModel($Id_review, $Id_utilizador)->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -120,12 +154,12 @@ class ReviewreportsController extends Controller
      * @return Reviewreports the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Id_review, $Id_utilizador)
-    {
+    protected function findModel($Id_review, $Id_utilizador) {
         if (($model = Reviewreports::findOne(['Id_review' => $Id_review, 'Id_utilizador' => $Id_utilizador])) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

@@ -11,6 +11,8 @@ use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use app\models\Comentarios;
 
 /**
  * JogosController implements the CRUD actions for Jogos model.
@@ -22,6 +24,25 @@ class JogosController extends Controller {
      */
     public function behaviors() {
         return [
+            'access' => [
+                'class' => AccessControl::classname(),
+                'only' => ['create', 'update', 'delete', 'login', 'logout'],
+                'rules' => [
+                        [
+                        'allow' => true,
+                        'actions' => ['logout', 'create', 'update', 'delete', 'login'],
+                        'roles' => ['@']
+                    ],
+                        [
+                        'allow' => true,
+                        'actions' => ['login'],
+                        'roles' => ['?']
+                    ],
+                    'denyCallback' => function ($rule, $action) {
+                        throw new \Exception('Não tem permissão para aceder a esta página.');
+                    }
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -44,8 +65,9 @@ class JogosController extends Controller {
                         'searchModel' => $searchModel,
                         'dataProvider' => $dataProvider,
             ]);
-        } else
+        } else {
             throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -93,6 +115,7 @@ class JogosController extends Controller {
             } else
                 throw new ForbiddenHttpException;
         }
+        throw new ForbiddenHttpException;
     }
 
     /**
@@ -128,7 +151,38 @@ class JogosController extends Controller {
      */
     public function actionDelete($id) {
         if (Yii::$app->user->can('admin')) {
+            $modelComent = \app\models\Comentarios::find()->where(['id_jogo' => $id])->all();
+            //CORRE E ELIMINA TODOS OS COMENTARIOS ASSOCIADOS A ESTE JOGO
+            for ($q = 0; $q < count($modelComent); $q++) {
+                $modelComentUser = \app\models\Comentariosutilizador::find()->where(['id_comentario' => $modelComent[$q]->Id])->all();
+                //CORRE E ELIMINA TODOS OS COMENTARIOS UTILIZADORES ASSOCIADOS A ESTE COMENTARIO
+                for ($w = 0; $w < count($modelComentUser); $w++) {
+                    $modelComentUser[$w]->delete();
+                }
+                $modelComentReport = \app\models\Comentariosreports::find()->where(['id_comentario' => $modelComent[$q]->Id])->all();
+                //CORRE E ELIMINA TODOS OS COMENTARIOS REPORTS ASSOCIADOS A ESTE COMENTARIO
+                for ($e = 0; $e < count($modelComentReport); $e++) {
+                    $modelComentReport[$e]->delete();
+                }
+                $modelComent[$q]->delete();
+            }
+            $modelReview = \app\models\Review::find()->where(['id_jogo' => $id])->all();
+            //CORRE E ELIMINA TODOS OS REVIEWS ASSOCIADOS A ESTE JOGO
+            for ($r = 0; $r < count($modelReview); $r++) {
+                $modelReviewUser = \app\models\Reviewutilizador::find()->where(['id_review' => $modelReview[$r]->Id])->all();
+                //CORRE E ELIMINA TODOS OS REVIEWS UTILIZADORES ASSOCIADOS A ESTE COMENTARIO
+                for ($t = 0; $t < count($modelReviewUser); $t++) {
+                    $modelReviewUser[$t]->delete();
+                }
+                $modelReviewReport = \app\models\Reviewreports::find()->where(['id_review' => $modelReview[$r]->Id])->all();
+                //CORRE E ELIMINA TODOS OS REVIEWS REPORTS ASSOCIADOS A ESTE COMENTARIO
+                for ($y = 0; $y < count($modelReviewUser); $y++) {
+                    $modelReviewReport[$y]->delete();
+                }
+                $modelReview[$r]->delete();
+            }
             $this->findModel($id)->delete();
+
 
             return $this->redirect(['index']);
         } else

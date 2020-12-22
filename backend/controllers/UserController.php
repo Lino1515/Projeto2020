@@ -8,18 +8,37 @@ use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
-{
+class UserController extends Controller {
+
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
+            'access' => [
+                'class' => AccessControl::classname(),
+                'only' => ['create', 'update', 'delete', 'login', 'logout'],
+                'rules' => [
+                        [
+                        'allow' => true,
+                        'actions' => ['logout', 'create', 'update', 'delete', 'login'],
+                        'roles' => ['@']
+                    ],
+                        [
+                        'allow' => true,
+                        'actions' => ['login'],
+                        'roles' => ['?']
+                    ],
+                    'denyCallback' => function ($rule, $action) {
+                        throw new \Exception('Não tem permissão para aceder a esta página.');
+                    }
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -33,15 +52,18 @@ class UserController extends Controller
      * Lists all User models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    public function actionIndex() {
+        if (Yii::$app->user->can('admin')) {
+            $searchModel = new UserSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -50,11 +72,14 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+    public function actionView($id) {
+        if (Yii::$app->user->can('admin')) {
+            return $this->render('view', [
+                        'model' => $this->findModel($id),
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -62,17 +87,20 @@ class UserController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
-        $model = new User();
+    public function actionCreate() {
+        if (Yii::$app->user->can('admin')) {
+            $model = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -82,17 +110,20 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
+    public function actionUpdate($id) {
+        if (Yii::$app->user->can('admin')) {
+            $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -102,11 +133,14 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
+    public function actionDelete($id) {
+        if (Yii::$app->user->can('admin')) {
+            $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -116,12 +150,12 @@ class UserController extends Controller
      * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = User::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

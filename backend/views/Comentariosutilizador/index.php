@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="comentariosutilizador-index row">
 
     <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
-    <h1><?= Html::encode($this->title) ?></h1>
+        <h1><?= Html::encode($this->title) ?></h1>
     </div>
 
 
@@ -26,19 +26,25 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
-        <?= GridView::widget([
+        <?=
+        GridView::widget([
             'dataProvider' => $dataProvider,
-           // 'filterModel' => $searchModel,
+            // 'filterModel' => $searchModel,
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
 
                 'Id_comentario',
                 'Id_utilizador',
+                    [
+                    'attribute' => 'Id_utilizador',
+                    'label' => 'Utilizador',
+                    'value' => 'user.id',
+                ],
                 'Like_Dislike',
-
-                ['class' => 'yii\grid\ActionColumn'],
+                    ['class' => 'yii\grid\ActionColumn'],
             ],
-        ]); ?>
+        ]);
+        ?>
     </div>
 
 </div>
