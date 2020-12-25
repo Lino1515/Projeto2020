@@ -74,8 +74,13 @@ class UserController extends Controller {
      */
     public function actionView($id) {
         if (Yii::$app->user->can('admin')) {
+            $searchModel = new UserSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
             return $this->render('view', [
                         'model' => $this->findModel($id),
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
             ]);
         } else {
             throw new ForbiddenHttpException;
@@ -87,7 +92,7 @@ class UserController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    /*public function actionCreate() {
         if (Yii::$app->user->can('admin')) {
             $model = new User();
 
@@ -101,7 +106,7 @@ class UserController extends Controller {
         } else {
             throw new ForbiddenHttpException;
         }
-    }
+    }*/
 
     /**
      * Updates an existing User model.
@@ -135,6 +140,37 @@ class UserController extends Controller {
      */
     public function actionDelete($id) {
         if (Yii::$app->user->can('admin')) {
+
+            $modelComent = \app\models\Comentarios::find()->where(['Id_utilizador' => $id])->all();
+            //CORRE E ELIMINA TODOS OS COMENTARIOS ASSOCIADOS A ESTE JOGO
+            for ($q = 0; $q < count($modelComent); $q++) {
+                $modelComentUser = \app\models\Comentariosutilizador::find()->where(['id_comentario' => $modelComent[$q]->Id])->all();
+                //CORRE E ELIMINA TODOS OS COMENTARIOS UTILIZADORES ASSOCIADOS A ESTE COMENTARIO
+                for ($w = 0; $w < count($modelComentUser); $w++) {
+                    $modelComentUser[$w]->delete();
+                }
+                $modelComentReport = \app\models\Comentariosreports::find()->where(['id_comentario' => $modelComent[$q]->Id])->all();
+                //CORRE E ELIMINA TODOS OS COMENTARIOS REPORTS ASSOCIADOS A ESTE COMENTARIO
+                for ($e = 0; $e < count($modelComentReport); $e++) {
+                    $modelComentReport[$e]->delete();
+                }
+                $modelComent[$q]->delete();
+            }
+            $modelReview = \app\models\Review::find()->where(['id_jogo' => $id])->all();
+            //CORRE E ELIMINA TODOS OS REVIEWS ASSOCIADOS A ESTE JOGO
+            for ($r = 0; $r < count($modelReview); $r++) {
+                $modelReviewUser = \app\models\Reviewutilizador::find()->where(['id_review' => $modelReview[$r]->Id])->all();
+                //CORRE E ELIMINA TODOS OS REVIEWS UTILIZADORES ASSOCIADOS A ESTE COMENTARIO
+                for ($t = 0; $t < count($modelReviewUser); $t++) {
+                    $modelReviewUser[$t]->delete();
+                }
+                $modelReviewReport = \app\models\Reviewreports::find()->where(['id_review' => $modelReview[$r]->Id])->all();
+                //CORRE E ELIMINA TODOS OS REVIEWS REPORTS ASSOCIADOS A ESTE COMENTARIO
+                for ($y = 0; $y < count($modelReviewUser); $y++) {
+                    $modelReviewReport[$y]->delete();
+                }
+                $modelReview[$r]->delete();
+            }
             $this->findModel($id)->delete();
 
             return $this->redirect(['index']);

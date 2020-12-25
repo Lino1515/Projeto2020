@@ -237,6 +237,12 @@ a.desc:after {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.truncate-user{
+    max-width: 200px!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .truncate:hover{
     overflow: visible;
     white-space: normal;

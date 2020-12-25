@@ -9,24 +9,22 @@ use app\models\User;
 /**
  * UserSearch represents the model behind the search form of `app\models\User`.
  */
-class UserSearch extends User
-{
+class UserSearch extends User {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
+                [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+                [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -38,8 +36,7 @@ class UserSearch extends User
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = User::find();
 
         // add conditions that should always apply here
@@ -64,13 +61,33 @@ class UserSearch extends User
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'verification_token', $this->verification_token]);
+        /* $query->andFilterWhere(['like', 'username', $this->username])
+          ->andFilterWhere(['like', 'auth_key', $this->auth_key])
+          ->andFilterWhere(['like', 'password_hash', $this->password_hash])
+          ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
+          ->andFilterWhere(['like', 'email', $this->email])
+          ->andFilterWhere(['like', 'verification_token', $this->verification_token]);
+         */
+        
+        if (strtolower($this->username) == strtolower('ativo'))
+            $obtemStatus = '10';
+        if (strtolower($this->username) == strtolower('inativo'))
+            $obtemStatus = '9';
+        if (strtolower($this->username) == strtolower('ELIMINADO'))
+            $obtemStatus = '0';
+        else
+            $obtemStatus = strtolower($this->username);
 
+
+        $query->andFilterWhere(['OR',
+                ['like', 'LOWER(username)', strtolower($this->username)],
+                ['like', 'LOWER(email)', strtolower($this->username)],
+                ['like', 'LOWER(status)', $obtemStatus],
+                //['like', 'LOWER(auth_key)', strtolower($this->username)],
+                //['like', 'LOWER(password_hash)', strtolower($this->username)],
+                //['like', 'LOWER(verification_token)', strtolower($this->username)],
+        ]);
         return $dataProvider;
     }
+
 }
