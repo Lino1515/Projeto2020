@@ -13,7 +13,7 @@ use app\models\Tipojog;
 
 <div class="jogos-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'Nome')->textInput(['maxlength' => true]) ?>
 
@@ -28,8 +28,7 @@ use app\models\Tipojog;
     ?>
 
     <?= $form->field($model, 'Trailer')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'Imagem')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Imagem')->fileInput() ?>
 
     <?= $form->field($model, 'Id_tipojogo')->dropDownList(ArrayHelper::map($tipojogo, 'Id', 'Nome'), ['prompt' => 'Selecione uma Opção'])->label('Tipo de jogo:') ?>
 

@@ -13,6 +13,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\Comentarios;
+use yii\web\UploadedFile;
 
 /**
  * JogosController implements the CRUD actions for Jogos model.
@@ -98,7 +99,14 @@ class JogosController extends Controller {
             $model = new Jogos();
             $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->load(Yii::$app->request->post())) {
+                $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+                $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
+                $image_path = 'Imagens/imagem_backend/' . $image_name;
+                $model->Imagem->saveAs($image_path);
+                $model->Imagem = $image_path;
+
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 
@@ -110,10 +118,10 @@ class JogosController extends Controller {
             $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();
             $genero = 2;
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->Id]);
-            } else
-                throw new ForbiddenHttpException;
+            /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
+              return $this->redirect(['view', 'id' => $model->Id]);
+              } else
+              throw new ForbiddenHttpException; */
         }
         throw new ForbiddenHttpException;
     }
@@ -128,9 +136,24 @@ class JogosController extends Controller {
     public function actionUpdate($id) {
         if (Yii::$app->user->can('admin')) {
             $model = $this->findModel($id);
+            $saveImagem = $this->findModel($id);
+            $saveImagem = $saveImagem->Imagem;
             $tipojogo = Tipojogo::find()->all();
+            if ($model->load(Yii::$app->request->post())) {
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                if ($model->Imagem != '') {
+                    unlink($saveImagem);
+                    $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+                    $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
+                    var_dump($image_name);
+                    exit;
+                    $image_path = 'Imagens/imagem_backend/' . $image_name;
+                    $model->Imagem->saveAs($image_path);
+                    $model->Imagem = $image_path;
+                } else {
+                    $model->Imagem = $saveImagem;
+                }
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 
@@ -138,8 +161,9 @@ class JogosController extends Controller {
                         'model' => $model,
                         'tipojogo' => $tipojogo,
             ]);
-        } else
+        } else {
             throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -181,12 +205,17 @@ class JogosController extends Controller {
                 }
                 $modelReview[$r]->delete();
             }
+            $model = Jogos::findOne($id);
+            //var_dump($model->Imagem);
+            unlink($model->Imagem);
+            //exit();
             $this->findModel($id)->delete();
 
 
             return $this->redirect(['index']);
-        } else
+        } else {
             throw new ForbiddenHttpException;
+        }
     }
 
     /**

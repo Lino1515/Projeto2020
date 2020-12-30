@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             //'filterModel' => $searchModel,
             'id' => 'descricao',
+            'options' => ['style' => 'overflow: scroll;'],
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
                 //'Id',
@@ -40,8 +41,35 @@ $this->params['breadcrumbs'][] = $this->title;
                     'contentOptions' => ['class' => 'truncate'],
                 ],
                 'Data',
-                'Trailer',
-                //'Imagem',
+                //'Trailer',
+                //'Imagem:image',
+                [
+                    'label' => 'Imagem',
+                    'attribute' => 'Imagem',
+                    'format' => 'html',
+                    'value' => function($model) {
+                        return yii\bootstrap\Html::img($model->Imagem, ['width' => '200', 'height' => '150']);
+                    }
+                ],
+                    [
+                    'label' => 'Trailer',
+                    'attribute' => 'Trailer',
+                    'format' => 'raw',
+                    'value' => function($model) {
+                        $video = \tuyakhov\youtube\EmbedWidget::widget([
+                                    'code' => $model->Trailer,
+                                    'playerParameters' => [
+                                        'controls' => 2
+                                    ],
+                                    'iframeOptions' => [
+                                        'width' => '200',
+                                        'height' => '150'
+                                    ]
+                        ]);
+
+                        return $video;
+                    }
+                ],
                 //'Id_tipojogo',
                 [
                     'label' => 'Tipo de jogo',
