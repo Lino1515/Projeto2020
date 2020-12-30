@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\ForbiddenHttpException;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -55,6 +56,7 @@ class UserController extends Controller {
     public function actionIndex() {
         if (Yii::$app->user->can('admin')) {
             $searchModel = new UserSearch();
+
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
             return $this->render('index', [
@@ -92,21 +94,21 @@ class UserController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    /*public function actionCreate() {
-        if (Yii::$app->user->can('admin')) {
-            $model = new User();
+    /* public function actionCreate() {
+      if (Yii::$app->user->can('admin')) {
+      $model = new User();
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
+      if ($model->load(Yii::$app->request->post()) && $model->save()) {
+      return $this->redirect(['view', 'id' => $model->id]);
+      }
 
-            return $this->render('create', [
-                        'model' => $model,
-            ]);
-        } else {
-            throw new ForbiddenHttpException;
-        }
-    }*/
+      return $this->render('create', [
+      'model' => $model,
+      ]);
+      } else {
+      throw new ForbiddenHttpException;
+      }
+      } */
 
     /**
      * Updates an existing User model.

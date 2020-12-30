@@ -11,6 +11,7 @@ $this->title = $model->username;
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
+$p = \app\models\Authassignment::find()->where(['user_id' => $model->id])->all();
 ?>
 <div class="user-view">
     <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
@@ -92,6 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12 col-xs-12" style="text-align: center;">
         <br>
         <p>
+            <?= Html::a('Alterar', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $model->id], ['class' => 'btn btn-danger',]); ?>
             <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?=
             Html::a('Eliminar', ['delete', 'id' => $model->id], [
@@ -134,6 +136,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         if ($data->status == 0)
                             return 'ELIMINADO';
                         return 'ERRO!';
+                    },
+                ],
+                    [
+                    'attribute' => 'user_id',
+                    'label' => '',
+                    'format' => 'raw',
+                    'value' => function($data) {
+
+                        $p = \app\models\Authassignment::find()->where(['user_id' => $data->id])->all();
+                        if ($p != null)
+                            return Html::a('<span>Alterar</span>', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $data->id], [
+                                        'class' => 'btn btn-danger',]) . '<b>&nbsp;&nbsp;&nbsp;&nbsp;' . $p[0]['item_name'] . '</b>';
+                        return '' . Html::a('<span>Alterar</span>', ['/authassignment/create', 'user_id' => $data->id], [
+                                    'class' => 'btn btn-danger',]) . '<b>&nbsp;&nbsp;&nbsp;&nbsp;null</b>';
                     },
                 ],
                 /* [

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\bootstrap\ButtonDropdown;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
@@ -21,7 +22,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>-->
 
     <div class="search-index-brackend col-md-12 col-xs-12">
-        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+        <?php
+        echo $this->render('_search', ['model' => $searchModel]);
+        ?>
     </div>
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
@@ -45,6 +48,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         if ($data->status == 0)
                             return 'ELIMINADO';
                         return 'ERRO!';
+                    },
+                ],
+                    [
+                    'attribute' => 'user_id',
+                    'label' => '',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        $p = \app\models\Authassignment::find()->where(['user_id' => $data->id])->all();
+                        if ($p != null)
+                            return Html::a('<span>Alterar</span>', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $data->id], [
+                                        'class' => 'btn btn-danger',]) . '<b>&nbsp;&nbsp;&nbsp;&nbsp;' . $p[0]['item_name'] . '</b>';
+                        return '' . Html::a('<span>Alterar</span>', ['/authassignment/create', 'user_id' => $data->id], [
+                                    'class' => 'btn btn-danger',]) . '<b>&nbsp;&nbsp;&nbsp;&nbsp;null</b>';
                     },
                 ],
                 /* [

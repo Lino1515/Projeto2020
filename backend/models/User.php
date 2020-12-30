@@ -29,37 +29,34 @@ use Yii;
  * @property Reviewutilizador[] $reviewutilizadors
  * @property Review[] $reviews1
  */
-class User extends \yii\db\ActiveRecord
-{
+class User extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'user';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
-            [['auth_key'], 'string', 'max' => 32],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
-            [['password_reset_token'], 'unique'],
+                [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+                [['status', 'created_at', 'updated_at'], 'integer'],
+                [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
+                [['auth_key'], 'string', 'max' => 32],
+                [['username'], 'unique'],
+                [['email'], 'unique'],
+                [['password_reset_token'], 'unique'],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'username' => 'Username',
@@ -77,80 +74,71 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComentarios()
-    {
+    public function getComentarios() {
         return $this->hasMany(Comentarios::className(), ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComentariosreports()
-    {
+    public function getComentariosreports() {
         return $this->hasMany(Comentariosreports::className(), ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComentarios0()
-    {
+    public function getComentarios0() {
         return $this->hasMany(Comentarios::className(), ['Id' => 'Id_comentario'])->viaTable('comentariosreports', ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComentariosutilizadors()
-    {
+    public function getComentariosutilizadors() {
         return $this->hasMany(Comentariosutilizador::className(), ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComentarios1()
-    {
+    public function getComentarios1() {
         return $this->hasMany(Comentarios::className(), ['Id' => 'Id_comentario'])->viaTable('comentariosutilizador', ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReviews()
-    {
+    public function getReviews() {
         return $this->hasMany(Review::className(), ['Id_Utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReviewreports()
-    {
+    public function getReviewreports() {
         return $this->hasMany(Reviewreports::className(), ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReviews0()
-    {
+    public function getReviews0() {
         return $this->hasMany(Review::className(), ['Id' => 'Id_review'])->viaTable('reviewreports', ['Id_utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReviewutilizadors()
-    {
+    public function getReviewutilizadors() {
         return $this->hasMany(Reviewutilizador::className(), ['Id_Utilizador' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getReviews1()
-    {
+    public function getReviews1() {
         return $this->hasMany(Review::className(), ['Id' => 'Id_review'])->viaTable('reviewutilizador', ['Id_Utilizador' => 'id']);
     }
+
 }
