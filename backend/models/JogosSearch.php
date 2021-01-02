@@ -79,6 +79,9 @@ class JogosSearch extends Jogos {
                 $tipojogomodel = $tipojogomodel[0]->Id;
             }
         }
+          if ($this->Descricao == "") {
+            $tipojogomodel = "";
+        }
         $query->andFilterWhere(['OR',
                 ['like', 'LOWER(Nome)', strtolower($this->Nome)],
                 ['like', 'LOWER(Descricao)', strtolower($this->Nome)],

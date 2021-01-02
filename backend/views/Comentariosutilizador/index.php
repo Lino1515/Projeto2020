@@ -16,14 +16,14 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
     </div>
 
-
-    <div class="button-index-brackend col-md-2 col-xs-12">
-        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <div class="search-index-brackend col-md-12 col-xs-12">
-        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-    </div>
+    <!--
+        <div class="button-index-brackend col-md-2 col-xs-12">
+            < ?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
+        </div>
+    
+        <div class="search-index-brackend col-md-12 col-xs-12">
+            <? php echo $this->render('_search', ['model' => $searchModel]); ?>
+        </div>-->
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
         <?=
@@ -32,21 +32,37 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'filterModel' => $searchModel,
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
-
-                'Id_comentario',
+                //'Id_comentario',
+                    [
+                    'attribute' => 'Id_comentario',
+                    'label' => 'Comentario',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return Html::a('<span>ver</span>', ['/comentarios/view', 'id' => $data->Id_comentario], ['target' => '_blank']);
+                    }
+                ],
                 //'Id_utilizador',
                 [
                     'attribute' => 'Id_utilizador',
                     'label' => 'Utilizador',
                     'value' => 'utilizador.username',
                 ],
-                'Like_Dislike',
                     [
-                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'attribute' => 'Like_Dislike',
+                    'label' => 'Voto',
+                    'value' => function($data) {
+                        if ($data->Like_Dislike == 1)
+                            return 'Like';
+                        return 'Dislike';
+                    },
+                ],
+                //'Like_Dislike',
+                [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}', //{update}
                     'buttons' => [
-                        'update' => function ($url, $model) {
-                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
-                        },
+                        /* 'update' => function ($url, $model) {
+                          return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                          }, */
                         'delete' => function ($url, $model) {
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',

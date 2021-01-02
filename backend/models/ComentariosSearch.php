@@ -78,6 +78,10 @@ class ComentariosSearch extends Comentarios {
         } else {
             $jogomodel = $jogomodel[0]->Id;
         }
+        if ($this->Descricao == "") {
+            $usermodel = "";
+            $jogomodel = "";
+        }
         $query->andFilterWhere(['OR',
                 ['like', 'LOWER(Data)', strtolower($this->Descricao)],
                 ['like', 'LOWER(Descricao)', strtolower($this->Descricao)],

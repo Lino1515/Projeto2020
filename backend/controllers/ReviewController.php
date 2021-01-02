@@ -56,7 +56,7 @@ class ReviewController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $searchModel = new ReviewSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -76,7 +76,7 @@ class ReviewController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             return $this->render('view', [
                         'model' => $this->findModel($id),
             ]);
@@ -91,10 +91,10 @@ class ReviewController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = new Review();
-
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->load(Yii::$app->request->post())) {
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 
@@ -114,7 +114,7 @@ class ReviewController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -137,7 +137,7 @@ class ReviewController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             //CORRE E ELIMINA TODAS AS REVIEWS UTILIZADORES
             $modelReviewUser = \app\models\Reviewutilizador::find()->where(['id_review' => $id])->all();
             for ($i = 0; $i < count($modelReviewUser); $i++)

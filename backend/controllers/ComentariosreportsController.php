@@ -54,7 +54,7 @@ class ComentariosreportsController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $searchModel = new ComentariosreportsSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -75,7 +75,7 @@ class ComentariosreportsController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($Id_comentario, $Id_utilizador) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             return $this->render('view', [
                         'model' => $this->findModel($Id_comentario, $Id_utilizador),
             ]);
@@ -90,7 +90,7 @@ class ComentariosreportsController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = new Comentariosreports();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -114,7 +114,7 @@ class ComentariosreportsController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($Id_comentario, $Id_utilizador) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = $this->findModel($Id_comentario, $Id_utilizador);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -138,7 +138,7 @@ class ComentariosreportsController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($Id_comentario, $Id_utilizador) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $this->findModel($Id_comentario, $Id_utilizador)->delete();
 
             return $this->redirect(['index']);

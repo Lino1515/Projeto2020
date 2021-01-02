@@ -28,7 +28,8 @@ $genero = Tipojogo::findOne($model->Id_tipojogo);
         </div>
 
         <div class="descricao-index-brackend col-md-5 col-xs-12"style="text-align: center;">
-            <?= Html::img($model->Imagem, ['alt' => $model->Nome, 'class' => 'imagem-veiw-backend']); ?><p>
+            <?= Html::img($model->Imagem, ['alt' => $model->Nome, 'class' => 'imagem-veiw-backend']); ?>
+            <p>
                 <b>Data de lançamento: </b><?= $model->Data; ?><br>
                 <b>Género: </b><?= $genero->Nome; ?><br>
                 <b>Link: </b><a href="https://www.youtube.com/watch?v="<?= $model->Trailer ?> target="_blank">Youtube</a><br>

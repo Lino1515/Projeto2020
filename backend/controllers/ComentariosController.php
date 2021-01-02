@@ -54,7 +54,7 @@ class ComentariosController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $searchModel = new ComentariosSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -74,7 +74,7 @@ class ComentariosController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             return $this->render('view', [
                         'model' => $this->findModel($id),
             ]);
@@ -89,7 +89,7 @@ class ComentariosController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = new Comentarios();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -112,7 +112,7 @@ class ComentariosController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -135,7 +135,7 @@ class ComentariosController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id) {
-        if (Yii::$app->user->can('admin') or Yii::$app->user->can('admin')) {
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $modelComentUser = \app\models\Comentariosutilizador::find()->where(['id_comentario' => $id])->all();
             for ($j = 0; $j < count($modelComentUser); $j++) {
 

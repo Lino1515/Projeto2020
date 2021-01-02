@@ -16,9 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
     </div>
 
-    <div class="button-index-brackend col-md-2 col-xs-12">
-        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
-    </div>
+    <!--<div class="button-index-brackend col-md-2 col-xs-12">
+        < ?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
+    </div>-->
 
     <div class="search-index-brackend col-md-12 col-xs-12">
         <?php echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -48,11 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'Data',
                 'Descricao:ntext',
                     [
-                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}', //{update} 
                     'buttons' => [
-                        'update' => function ($url, $model) {
-                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
-                        },
+                        /* 'update' => function ($url, $model) {
+                          return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                          }, */
                         'delete' => function ($url, $model) {
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',

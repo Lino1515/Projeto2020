@@ -68,7 +68,8 @@ class ComentariosreportsSearch extends Comentariosreports {
         } else {
             $usermodel = $usermodel[0]->id;
         }
-
+        if ($this->Descricao == "")
+            $usermodel = "";
         $query->andFilterWhere(['OR',
                 ['like', 'LOWER(Data)', strtolower($this->Descricao)],
                 ['like', 'LOWER(Descricao)', strtolower($this->Descricao)],

@@ -8,7 +8,7 @@ use app\models\User;
 /* @var $searchModel app\models\ComentariosSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Comentarios';
+$this->title = 'Comentários';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="comentarios-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="button-index-brackend col-md-2 col-xs-12">
-        <?= Html::a('Create Comentarios', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <div class="search-index-brackend col-md-12 col-xs-12">

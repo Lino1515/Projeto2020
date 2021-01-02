@@ -14,17 +14,19 @@ use app\models\User;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Data')->textInput() ?>
+    <?= $form->field($model, 'Data')->textInput(['value' => date('Y-m-d'), 'readonly' => true])->label('Data:') ?>
 
-    <?= $form->field($model, 'Descricao')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'Descricao')->textarea(['rows' => 6])->label('Descrição:') ?>
 
+    <?= $form->field($model, 'Id_jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo']) ?>
     <!--< ?= $form->field($model, 'Id_utilizador')->textInput() ?>-->
-    <?= $form->field($model, 'Id_utilizador')->dropDownList(ArrayHelper::map(user::find()->all(), 'id', 'username'), ['prompt' => 'select']) ?>
+    <?= $form->field($model, 'Id_utilizador')->hiddenInput(['value' => Yii::$app->user->identity->id, 'readonly' => true])->label('') ?>
+    <!--<? = $form->field($model, 'Id_utilizador')->dropDownList(ArrayHelper::map(user::find()->all(), 'id', 'username'), ['prompt' => 'select']) ?>-->
 
-    <?= $form->field($model, 'Id_jogo')->textInput() ?>
+    <!--< ?= $form->field($model, 'Id_jogo')->textInput() ?>-->
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('criar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="button-index-brackend col-md-2 col-xs-12">
-        <?= Html::a('Create Review', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Novo', ['create'], ['class' => 'btn btn-success']) ?>
     </div>
 
     <div class="search-index-brackend col-md-12 col-xs-12">
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',
                                         'data' => [
-                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'confirm' => 'Tem a certeza que pretende eliminar a review?',
                                             'method' => 'post',
                             ]]);
                         },

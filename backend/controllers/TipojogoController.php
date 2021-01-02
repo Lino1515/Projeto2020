@@ -54,13 +54,17 @@ class TipojogoController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        $searchModel = new TipojogoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if (Yii::$app->user->can('admin')) {
+            $searchModel = new TipojogoSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -70,14 +74,18 @@ class TipojogoController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id) {
-        $searchModel = new TipojogoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if (Yii::$app->user->can('admin')) {
+            $searchModel = new TipojogoSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('view', [
-                    'model' => $this->findModel($id),
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('view', [
+                        'model' => $this->findModel($id),
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -86,15 +94,19 @@ class TipojogoController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
-        $model = new Tipojogo();
+        if (Yii::$app->user->can('admin')) {
+            $model = new Tipojogo();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->Id]);
+            }
+
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('create', [
-                    'model' => $model,
-        ]);
     }
 
     /**
@@ -105,15 +117,19 @@ class TipojogoController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id) {
-        $model = $this->findModel($id);
+        if (Yii::$app->user->can('admin')) {
+            $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->Id]);
+            }
+
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        } else {
+            throw new ForbiddenHttpException;
         }
-
-        return $this->render('update', [
-                    'model' => $model,
-        ]);
     }
 
     /**
@@ -124,14 +140,18 @@ class TipojogoController extends Controller {
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id) {
-        $modelJogo = \app\models\Jogos::find()->where(['id_tipojogo' => $id])->all();
-        if (count($modelJogo) > 0) {
-            //throw new NotFoundHttpException('The requested page does not exist.');
-            throw new \yii\web\NotAcceptableHttpException('Existem jogos associados a esta categoria, por favor edite-os e proceda à eliminação.');
-        } else {
-            $this->findModel($id)->delete();
+        if (Yii::$app->user->can('admin')) {
+            $modelJogo = \app\models\Jogos::find()->where(['id_tipojogo' => $id])->all();
+            if (count($modelJogo) > 0) {
+                //throw new NotFoundHttpException('The requested page does not exist.');
+                throw new \yii\web\NotAcceptableHttpException('Existem jogos associados a esta categoria, por favor edite-os e proceda à eliminação.');
+            } else {
+                $this->findModel($id)->delete();
 
-            return $this->redirect(['index']);
+                return $this->redirect(['index']);
+            }
+        } else {
+            throw new ForbiddenHttpException;
         }
     }
 
