@@ -9,25 +9,23 @@ use app\models\Review;
 /**
  * ReviewSearch represents the model behind the search form of `app\models\Review`.
  */
-class ReviewSearch extends Review
-{
+class ReviewSearch extends Review {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['Id', 'Id_Jogo', 'Id_Utilizador'], 'integer'],
-            [['Data', 'Descricao'], 'safe'],
-            [['Score'], 'number'],
+                [['Id', 'Id_Jogo', 'Id_Utilizador'], 'integer'],
+                [['Data', 'Descricao'], 'safe'],
+                [['Score'], 'number'],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,8 +37,7 @@ class ReviewSearch extends Review
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Review::find();
 
         // add conditions that should always apply here
@@ -58,16 +55,38 @@ class ReviewSearch extends Review
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'Id' => $this->Id,
-            'Data' => $this->Data,
-            'Score' => $this->Score,
-            'Id_Jogo' => $this->Id_Jogo,
-            'Id_Utilizador' => $this->Id_Utilizador,
+        /* $query->andFilterWhere([
+          'Id' => $this->Id,
+          'Data' => $this->Data,
+          'Score' => $this->Score,
+          'Id_Jogo' => $this->Id_Jogo,
+          'Id_Utilizador' => $this->Id_Utilizador,
+          ]);
+
+          $query->andFilterWhere(['like', 'Descricao', $this->Descricao]); */
+        $usermodel = User::find()->where(['username' => strtolower($this->Descricao)])->all();
+        if ($usermodel == null) {
+            $usermodel = $this->Id_Jogo;
+        } else {
+            $usermodel = $usermodel[0]->id;
+        }
+        $likeCondition = new \yii\db\conditions\LikeCondition('LOWER(Nome)', 'LIKE', strtolower($this->Descricao) . '%');
+        $likeCondition->setEscapingReplacements(false);
+        $jogomodel = Jogos::find()->where($likeCondition)->all();
+
+        if ($jogomodel == null) {
+            $jogomodel = $this->Id_Jogo;
+        } else {
+            $jogomodel = $jogomodel[0]->Id;
+        }
+        $query->andFilterWhere(['OR',
+                ['like', 'LOWER(Data)', strtolower($this->Descricao)],
+                ['like', 'LOWER(Descricao)', strtolower($this->Descricao)],
+                ['like', 'LOWER(Score)', strtolower($this->Descricao)],
+                ['like', 'LOWER(Id_Jogo)', strtolower($jogomodel)],
+                ['like', 'LOWER(Id_Utilizador)', strtolower($usermodel)],
         ]);
-
-        $query->andFilterWhere(['like', 'Descricao', $this->Descricao]);
-
         return $dataProvider;
     }
+
 }

@@ -25,20 +25,50 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
-        <?= GridView::widget([
+        <?=
+        GridView::widget([
             'dataProvider' => $dataProvider,
             //'filterModel' => $searchModel,
             'columns' => [
-               // ['class' => 'yii\grid\SerialColumn'],
-
-                'Id_comentario',
-                'Id_utilizador',
+                // ['class' => 'yii\grid\SerialColumn'],
+                // 'Id_comentario',
+                    [
+                    'attribute' => 'Id_comentario',
+                    'label' => 'Comentario',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return Html::a('<span>ver</span>', ['/comentarios/view', 'id' => $data->Id_comentario], ['target' => '_blank']);
+                    }
+                ],
+                    [
+                    'attribute' => 'Id_utilizador',
+                    'label' => 'Username',
+                    'value' => 'utilizador.username',
+                ],
                 'Data',
                 'Descricao:ntext',
-
-                ['class' => 'yii\grid\ActionColumn'],
+                    [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'buttons' => [
+                        'update' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                        'class' => 'btn btn-danger',
+                                        'data' => [
+                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'method' => 'post',
+                            ]]);
+                        },
+                        'view' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                        },
+                    ],
+                ],
             ],
-        ]); ?>
+        ]);
+        ?>
     </div>
 
 </div>

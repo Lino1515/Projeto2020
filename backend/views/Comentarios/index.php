@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'Data',
                 'Descricao:ntext',
                 //'Id_utilizador',
-                    [
+                [
                     'attribute' => 'Id_utilizador',
                     'label' => 'Username',
                     'value' => 'utilizador.username',
@@ -47,7 +47,25 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'Id_jogo',
                     'value' => 'jogo.Nome',
                 ],
-                    ['class' => 'yii\grid\ActionColumn'],
+                    [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'buttons' => [
+                        'update' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                        'class' => 'btn btn-danger',
+                                        'data' => [
+                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'method' => 'post',
+                            ]]);
+                        },
+                        'view' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                        },
+                    ],
+                ],
             ],
         ]);
         ?>

@@ -16,8 +16,8 @@ class TipojogoSearch extends Tipojogo {
      */
     public function rules() {
         return [
-            [['Id'], 'integer'],
-            [['Nome', 'Descricao'], 'safe'],
+                [['Id'], 'integer'],
+                [['Nome', 'Descricao'], 'safe'],
         ];
     }
 
@@ -62,8 +62,9 @@ class TipojogoSearch extends Tipojogo {
         /* $query->andFilterWhere(['like', 'Nome', $this->Nome])
           ->andFilterWhere(['like', 'Descricao', $this->Descricao]); */
         $query->andFilterWhere(['OR',
-            ['like', 'LOWER(Nome)', strtolower($this->Nome)],
-            ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+                ['like', 'LOWER(Nome)', strtolower($this->Nome)],
+                ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+                ['like', 'Descricao', $this->Nome],
         ]);
 
         return $dataProvider;

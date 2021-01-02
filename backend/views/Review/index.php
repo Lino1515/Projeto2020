@@ -25,32 +25,50 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="grid-index-brackend col-md-12 col-xs-12">
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-           // ['class' => 'yii\grid\SerialColumn'],
-
-           // 'Id',
-            'Data',
-            'Descricao:ntext',
-            'Score',
-            //'Id_Jogo',
-            [
-                'attribute' => 'Id_Jogo',
-                'value'=>'jogos.Nome',
-                'label' => 'Nome do jogo',
+        <?=
+        GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                // ['class' => 'yii\grid\SerialColumn'],
+                // 'Id',
+                'Data',
+                'Descricao:ntext',
+                'Score',
+                //'Id_Jogo',
+                [
+                    'attribute' => 'Id_Jogo',
+                    'value' => 'jogo.Nome',
+                    'label' => 'Nome do jogo',
+                ],
+                //'Id_Utilizador',
+                [
+                    'attribute' => 'Id_Utilizador',
+                    'value' => 'utilizador.username',
+                    'label' => 'Nome de utilizador',
+                ],
+                    [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'buttons' => [
+                        'update' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                        'class' => 'btn btn-danger',
+                                        'data' => [
+                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'method' => 'post',
+                            ]]);
+                        },
+                        'view' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                        },
+                    ],
+                ],
             ],
-            //'Id_Utilizador',
-            [
-                'attribute' => 'Id_Utilizador',
-                'value'=>'user.username',
-                'label' => 'Nome de utilizador',
-            ],
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        ]);
+        ?>
     </div>
 
 </div>

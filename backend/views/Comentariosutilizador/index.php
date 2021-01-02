@@ -34,14 +34,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 //['class' => 'yii\grid\SerialColumn'],
 
                 'Id_comentario',
-                'Id_utilizador',
-                    [
+                //'Id_utilizador',
+                [
                     'attribute' => 'Id_utilizador',
                     'label' => 'Utilizador',
-                    'value' => 'user.id',
+                    'value' => 'utilizador.username',
                 ],
                 'Like_Dislike',
-                    ['class' => 'yii\grid\ActionColumn'],
+                    [
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'buttons' => [
+                        'update' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
+                        },
+                        'delete' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
+                                        'class' => 'btn btn-danger',
+                                        'data' => [
+                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'method' => 'post',
+                            ]]);
+                        },
+                        'view' => function ($url, $model) {
+                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                        },
+                    ],
+                ],
             ],
         ]);
         ?>

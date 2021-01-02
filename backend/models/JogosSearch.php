@@ -16,8 +16,8 @@ class JogosSearch extends Jogos {
      */
     public function rules() {
         return [
-            [['Id', 'Id_tipojogo'], 'integer'],
-            [['Nome', 'Descricao', 'Data', 'Trailer', 'Imagem'], 'safe'],
+                [['Id', 'Id_tipojogo'], 'integer'],
+                [['Nome', 'Descricao', 'Data', 'Trailer', 'Imagem'], 'safe'],
         ];
     }
 
@@ -64,11 +64,27 @@ class JogosSearch extends Jogos {
           ->andFilterWhere(['like', 'LOWER(Descricao)', strtolower($this->Nome]))
           ->andFilterWhere(['like', 'LOWER(Trailer)', strtolower($this->Trailer])
           ->andFilterWhere(['like', 'LOWER(Imagem)', strtolower($this->Imagem]); */
+
+        if ($this->Nome == "") {
+            $tipojogomodel = $this->Nome;
+        } else {
+            $tipojogomodel = Tipojogo::find()->where(['Nome' => $this->Nome])->all();
+           /* var_dump($this->Nome);
+            var_dump($tipojogomodel);
+            echo 'ELO';
+            exit;*/
+            if ($tipojogomodel == null) {
+                $tipojogomodel = $this->Nome;
+            } else {
+                $tipojogomodel = $tipojogomodel[0]->Id;
+            }
+        }
         $query->andFilterWhere(['OR',
-            ['like', 'LOWER(Nome)', strtolower($this->Nome)],
-            ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
-            ['like', 'LOWER(Trailer)', strtolower($this->Nome)],
-            ['like', 'LOWER(Imagem)', strtolower($this->Nome)],
+                ['like', 'LOWER(Nome)', strtolower($this->Nome)],
+                ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+                ['like', 'LOWER(Trailer)', strtolower($this->Nome)],
+                ['like', 'LOWER(Imagem)', strtolower($this->Nome)],
+                ['like', 'LOWER(Id_tipojogo)', strtolower($tipojogomodel)],
         ]);
         return $dataProvider;
     }

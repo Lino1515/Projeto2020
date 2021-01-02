@@ -9,24 +9,22 @@ use app\models\Comentariosreports;
 /**
  * ComentariosreportsSearch represents the model behind the search form of `app\models\Comentariosreports`.
  */
-class ComentariosreportsSearch extends Comentariosreports
-{
+class ComentariosreportsSearch extends Comentariosreports {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['Id_comentario', 'Id_utilizador'], 'integer'],
-            [['Data', 'Descricao'], 'safe'],
+                [['Id_comentario', 'Id_utilizador'], 'integer'],
+                [['Data', 'Descricao'], 'safe'],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -38,8 +36,7 @@ class ComentariosreportsSearch extends Comentariosreports
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Comentariosreports::find();
 
         // add conditions that should always apply here
@@ -57,14 +54,27 @@ class ComentariosreportsSearch extends Comentariosreports
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'Id_comentario' => $this->Id_comentario,
-            'Id_utilizador' => $this->Id_utilizador,
-            'Data' => $this->Data,
+        /* $query->andFilterWhere([
+          'Id_comentario' => $this->Id_comentario,
+          'Id_utilizador' => $this->Id_utilizador,
+          'Data' => $this->Data,
+          ]);
+
+          $query->andFilterWhere(['like', 'Descricao', $this->Descricao]);
+         */
+        $usermodel = User::find()->where(['username' => strtolower($this->Descricao)])->all();
+        if ($usermodel == null) {
+            $usermodel = $this->Descricao;
+        } else {
+            $usermodel = $usermodel[0]->id;
+        }
+
+        $query->andFilterWhere(['OR',
+                ['like', 'LOWER(Data)', strtolower($this->Descricao)],
+                ['like', 'LOWER(Descricao)', strtolower($this->Descricao)],
+                ['like', 'LOWER(Id_utilizador)', strtolower($usermodel)],
         ]);
-
-        $query->andFilterWhere(['like', 'Descricao', $this->Descricao]);
-
         return $dataProvider;
     }
+
 }
