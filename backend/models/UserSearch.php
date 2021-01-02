@@ -68,7 +68,7 @@ class UserSearch extends User {
           ->andFilterWhere(['like', 'email', $this->email])
           ->andFilterWhere(['like', 'verification_token', $this->verification_token]);
          */
-        
+
         if (strtolower($this->username) == strtolower('ativo'))
             $obtemStatus = '10';
         if (strtolower($this->username) == strtolower('inativo'))
@@ -78,11 +78,19 @@ class UserSearch extends User {
         else
             $obtemStatus = strtolower($this->username);
 
+        if (strtolower($this->username) == 'admin' OR strtolower($this->username) == 'moderador' OR strtolower($this->username) == 'null') {
+            $patente = Authassignment::find()->where(['item_name' => $this->username])->all();
+            $patente = $patente[0]->user_id;
+        } else {
+            $patente = strtolower($this->username);
+        }
+        $query->join('INNER JOIN', 'auth_assignment', 'auth_assignment.user_id = user.id');
 
         $query->andFilterWhere(['OR',
                 ['like', 'LOWER(username)', strtolower($this->username)],
                 ['like', 'LOWER(email)', strtolower($this->username)],
                 ['like', 'LOWER(status)', $obtemStatus],
+                ['like', 'LOWER(auth_assignment.user_id)', $patente],
                 //['like', 'LOWER(auth_key)', strtolower($this->username)],
                 //['like', 'LOWER(password_hash)', strtolower($this->username)],
                 //['like', 'LOWER(verification_token)', strtolower($this->username)],

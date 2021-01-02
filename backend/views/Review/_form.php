@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'Score')->textInput() ?>
 
-    <?= $form->field($model, 'Id_Jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo']) ?>
+    <?= $form->field($model, 'Id_Jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo'])->label('Jogo: ') ?>
 
     <?= $form->field($model, 'Id_Utilizador')->hiddenInput(['value' => Yii::$app->user->identity->id, 'readonly' => true])->label('') ?>
 

@@ -18,7 +18,7 @@ use app\models\User;
 
     <?= $form->field($model, 'Descricao')->textarea(['rows' => 6])->label('Descrição:') ?>
 
-    <?= $form->field($model, 'Id_jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo']) ?>
+    <?= $form->field($model, 'Id_jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo'])->label('Jogo:') ?>
     <!--< ?= $form->field($model, 'Id_utilizador')->textInput() ?>-->
     <?= $form->field($model, 'Id_utilizador')->hiddenInput(['value' => Yii::$app->user->identity->id, 'readonly' => true])->label('') ?>
     <!--<? = $form->field($model, 'Id_utilizador')->dropDownList(ArrayHelper::map(user::find()->all(), 'id', 'username'), ['prompt' => 'select']) ?>-->
