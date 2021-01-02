@@ -9,7 +9,7 @@ use yii\web\Controller;
  */
 class DefaultController extends \yii\rest\ActiveController {
 
-    public $modelClass = 'app\modules\v1\models\tipojogo';
+    public $modelClass = 'app\modules\v1';
 
     /**
      * Renders the index view for the module

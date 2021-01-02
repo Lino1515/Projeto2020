@@ -93,7 +93,11 @@ $p = \app\models\Authassignment::find()->where(['user_id' => $model->id])->all()
     <div class="col-md-12 col-xs-12" style="text-align: center;">
         <br>
         <p>
-            <?= Html::a('Alterar', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $model->id], ['class' => 'btn btn-danger',]); ?>
+            <?php
+            if (Yii::$app->user->identity->id != $model->id) {
+                echo Html::a('Alterar permisão', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $model->id], ['class' => 'btn btn-danger',]);
+            }
+            ?>
             <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?=
             Html::a('Eliminar', ['delete', 'id' => $model->id], [

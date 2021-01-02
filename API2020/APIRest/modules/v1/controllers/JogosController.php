@@ -30,7 +30,7 @@ class JogosController extends ActiveController {
         $behaviors['authenticator'] = [
             'class' => CompositeAuth::className(),
             'authMethods' => [
-                [
+                    [
                     'class' => HttpBasicAuth::className(),
                     'auth' => [$this, 'auth']
                 ],
@@ -194,6 +194,32 @@ class JogosController extends ActiveController {
             return['Jogo' => $jogo, 'Melhor review' => $review];
         if ($review == null)
             return['Jogo' => $jogo, 'Este jogo ainda nao tem reviews'];
+        return['Nao foi possivel encontrar este jogo.'];
+    }
+
+    //Ordena a melhor comentario do jogo com id $id
+    public function actionTopcomentario($id) {
+        $model = new $this->modelClass;
+        $modelComent = new \app\modules\v1\models\Comentarios;
+        $modelComentUser = new \app\modules\v1\models\Comentariosutilizador;
+        $coment = $modelComent::find()->where(['Id_jogo' => $id])->all();
+        $countcomentuser = 0;
+        for ($i = 0; $i < count($coment); $i++) {
+//, 'Like_Dislike' => 1]
+            //$comentUser = $modelComentUser::find()->where(['Id_comentario' => $coment[$i]->attributes["Id"], 'Like_Dislike' => 1])->all();
+            if ($countcomentuser < $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count()) {
+                $countcomentuser = $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count();
+                $idComent = $coment[$i]->attributes["Id"];
+            }
+        }
+        // $coment = $coment::find()->where(['Id' => $comentUser->attributes["Id_comentario"]])->all();
+        $jogo = $model::find()->where(['Id' => $id])->all();
+        $coment = $modelComent::find()->where(['Id' => $idComent])->all();
+
+        if ($jogo != null and $coment != null)
+            return['Jogo' => $jogo, 'Melhor comentário' => $coment];
+        if ($coment == null)
+            return['Jogo' => $jogo, 'Este jogo ainda nao tem comentários'];
         return['Nao foi possivel encontrar este jogo.'];
     }
 

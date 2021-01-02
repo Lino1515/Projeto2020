@@ -88,6 +88,8 @@ $config = [
                         'GET bot' => 'bot', //Obtem o top de jogos actionTop
                         //TOP REVIEWS DE DETERMINADO JOGO
                         'GET topreview/{id}' => 'topreview', //Obtem o top de jogos actionTop
+                        //TOP COMENTARIO DE DETERMINADO JOGO
+                        'GET topcomentario/{id}' => 'topcomentario', //Obtem o top de jogos actionTop
                         //ORDENAÇÃO
                         'GET dataasc' => 'dataasc', //Obtem todos os resultados em asc por data
                         'GET datadesc' => 'datadesc', //Obtem todos os resultados em desc por data

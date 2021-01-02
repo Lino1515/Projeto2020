@@ -125,15 +125,14 @@ class TipojogoController extends Controller {
      */
     public function actionDelete($id) {
         $modelJogo = \app\models\Jogos::find()->where(['id_tipojogo' => $id])->all();
-        if ($modelJogo > 0) {
+        if (count($modelJogo) > 0) {
             //throw new NotFoundHttpException('The requested page does not exist.');
             throw new \yii\web\NotAcceptableHttpException('Existem jogos associados a esta categoria, por favor edite-os e proceda à eliminação.');
-            exit;
-        }
-        var_dump($this->findModel($id)->delete());
-        exit;
+        } else {
+            $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        }
     }
 
     /**

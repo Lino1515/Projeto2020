@@ -124,6 +124,11 @@ class ComentariosreportsController extends ActiveController {
         }
     }
 
+    public function actionTotal() {
+        $totalmodel = new $this->modelClass;
+        $recs = $totalmodel::find()->all();
+        return['total' => 'Tem um total de ' . count($recs) . ' registos inseridos na base de dados'];
+    }
     // /**
     // * {@inheritdoc}
     // */
