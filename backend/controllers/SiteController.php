@@ -78,7 +78,12 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionIndex() {
-        return $this->render('index');
+        if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+
+            return $this->render('index');
+        } else {
+            throw new ForbiddenHttpException;
+        }
     }
 
     /**
@@ -95,7 +100,13 @@ class SiteController extends Controller {
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+                return $this->goBack();
+            } else {
+
+                Yii::$app->user->logout();
+                return $this->goBack();
+            }
         } else {
             $model->password = '';
 
