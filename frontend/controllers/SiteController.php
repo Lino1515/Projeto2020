@@ -214,6 +214,7 @@ class SiteController extends Controller {
             if ($utilizador != null) {
                 \Yii::$app->db->createCommand()
                         ->update('user', ['status' => 10], "id=" . $utilizador[0]->attributes['id'])
+                        ->insert('auth_assignment', ['item_name' => 'null', 'user_id' => $utilizador[0]->attributes['id']])
                         ->execute();
                 Yii::$app->session->setFlash('success', 'Obrigado por verificar a sua conta.');
                 return $this->redirect(['index']);

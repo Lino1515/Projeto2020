@@ -32893,3 +32893,175 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1609633117.575
     'REQUEST_TIME' => 1609633117
 ]
+2021-01-03 17:45:31 [::1][1][el7okjfhijcd12h7sgov27drcq][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: data in C:\wamp64\www\Projeto2020\backend\controllers\UserController.php:60
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\UserController.php(60): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\UserController->actionIndex()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): backend\controllers\UserController->runAction()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#8 {main}
+2021-01-03 17:45:30 [::1][1][el7okjfhijcd12h7sgov27drcq][info][application] $_GET = [
+    'r' => 'user/index'
+    'UserSearch' => [
+        'username' => ''
+    ]
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qfm6itd3nv72of0b2cc3ksit80'
+    '_csrf' => 'ef7ad9ea1d92d46ea09d16c55d9811f4b28768cddf54bd17865a2855a9d16d07a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"TyMHZzqLy9dCpCRFzwHQJ2ffB2qT7Aot\";}'
+    'advanced-frontend' => 'h6vv0nundi2h1aua7mur15egrn'
+    '_identity-frontend' => '231ff3dbd549814c5c6b061cf6ef68f9ef4420049b311f61009d4a60fe4d6703a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"RyGqk-SML1nRktKDYOFuP2XKcqXSEzbL\",2592000]\";}'
+    '_csrf-frontend' => '22a93b522f5a229d8d8b8282c301784c0993b7ff187412e85e793a5cf1d92bf2a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"IfQIxh5PdWlxvdoHURwplt8zC1w0YOGJ\";}'
+    'advanced-backend' => 'el7okjfhijcd12h7sgov27drcq'
+    '_identity-backend' => '6e640f4a82301df057a0751315bf43120257dfbee9eba6606c09fffcfabd3813a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'b9d28c4d69eb274815b33975605d642ecca04619624b92138056ec8d878fcc7aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"WBBH6OgRTesTdClD_nHJk8H-JU4V-Bi0\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/projeto2020/backend/web/index.php?r=user%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'PHPSESSID=qfm6itd3nv72of0b2cc3ksit80; _csrf=ef7ad9ea1d92d46ea09d16c55d9811f4b28768cddf54bd17865a2855a9d16d07a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22TyMHZzqLy9dCpCRFzwHQJ2ffB2qT7Aot%22%3B%7D; advanced-frontend=h6vv0nundi2h1aua7mur15egrn; _identity-frontend=231ff3dbd549814c5c6b061cf6ef68f9ef4420049b311f61009d4a60fe4d6703a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22RyGqk-SML1nRktKDYOFuP2XKcqXSEzbL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=22a93b522f5a229d8d8b8282c301784c0993b7ff187412e85e793a5cf1d92bf2a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22IfQIxh5PdWlxvdoHURwplt8zC1w0YOGJ%22%3B%7D; advanced-backend=el7okjfhijcd12h7sgov27drcq; _identity-backend=6e640f4a82301df057a0751315bf43120257dfbee9eba6606c09fffcfabd3813a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=b9d28c4d69eb274815b33975605d642ecca04619624b92138056ec8d878fcc7aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22WBBH6OgRTesTdClD_nHJk8H-JU4V-Bi0%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;\"C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;\";C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\wamp64\\bin\\php\\php5.6.40;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk-15.0.1\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '63123'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=user%2Findex&UserSearch%5Busername%5D='
+    'REQUEST_URI' => '/projeto2020/backend/web/index.php?r=user%2Findex&UserSearch%5Busername%5D='
+    'SCRIPT_NAME' => '/projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1609695930.9
+    'REQUEST_TIME' => 1609695930
+]
+2021-01-03 17:55:38 [::1][1][el7okjfhijcd12h7sgov27drcq][error][Error] Error: Call to a member function delete() on array in C:\wamp64\www\Projeto2020\backend\controllers\UserController.php:175
+Stack trace:
+#0 [internal function]: backend\controllers\UserController->actionDelete('8')
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('delete', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('user/delete', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2021-01-03 17:55:38 [::1][1][el7okjfhijcd12h7sgov27drcq][info][application] $_GET = [
+    'r' => 'user/delete'
+    'id' => '8'
+]
+
+$_POST = [
+    '_csrf-backend' => 'Z_V0n4nETmYwcHoQeODgzb2cy55jUwzHVqc925YajfQwtzbXv4spNGQVCUQco4yJ4vKD1AhrROoc8gmNu1jkxA=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qfm6itd3nv72of0b2cc3ksit80'
+    '_csrf' => 'ef7ad9ea1d92d46ea09d16c55d9811f4b28768cddf54bd17865a2855a9d16d07a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"TyMHZzqLy9dCpCRFzwHQJ2ffB2qT7Aot\";}'
+    'advanced-frontend' => 'h6vv0nundi2h1aua7mur15egrn'
+    '_identity-frontend' => '231ff3dbd549814c5c6b061cf6ef68f9ef4420049b311f61009d4a60fe4d6703a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"RyGqk-SML1nRktKDYOFuP2XKcqXSEzbL\",2592000]\";}'
+    '_csrf-frontend' => '22a93b522f5a229d8d8b8282c301784c0993b7ff187412e85e793a5cf1d92bf2a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"IfQIxh5PdWlxvdoHURwplt8zC1w0YOGJ\";}'
+    'advanced-backend' => 'el7okjfhijcd12h7sgov27drcq'
+    '_identity-backend' => '6e640f4a82301df057a0751315bf43120257dfbee9eba6606c09fffcfabd3813a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => 'b9d28c4d69eb274815b33975605d642ecca04619624b92138056ec8d878fcc7aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"WBBH6OgRTesTdClD_nHJk8H-JU4V-Bi0\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '106'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/projeto2020/backend/web/index.php?r=user%2Findex&UserSearch%5Busername%5D=null'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'PHPSESSID=qfm6itd3nv72of0b2cc3ksit80; _csrf=ef7ad9ea1d92d46ea09d16c55d9811f4b28768cddf54bd17865a2855a9d16d07a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22TyMHZzqLy9dCpCRFzwHQJ2ffB2qT7Aot%22%3B%7D; advanced-frontend=h6vv0nundi2h1aua7mur15egrn; _identity-frontend=231ff3dbd549814c5c6b061cf6ef68f9ef4420049b311f61009d4a60fe4d6703a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22RyGqk-SML1nRktKDYOFuP2XKcqXSEzbL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=22a93b522f5a229d8d8b8282c301784c0993b7ff187412e85e793a5cf1d92bf2a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22IfQIxh5PdWlxvdoHURwplt8zC1w0YOGJ%22%3B%7D; advanced-backend=el7okjfhijcd12h7sgov27drcq; _identity-backend=6e640f4a82301df057a0751315bf43120257dfbee9eba6606c09fffcfabd3813a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=b9d28c4d69eb274815b33975605d642ecca04619624b92138056ec8d878fcc7aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22WBBH6OgRTesTdClD_nHJk8H-JU4V-Bi0%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;\"C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;\";C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\wamp64\\bin\\php\\php5.6.40;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Java\\jdk-15.0.1\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.3.12 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.3.12'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '63218'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=user%2Fdelete&id=8'
+    'REQUEST_URI' => '/projeto2020/backend/web/index.php?r=user%2Fdelete&id=8'
+    'SCRIPT_NAME' => '/projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1609696538.743
+    'REQUEST_TIME' => 1609696538
+]

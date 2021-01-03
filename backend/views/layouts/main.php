@@ -36,7 +36,7 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top ',
                 ],
             ]);
-            $menuItemsNav = [['label' => 'Home', 'url' => ['/site/index']]];
+            //$menuItemsNav = [['label' => 'Home', 'url' => ['/site/index']]];
             if (Yii::$app->user->isGuest) {
                 $menuItemsNav[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {

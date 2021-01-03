@@ -56,9 +56,7 @@ class UserController extends Controller {
     public function actionIndex() {
         if (Yii::$app->user->can('admin')) {
             $searchModel = new UserSearch();
-
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
             return $this->render('index', [
                         'searchModel' => $searchModel,
                         'dataProvider' => $dataProvider,
@@ -173,6 +171,9 @@ class UserController extends Controller {
                 }
                 $modelReview[$r]->delete();
             }
+            $auth = \app\models\AuthAssignment::find()->where(['user_id' => $id])->all();
+            $auth[0]->delete();
+
             $this->findModel($id)->delete();
 
             return $this->redirect(['index']);

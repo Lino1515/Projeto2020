@@ -84,8 +84,8 @@ class UserSearch extends User {
         } else {
             $patente = strtolower($this->username);
         }
-        $query->join('INNER JOIN', 'auth_assignment', 'auth_assignment.user_id = user.id');
-         
+        $query->join('left JOIN', 'auth_assignment', 'auth_assignment.user_id = user.id');
+
         $query->andFilterWhere(['OR',
                 ['like', 'LOWER(username)', strtolower($this->username)],
                 ['like', 'LOWER(email)', strtolower($this->username)],
