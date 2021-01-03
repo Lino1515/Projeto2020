@@ -245,6 +245,12 @@ class SiteController extends Controller {
         if ($user = $model->verifyEmail()) {
             if (Yii::$app->user->login($user)) {
                 Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
+
+                $utilizador = \app\models\User::find()->where(['verification_token' => $token])->all();
+                \Yii::$app->db->createCommand()
+                        ->update('user', ['status' => 10], "id=" . $utilizador[0]->attributes['id'])
+                        ->insert('auth_assignment', ['item_name' => 'null', 'user_id' => $utilizador[0]->attributes['id']])
+                        ->execute();
                 return $this->goHome();
             }
         }

@@ -59,6 +59,23 @@ class SignupForm extends Model {
      * @return bool whether the email was sent
      */
     protected function sendEmail($user) {
+        $user = User::findOne([
+                    'email' => $this->email,
+                    'status' => User::STATUS_INACTIVE
+        ]);
+
+        if ($user === null) {
+            return false;
+        }
+        return Yii::$app
+                        ->mailer
+                        ->compose(
+                                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'], ['user' => $user]
+                        )
+                        ->setFrom("igdb.games@gmail.com")
+                        ->setTo($this->email)
+                        ->setSubject('Account registration at ' . Yii::$app->name)
+                        ->send();
         /* $teste = Yii::$app->mailer->compose(['html' => 'emailVerify-html', 'text' => 'emailVerify-text'], ['user' => $user])
           ->setFrom('leopoldo31920@gmail.com')
           ->setTo('leopoldo31920@gmail.com')
