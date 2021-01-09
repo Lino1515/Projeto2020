@@ -64,63 +64,64 @@ AppAsset::register($this);
                         //'heading' => 'Options',
                         'options' => ['class' => 'sidebarstyle', 'style' => ''],
                         'items' => [
-                                [
+                            [
                                 'label' => 'Tipo Jogo',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/tipojogo/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/tipojogo/create']],
+                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/tipojogo/index']],
+                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/tipojogo/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Jogos',
+                                'id' => 'jogos',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/jogos/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/jogos/create']],
+                                    ['label' => 'Lista jogos'/* , 'icon' => 'info-sign' */, 'url' => ['/jogos/index']],
+                                    ['label' => 'Criar jogos'/* , 'icon' => 'phone' */, 'url' => ['/jogos/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Comentarios',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentarios/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentarios/create']],
+                                    ['label' => 'Lista comentarios'/* , 'icon' => 'info-sign' */, 'url' => ['/comentarios/index']],
+                                    ['label' => 'Criar comentarios'/* , 'icon' => 'phone' */, 'url' => ['/comentarios/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Review',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/review/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/review/create']],
+                                    ['label' => 'Lista reviews'/* , 'icon' => 'info-sign' */, 'url' => ['/review/index']],
+                                    ['label' => 'Criar reviews'/* , 'icon' => 'phone' */, 'url' => ['/review/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Creports',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentariosreports/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentariosreports/create']],
+                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/comentariosreports/index']],
+                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/comentariosreports/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Cutilizador',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/comentariosutilizador/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/comentariosutilizador/create']],
+                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/comentariosutilizador/index']],
+                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/comentariosutilizador/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Rutilizador',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/reviewutilizador/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/reviewutilizador/create']],
+                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/reviewutilizador/index']],
+                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/reviewutilizador/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Rreports',
                                 'items' => [
-                                        ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/reviewreports/index']],
-                                        ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/reviewreports/create']],
+                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/reviewreports/index']],
+                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/reviewreports/create']],
                                 ],
                             ],
-                                [
+                            [
                                 'label' => 'Utilizadores',
                                 'url' => ['/user/index'],
                             /* 'items' => [

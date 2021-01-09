@@ -23,12 +23,12 @@ class SiteController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -41,11 +41,11 @@ class SiteController extends Controller {
             'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
-                        [
+                    [
                         'actions' => ['login', 'error'],
                         'allow' => true,
                     ],
-                        [
+                    [
                         'actions' => ['logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
@@ -78,6 +78,8 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionIndex() {
+        if (Yii::$app->user->isGuest)
+            return $this->render('login');
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
 
             return $this->render('index');
@@ -103,7 +105,6 @@ class SiteController extends Controller {
             if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
                 return $this->goBack();
             } else {
-
                 Yii::$app->user->logout();
                 return $this->goBack();
             }

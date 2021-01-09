@@ -27,12 +27,12 @@ class ReviewController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -93,8 +93,8 @@ class ReviewController extends Controller {
     public function actionCreate() {
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
             $model = new Review();
-            if ($model->load(Yii::$app->request->post())) {
-                $model->save();
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 

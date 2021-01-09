@@ -13,7 +13,7 @@ use app\models\Tipojog;
 
 <div class="jogos-form">
 
-    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data', 'id' => 'form-jogo']]); ?>
 
     <?= $form->field($model, 'Nome')->textInput(['maxlength' => true])->label('Nome:') ?>
 
@@ -42,7 +42,7 @@ use app\models\Tipojog;
     </div>
 
     <div class="form-group col-md-12">
-        <?= Html::submitButton('Criar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Criar', ['class' => 'btn btn-success', 'id' => 'criarform']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

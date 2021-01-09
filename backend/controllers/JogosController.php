@@ -29,12 +29,12 @@ class JogosController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -99,14 +99,22 @@ class JogosController extends Controller {
             $model = new Jogos();
             $tipojogo = Tipojogo::find()->orderBy('Nome')->asArray()->all();
 
-            if ($model->load(Yii::$app->request->post())) {
-                $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
-                $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
-                $image_path = 'Imagens/imagem_backend/' . $image_name;
-                $model->Imagem->saveAs($image_path);
-                $model->Imagem = $image_path;
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-                $model->save();
+                if ($model->Imagem != "") {
+                    /* echo "elo";
+                      exit; */
+                    $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+                    $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
+                    $image_path = 'Imagens/imagem_backend/' . $image_name;
+                    $model->Imagem->saveAs($image_path);
+                    $model->Imagem = $image_path;
+                } else {
+                    /* echo "elo2";
+                      exit; */
+                    $model->Imagem = null;
+                }
+
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 

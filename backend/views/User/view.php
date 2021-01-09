@@ -94,9 +94,10 @@ $p = \app\models\Authassignment::find()->where(['user_id' => $model->id])->all()
         <br>
         <p>
             <?php
-            if (Yii::$app->user->identity->id != $model->id) {
-                echo Html::a('Alterar permisão', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $model->id], ['class' => 'btn btn-danger',]);
-            }
+            if (empty($p) == FALSE)
+                if (Yii::$app->user->identity->id != $model->id) {
+                    echo Html::a('Alterar permisão', ['/authassignment/update', 'item_name' => $p[0]['item_name'], 'user_id' => $model->id], ['class' => 'btn btn-danger',]);
+                }
             ?>
             <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?=
@@ -129,7 +130,7 @@ $p = \app\models\Authassignment::find()->where(['user_id' => $model->id])->all()
                 // 'id',
                 'username',
                 'email',
-                    [
+                [
                     'attribute' => 'status',
                     'label' => 'Estado',
                     'value' => function($data) {
@@ -142,7 +143,7 @@ $p = \app\models\Authassignment::find()->where(['user_id' => $model->id])->all()
                         return 'ERRO!';
                     },
                 ],
-                    [
+                [
                     'attribute' => 'user_id',
                     'label' => '',
                     'format' => 'raw',

@@ -14,10 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Nome')->textInput(['maxlength' => true])->label('Nome:') ?>
 
-    <?= $form->field($model, 'Descricao')->textarea(['rows' => 15, ])->label('Descrição: ') ?>
+    <?= $form->field($model, 'Descricao')->textarea(['rows' => 15,])->label('Descrição: ') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success', 'id' => 'enviarform']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

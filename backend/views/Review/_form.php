@@ -17,14 +17,14 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'Descricao')->textarea(['rows' => 6])->label('Descrição:') ?>
 
-    <?= $form->field($model, 'Score')->textInput() ?>
+    <?= $form->field($model, 'Score')->textInput(['type' => 'number', 'min' => "0", 'max' => "10", 'step' => '0.01'])->label('Score:') ?>
 
     <?= $form->field($model, 'Id_Jogo')->dropDownList(ArrayHelper::map(app\models\Jogos::find()->all(), 'Id', 'Nome'), ['prompt' => 'selecione um jogo'])->label('Jogo: ') ?>
 
     <?= $form->field($model, 'Id_Utilizador')->hiddenInput(['value' => Yii::$app->user->identity->id, 'readonly' => true])->label('') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success', 'id' => 'enviarform']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

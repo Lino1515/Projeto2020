@@ -30,12 +30,12 @@ class SiteController extends Controller {
                 'class' => AccessControl::className(),
                 'only' => ['logout', 'signup'],
                 'rules' => [
-                        [
+                    [
                         'actions' => ['signup'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
-                        [
+                    [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
@@ -116,7 +116,9 @@ class SiteController extends Controller {
     public function actionContact() {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+            $email = 'igdb.games@gmail.com';
+            //$fromEmail = Yii::$app->request->bodyParams["ContactForm"]["email"];
+            if ($model->sendEmail($email)) {
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending your message.');
@@ -245,12 +247,12 @@ class SiteController extends Controller {
         if ($user = $model->verifyEmail()) {
             if (Yii::$app->user->login($user)) {
                 Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
-
                 $utilizador = \app\models\User::find()->where(['verification_token' => $token])->all();
                 \Yii::$app->db->createCommand()
                         ->update('user', ['status' => 10], "id=" . $utilizador[0]->attributes['id'])
                         ->insert('auth_assignment', ['item_name' => 'null', 'user_id' => $utilizador[0]->attributes['id']])
                         ->execute();
+
                 return $this->goHome();
             }
         }
@@ -266,8 +268,10 @@ class SiteController extends Controller {
      */
     public function actionResendVerificationEmail() {
         $model = new ResendVerificationEmailForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
+
                 Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
                 return $this->goHome();
             }

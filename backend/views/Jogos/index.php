@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
     </div>
     <div class="button-index-brackend col-md-2 col-xs-12">
-        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success', 'name' => 'criarjogo']) ?>
     </div>
 
     <div class="search-index-brackend col-md-12 col-xs-12">
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return yii\bootstrap\Html::img($model->Imagem, ['width' => '200', 'height' => '150']);
                     }
                 ],
-                    [
+                [
                     'label' => 'Trailer',
                     'attribute' => 'Trailer',
                     'format' => 'raw',
@@ -76,7 +76,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'Id_tipojogo',
                     'value' => 'tipojogo.Nome',
                 ],
-                    [
+                [
                     'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
                     'buttons' => [
                         'update' => function ($url, $model) {

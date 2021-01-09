@@ -8,8 +8,8 @@ use common\fixtures\UserFixture;
 /**
  * Class LoginCest
  */
-class LoginCest
-{
+class LoginCest {
+
     /**
      * Load fixtures before db transaction begin
      * Called in _before()
@@ -17,8 +17,7 @@ class LoginCest
      * @see \Codeception\Module\Yii2::loadFixtures()
      * @return array
      */
-    public function _fixtures()
-    {
+    public function _fixtures() {
         return [
             'user' => [
                 'class' => UserFixture::className(),
@@ -26,19 +25,40 @@ class LoginCest
             ]
         ];
     }
-    
+
+    public function checkLoginUserEmpty(FunctionalTester $I) {
+        $I->amOnPage('/site/login');
+        $I->fillField('Username', '');
+        $I->fillField('Password', '');
+        $I->click('login-button');
+        //$I->see('Incorrect username or password');
+        $I->see('Username cannot be blank.');
+        $I->see('Password cannot be blank.');
+    }
+
     /**
      * @param FunctionalTester $I
      */
-    public function loginUser(FunctionalTester $I)
-    {
+    public function checkLoginUserBadPassword(FunctionalTester $I) {
+        $I->amOnPage('/site/login');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'dinas');
+        $I->click('login-button');
+        $I->see('Incorrect username or password');
+    }
+
+    public function checkLoginUserCorrect(FunctionalTester $I) {
         $I->amOnPage('/site/login');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
-        $I->click('login-button');
+        $I->click('button[name="login-button"]');
+        //$I->see('Incorrect username or password');
 
-        $I->see('Logout (erau)', 'form button[type=submit]');
-        $I->dontSeeLink('Login');
-        $I->dontSeeLink('Signup');
+        $I->see('Utilizadores');
+        $I->see('Rreports');
+        $I->see('Rutilizador');
+        $I->see('Logout (erau)');
+        //$I->seeCurrentUrlEquals('/Projeto2020/backend/web/');
     }
+
 }

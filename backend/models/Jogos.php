@@ -33,14 +33,14 @@ class Jogos extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-                [['Nome', 'Descricao', 'Data', 'Trailer', 'Id_tipojogo'], 'required'],
-                [['Descricao'], 'string'],
-                [['Data'], 'safe'],
-                [['Id_tipojogo'], 'integer'],
-                [['Nome'], 'string', 'max' => 120],
-                [['Imagem'], 'file'/* , 'skipOnEmpty' => false */, 'extensions' => 'jpg,png,jpeg'],
-                [['Trailer'], 'string', 'max' => 255],
-                [['Id_tipojogo'], 'exist', 'skipOnError' => true, 'targetClass' => Tipojogo::className(), 'targetAttribute' => ['Id_tipojogo' => 'Id']],
+            [['Nome', 'Descricao', 'Data', 'Trailer', 'Id_tipojogo'], 'required'],
+            [['Descricao'], 'string'],
+            [['Data'], 'safe'],
+            [['Id_tipojogo'], 'integer'],
+            [['Nome'], 'string', 'max' => 120],
+            [['Imagem'], 'file'/* , 'skipOnEmpty' => false */, 'extensions' => 'jpg,png,jpeg'],
+            [['Trailer'], 'string', 'max' => 255],
+            [['Id_tipojogo'], 'exist', 'skipOnError' => true, 'targetClass' => Tipojogo::className(), 'targetAttribute' => ['Id_tipojogo' => 'Id']],
         ];
     }
 

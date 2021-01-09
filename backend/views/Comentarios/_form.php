@@ -26,7 +26,7 @@ use app\models\User;
     <!--< ?= $form->field($model, 'Id_jogo')->textInput() ?>-->
 
     <div class="form-group">
-        <?= Html::submitButton('criar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success', 'id' => 'enviarform']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
