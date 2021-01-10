@@ -35,11 +35,12 @@ class Jogos extends \yii\db\ActiveRecord {
         return [
             [['Nome', 'Descricao', 'Data', 'Trailer', 'Id_tipojogo'], 'required'],
             [['Descricao'], 'string'],
-            [['Data'], 'safe'],
+            [['Id'], 'integer'],
+            [['Data'], 'date', 'format' => 'php:Y-m-d'],
             [['Id_tipojogo'], 'integer'],
             [['Nome'], 'string', 'max' => 120],
             [['Imagem'], 'file'/* , 'skipOnEmpty' => false */, 'extensions' => 'jpg,png,jpeg'],
-            [['Trailer'], 'string', 'max' => 255],
+            [['Trailer'], 'string', 'max' => 30],
             [['Id_tipojogo'], 'exist', 'skipOnError' => true, 'targetClass' => Tipojogo::className(), 'targetAttribute' => ['Id_tipojogo' => 'Id']],
         ];
     }
@@ -57,6 +58,10 @@ class Jogos extends \yii\db\ActiveRecord {
             'Imagem' => 'Upload Imagem',
             'Id_tipojogo' => 'Id Tipojogo',
         ];
+    }
+
+    public function setAttribute($campo, $valor) {
+        return $this->$campo = $valor;
     }
 
     /**

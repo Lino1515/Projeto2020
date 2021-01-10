@@ -58,6 +58,7 @@ class JogosController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
+
         if (Yii::$app->user->can('admin')) {
             $searchModel = new JogosSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -215,7 +216,8 @@ class JogosController extends Controller {
             }
             $model = Jogos::findOne($id);
             //var_dump($model->Imagem);
-            unlink($model->Imagem);
+            if ($model->Imagem != "")
+                unlink($model->Imagem);
             //exit();
             $this->findModel($id)->delete();
 

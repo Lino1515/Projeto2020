@@ -1,2 +1,20 @@
 suite_namespace: backend\tests\unit
 actor: UnitTester
+modules:
+    config:
+        Db:
+          dsn: 'mysql:host=localhost;dbname=yii2advanced_test;port=3306'
+          user: 'root'
+          password: ''
+          dump: ''
+          populate: true
+          cleanup: false
+          reconnect: true
+    enabled:
+       
+        - Yii2:
+            part: [orm, email, fixtures]
+        - Asserts        
+        - Db 
+        
+        

@@ -37,7 +37,8 @@ class Comentarios extends \yii\db\ActiveRecord
     {
         return [
             [['Data', 'Descricao', 'Id_utilizador', 'Id_jogo'], 'required'],
-            [['Data'], 'safe'],
+            [['Id'], 'integer'],
+            [['Data'], 'date', 'format' => 'php:Y-m-d'],
             [['Descricao'], 'string'],
             [['Id_utilizador', 'Id_jogo'], 'integer'],
             [['Id_utilizador'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['Id_utilizador' => 'id']],

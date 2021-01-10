@@ -43,13 +43,18 @@ class User extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-                [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-                [['status', 'created_at', 'updated_at'], 'integer'],
-                [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
-                [['auth_key'], 'string', 'max' => 32],
-                [['username'], 'unique'],
-                [['email'], 'unique'],
-                [['password_reset_token'], 'unique'],
+            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['id'], 'integer'],
+            [['password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
+            [['auth_key'], 'string', 'max' => 32],
+            [['username'], 'string', 'max' => 25],
+            [['username'], 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            [['password_reset_token'], 'unique'],
+            ['username', 'trim'],
+            ['email', 'trim'],
+            ['email', 'email'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
         ];
     }
 
@@ -139,6 +144,36 @@ class User extends \yii\db\ActiveRecord {
      */
     public function getReviews1() {
         return $this->hasMany(Review::className(), ['Id' => 'Id_review'])->viaTable('reviewutilizador', ['Id_Utilizador' => 'id']);
+    }
+
+    /**
+     * Generates "remember me" authentication key
+     */
+    public function generateAuthKey() {
+        return $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password) {
+        return $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+
+    /**
+     * Generates new password reset token
+     */
+    public function generatePasswordResetToken() {
+        return $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+    }
+
+    /**
+     * Generates new token for email verification
+     */
+    public function generateEmailVerificationToken() {
+        return $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
 }

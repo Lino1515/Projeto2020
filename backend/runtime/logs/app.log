@@ -35888,3 +35888,1057 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1610202974.862
     'REQUEST_TIME' => 1610202974
 ]
+2021-01-09 20:30:19 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\db\Exception] PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '20-02-2020' for column `igbd`.`jogos`.`Data` at row 1 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `jo...')
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('jogos', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(102): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\JogosController->actionCreate()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '20-02-2020' for column `igbd`.`jogos`.`Data` at row 1
+The SQL being executed was: INSERT INTO `jogos` (`Nome`, `Descricao`, `Trailer`, `Imagem`, `Data`, `Id_tipojogo`) VALUES ('teste', 'teste', 'teste', '', '20-02-2020', 21) in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php:678
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1304): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `jo...')
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `jo...')
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('jogos', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(102): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\JogosController->actionCreate()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 22007
+    [1] => 1292
+    [2] => Incorrect date value: '20-02-2020' for column `igbd`.`jogos`.`Data` at row 1
+)
+
+2021-01-09 20:30:19 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'sORLTAfxjGa9g9IR9DPLC5_CqqNom2xQx5M1v9K7A5zFg3MkQID6Vd-7tl2GcZ1Ir4779j-qFiP1oWrLmMhrqA=='
+    'Jogos' => [
+        'Nome' => 'teste'
+        'Descricao' => 'teste'
+        'Trailer' => 'teste'
+        'Imagem' => ''
+        'Data' => '20-02-2020'
+        'Id_tipojogo' => '21'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => ''
+        ]
+        'type' => [
+            'Imagem' => ''
+        ]
+        'tmp_name' => [
+            'Imagem' => ''
+        ]
+        'error' => [
+            'Imagem' => 4
+        ]
+        'size' => [
+            'Imagem' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1017'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryicGcljjlmVAbYc9L'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1349'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610224219.709
+    'REQUEST_TIME' => 1610224219
+]
+2021-01-09 21:03:26 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\db\Exception] PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '3232' for column `igbd`.`jogos`.`Data` at row 1 in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `jo...')
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('jogos', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(102): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\JogosController->actionCreate()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '3232' for column `igbd`.`jogos`.`Data` at row 1
+The SQL being executed was: INSERT INTO `jogos` (`Nome`, `Descricao`, `Trailer`, `Imagem`, `Data`, `Id_tipojogo`) VALUES ('32', '32', '23', '', '3232', 21) in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php:678
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1304): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `jo...')
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `jo...')
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('jogos', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(102): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\JogosController->actionCreate()
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#12 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 22007
+    [1] => 1292
+    [2] => Incorrect date value: '3232' for column `igbd`.`jogos`.`Data` at row 1
+)
+
+2021-01-09 21:03:25 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'V4q12BCqYAGto0BFxJQSgoDWW9FOcnuHaJeZ9d5JWpAi7Y2wV9sWMs-bJAm21kTBsJoKhBlDAfRapcaBlDoypA=='
+    'Jogos' => [
+        'Nome' => '32'
+        'Descricao' => '32'
+        'Trailer' => '23'
+        'Imagem' => ''
+        'Data' => '3232'
+        'Id_tipojogo' => '21'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => ''
+        ]
+        'type' => [
+            'Imagem' => ''
+        ]
+        'tmp_name' => [
+            'Imagem' => ''
+        ]
+        'error' => [
+            'Imagem' => 4
+        ]
+        'size' => [
+            'Imagem' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1002'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary2swWB81U65ZZ8rcf'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1615'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610226205.955
+    'REQUEST_TIME' => 1610226205
+]
+2021-01-09 21:03:58 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: Invalid validation rule: a rule must specify both attribute names and validator type. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php:472
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php(421): yii\base\Model->createValidators()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php(190): yii\base\Model->getValidators()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php(796): yii\base\Model->scenarios()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php(740): yii\base\Model->safeAttributes()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Model.php(872): yii\base\Model->setAttributes(Array)
+#5 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(102): yii\base\Model->load(Array)
+#6 [internal function]: backend\controllers\JogosController->actionCreate()
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#10 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#11 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2021-01-09 21:03:58 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'V4q12BCqYAGto0BFxJQSgoDWW9FOcnuHaJeZ9d5JWpAi7Y2wV9sWMs-bJAm21kTBsJoKhBlDAfRapcaBlDoypA=='
+    'Jogos' => [
+        'Nome' => '32'
+        'Descricao' => '32'
+        'Trailer' => '23'
+        'Imagem' => ''
+        'Data' => '3232'
+        'Id_tipojogo' => '21'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => ''
+        ]
+        'type' => [
+            'Imagem' => ''
+        ]
+        'tmp_name' => [
+            'Imagem' => ''
+        ]
+        'error' => [
+            'Imagem' => 4
+        ]
+        'size' => [
+            'Imagem' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1002'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary2swWB81U65ZZ8rcf'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1623'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610226238.364
+    'REQUEST_TIME' => 1610226238
+]
+2021-01-09 21:05:29 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\ErrorException:2] yii\base\ErrorException: unlink(): Invalid argument in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:218
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(218): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(218): ::unlink()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\JogosController->actionDelete()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): backend\controllers\JogosController->runAction()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#8 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#9 {main}
+2021-01-09 21:05:29 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/delete'
+    'id' => '21'
+]
+
+$_POST = [
+    '_csrf-backend' => '06_wE2ScfQFMI8fglTCKUCHZunX_TtB-mRco3Al0IaumyMh7I-0LMi4bo6znctwTEZXrIKh_qg2rJXeoQwdJnw=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '106'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1651'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fdelete&id=21'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fdelete&id=21'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610226329.599
+    'REQUEST_TIME' => 1610226329
+]
+2021-01-09 22:51:11 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: jogos/Test in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('Test', Array)
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/Test', Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2021-01-09 22:51:11 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/Test'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1769'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2FTest'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2FTest'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232671.682
+    'REQUEST_TIME' => 1610232671
+]
+2021-01-09 22:52:27 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: backend\controllers\JogosController::test() in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:301
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(61): yii\base\Component->__call('test', Array)
+#1 [internal function]: backend\controllers\JogosController->actionIndex()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2021-01-09 22:52:27 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1787'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232747.484
+    'REQUEST_TIME' => 1610232747
+]
+2021-01-09 22:52:47 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: backend\controllers\JogosController::test() in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:301
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(61): yii\base\Component->__call('test', Array)
+#1 [internal function]: backend\controllers\JogosController->actionIndex()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2021-01-09 22:52:46 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1791'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232766.997
+    'REQUEST_TIME' => 1610232766
+]
+2021-01-09 22:52:58 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: backend\controllers\JogosController::Test() in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:301
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(61): yii\base\Component->__call('Test', Array)
+#1 [internal function]: backend\controllers\JogosController->actionIndex()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2021-01-09 22:52:58 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1794'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232778.844
+    'REQUEST_TIME' => 1610232778
+]
+2021-01-09 22:53:13 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][Error] Error: Call to undefined function backend\controllers\Test() in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:61
+Stack trace:
+#0 [internal function]: backend\controllers\JogosController->actionIndex()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2021-01-09 22:53:13 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1798'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232793.924
+    'REQUEST_TIME' => 1610232793
+]
+2021-01-09 22:53:41 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Jogos::tester in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('tester')
+#1 C:\wamp64\www\Projeto2020\backend\models\Jogos.php(65): yii\db\BaseActiveRecord->__get('tester')
+#2 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(62): app\models\Jogos->Test()
+#3 [internal function]: backend\controllers\JogosController->actionIndex()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#8 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2021-01-09 22:53:41 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1803'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232821.128
+    'REQUEST_TIME' => 1610232821
+]
+2021-01-09 22:54:19 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: id in C:\wamp64\www\Projeto2020\backend\models\Jogos.php:74
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\models\Jogos.php(74): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(62): app\models\Jogos->Test()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\JogosController->actionIndex()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): backend\controllers\JogosController->runAction()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#8 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#9 {main}
+2021-01-09 22:54:19 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232859.891
+    'REQUEST_TIME' => 1610232859
+]
+2021-01-09 22:55:12 [::1][1][nkpag6l9apjdej04o2vjjab3de][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\db\ActiveQuery::all in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\models\Jogos.php(74): yii\base\Component->__get('all')
+#1 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(62): app\models\Jogos->Test()
+#2 [internal function]: backend\controllers\JogosController->actionIndex()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/index', Array)
+#7 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2021-01-09 22:55:12 [::1][1][nkpag6l9apjdej04o2vjjab3de][info][application] $_GET = [
+    'r' => 'jogos/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    'advanced-backend' => 'nkpag6l9apjdej04o2vjjab3de'
+    '_csrf-backend' => 'd2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; advanced-backend=nkpag6l9apjdej04o2vjjab3de; _csrf-backend=d2b0fe5488acfc984c10c5d5960d42913e8914213d4b9a0050dbbaa14a9f26d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ug8hGqv3b8dLrBVC0LQUW1zs22_tJsh4%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '1811'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=jogos%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610232912.494
+    'REQUEST_TIME' => 1610232912
+]

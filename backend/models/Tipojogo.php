@@ -13,23 +13,22 @@ use Yii;
  *
  * @property Jogos[] $jogos
  */
-class Tipojogo extends \yii\db\ActiveRecord
-{
+class Tipojogo extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'tipojogo';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['Nome', 'Descricao'], 'required'],
+            [['Id'], 'integer'],
             [['Descricao'], 'string'],
             [['Nome'], 'string', 'max' => 120],
         ];
@@ -38,8 +37,7 @@ class Tipojogo extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'Id' => 'ID',
             'Nome' => 'Nome',
@@ -50,8 +48,8 @@ class Tipojogo extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getJogos()
-    {
+    public function getJogos() {
         return $this->hasMany(Jogos::className(), ['Id_tipojogo' => 'Id']);
     }
+
 }
