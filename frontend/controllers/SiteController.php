@@ -72,7 +72,12 @@ class SiteController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        return $this->render('index');
+        $jogosRecent = \frontend\models\Jogos::find()->limit(4)->orderBy('Data DESC')->all();
+        $jogosAntig = \frontend\models\Jogos::find()->limit(4)->orderBy('Data ASC')->all();
+        return $this->render('index', [
+                    'jogosrecent' => $jogosRecent,
+                    'jogosantig' => $jogosAntig,
+        ]);
     }
 
     /**

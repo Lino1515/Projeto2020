@@ -1,10 +1,10 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 use Yii;
-use app\models\Comentariosutilizador;
-use app\models\ComentariosutilizadorSearch;
+use frontend\models\Comentariosutilizador;
+use frontend\models\ComentariosutilizadorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,7 +68,7 @@ class ComentariosutilizadorController extends Controller
         $model = new Comentariosutilizador();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+        return $this->goBack((!empty(Yii::$app->request->referrer) ? Yii::$app->request->referrer : null));
         }
 
         return $this->render('create', [
@@ -109,7 +109,7 @@ class ComentariosutilizadorController extends Controller
     {
         $this->findModel($Id_comentario, $Id_utilizador)->delete();
 
-        return $this->redirect(['index']);
+        return $this->goBack((!empty(Yii::$app->request->referrer) ? Yii::$app->request->referrer : null));
     }
 
     /**

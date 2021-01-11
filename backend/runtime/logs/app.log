@@ -37002,3 +37002,435 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1610385426.542
     'REQUEST_TIME' => 1610385426
 ]
+2021-01-11 19:25:20 [::1][1][hgltlt174mfvv7cg3foh1tapv1][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: jogos in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:104
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(104): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\JogosController->actionCreate()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): backend\controllers\JogosController->runAction()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#8 {main}
+2021-01-11 19:25:20 [::1][1][hgltlt174mfvv7cg3foh1tapv1][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'NecRzKMUTBtwDSkomU_qIgbbsZgUf-tkv8wBW3mLpdhbhimCk1YhKQJmHRDeF5IaUb_51XoZnx3ZqFs2TrPO7A=='
+    'Jogos' => [
+        'Nome' => 'Home Jogos Pokémon FireRed e LeafGreen Pokémon FireRed e LeafGreen'
+        'Descricao' => 'O jogo se inicia em Pallet Town, onde o personagem sai para pegar seu primeiro Pokémon com o professor Carvalho. Ao mesmo tempo, seu rival de infância também pega um. Assim inicia-se sua jornada para capturar todos os Pokémon e se tornar um campeão. No meio do caminho, o jogador tem de vencer oito líderes de ginásio para poder entrar e desafiar a Elite dos 4. Também durante sua jornada, encontra e enfrenta a Equipe Rocket, que quer pegar e modificar geneticamente os Pokémon, e seu líder Giovanni. A medida que vai capturando, treinando seus Pokémon e enfrentando Líderes de Ginásio, o protagonista descobre o plano da Equipe Rocket. Ao derrotar Giovanni na Silph Co. em Saffron City e em seu ginásio em Viridian City, ele desaparece. Logo vem o desafio da Elite dos 4. O jogador descobre que seu rival se torna o campeão e você deve derrotá-lo. Após vencer a liga e obter pelo menos 60 Pokémon na Pokédex, é hora de explorar as Sevii Islands, uma nova região longe de Kanto. Lá, é possível encontrar Pokémon selvagens de Johto e ainda há uma nova jornada: recuperar o Ruby Plate e o Sapphire Plate para entregar para Celio, o supervisor do Pokémon Network Center na One Island, e poder conectar Pokémon FireRed e LeafGreen com Pokémon Ruby, Sapphire e Emerald, Pokémon Colosseum e Pokémon.'
+        'Trailer' => '7Df6iOkYdHI'
+        'Imagem' => ''
+        'Data' => '2004-08-29'
+        'Id_tipojogo' => '1'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => '5285680.jpeg'
+        ]
+        'type' => [
+            'Imagem' => 'image/jpeg'
+        ]
+        'tmp_name' => [
+            'Imagem' => 'C:\\wamp64\\tmp\\php3912.tmp'
+        ]
+        'error' => [
+            'Imagem' => 0
+        ]
+        'size' => [
+            'Imagem' => 134788
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'hgltlt174mfvv7cg3foh1tapv1'
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => '36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"na8N0Bm2rk48GXx8WdHMnftyfdZm78k4\";}'
+    'advanced-frontend' => 'v7mh1q8s55qq1dl19uq6qm7eor'
+    '_csrf-frontend' => 'e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '137192'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryfnDuMq3h6qPPMlqc'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=hgltlt174mfvv7cg3foh1tapv1; _identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22na8N0Bm2rk48GXx8WdHMnftyfdZm78k4%22%3B%7D; advanced-frontend=v7mh1q8s55qq1dl19uq6qm7eor; _csrf-frontend=e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '10590'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610393120.822
+    'REQUEST_TIME' => 1610393120
+]
+2021-01-11 19:25:26 [::1][1][hgltlt174mfvv7cg3foh1tapv1][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: jogos in C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php:104
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(104): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\JogosController->actionCreate()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams()
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): backend\controllers\JogosController->runAction()
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\web\Application->run()
+#8 {main}
+2021-01-11 19:25:25 [::1][1][hgltlt174mfvv7cg3foh1tapv1][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'XB2dsOsVz0mNZBiTu_qW_tG3z3BtcG-OKbtSi_ZJlUMyfKX-21eie_8PLKv8ou7GhtOHPQMWG_dP3wjmwXH-dw=='
+    'Jogos' => [
+        'Nome' => 'Home Jogos Pokémon FireRed e LeafGreen Pokémon FireRed e LeafGreen'
+        'Descricao' => 'O jogo se inicia em Pallet Town, onde o personagem sai para pegar seu primeiro Pokémon com o professor Carvalho. Ao mesmo tempo, seu rival de infância também pega um. Assim inicia-se sua jornada para capturar todos os Pokémon e se tornar um campeão. No meio do caminho, o jogador tem de vencer oito líderes de ginásio para poder entrar e desafiar a Elite dos 4. Também durante sua jornada, encontra e enfrenta a Equipe Rocket, que quer pegar e modificar geneticamente os Pokémon, e seu líder Giovanni. A medida que vai capturando, treinando seus Pokémon e enfrentando Líderes de Ginásio, o protagonista descobre o plano da Equipe Rocket. Ao derrotar Giovanni na Silph Co. em Saffron City e em seu ginásio em Viridian City, ele desaparece. Logo vem o desafio da Elite dos 4. O jogador descobre que seu rival se torna o campeão e você deve derrotá-lo. Após vencer a liga e obter pelo menos 60 Pokémon na Pokédex, é hora de explorar as Sevii Islands, uma nova região longe de Kanto. Lá, é possível encontrar Pokémon selvagens de Johto e ainda há uma nova jornada: recuperar o Ruby Plate e o Sapphire Plate para entregar para Celio, o supervisor do Pokémon Network Center na One Island, e poder conectar Pokémon FireRed e LeafGreen com Pokémon Ruby, Sapphire e Emerald, Pokémon Colosseum e Pokémon.'
+        'Trailer' => '7Df6iOkYdHI'
+        'Imagem' => ''
+        'Data' => '2004-08-29'
+        'Id_tipojogo' => '1'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => '5285680.jpeg'
+        ]
+        'type' => [
+            'Imagem' => 'image/jpeg'
+        ]
+        'tmp_name' => [
+            'Imagem' => 'C:\\wamp64\\tmp\\php4BFF.tmp'
+        ]
+        'error' => [
+            'Imagem' => 0
+        ]
+        'size' => [
+            'Imagem' => 134788
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'hgltlt174mfvv7cg3foh1tapv1'
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => '36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"na8N0Bm2rk48GXx8WdHMnftyfdZm78k4\";}'
+    'advanced-frontend' => 'v7mh1q8s55qq1dl19uq6qm7eor'
+    '_csrf-frontend' => 'e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '137192'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryHM9yvd7fBQ1WRiTW'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=hgltlt174mfvv7cg3foh1tapv1; _identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22na8N0Bm2rk48GXx8WdHMnftyfdZm78k4%22%3B%7D; advanced-frontend=v7mh1q8s55qq1dl19uq6qm7eor; _csrf-frontend=e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '10599'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610393125.656
+    'REQUEST_TIME' => 1610393125
+]
+2021-01-11 19:25:46 [::1][1][hgltlt174mfvv7cg3foh1tapv1][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\web\Request::post in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(104): yii\base\Component->__get('post')
+#1 [internal function]: backend\controllers\JogosController->actionCreate()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2021-01-11 19:25:45 [::1][1][hgltlt174mfvv7cg3foh1tapv1][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'XB2dsOsVz0mNZBiTu_qW_tG3z3BtcG-OKbtSi_ZJlUMyfKX-21eie_8PLKv8ou7GhtOHPQMWG_dP3wjmwXH-dw=='
+    'Jogos' => [
+        'Nome' => 'Home Jogos Pokémon FireRed e LeafGreen Pokémon FireRed e LeafGreen'
+        'Descricao' => 'O jogo se inicia em Pallet Town, onde o personagem sai para pegar seu primeiro Pokémon com o professor Carvalho. Ao mesmo tempo, seu rival de infância também pega um. Assim inicia-se sua jornada para capturar todos os Pokémon e se tornar um campeão. No meio do caminho, o jogador tem de vencer oito líderes de ginásio para poder entrar e desafiar a Elite dos 4. Também durante sua jornada, encontra e enfrenta a Equipe Rocket, que quer pegar e modificar geneticamente os Pokémon, e seu líder Giovanni. A medida que vai capturando, treinando seus Pokémon e enfrentando Líderes de Ginásio, o protagonista descobre o plano da Equipe Rocket. Ao derrotar Giovanni na Silph Co. em Saffron City e em seu ginásio em Viridian City, ele desaparece. Logo vem o desafio da Elite dos 4. O jogador descobre que seu rival se torna o campeão e você deve derrotá-lo. Após vencer a liga e obter pelo menos 60 Pokémon na Pokédex, é hora de explorar as Sevii Islands, uma nova região longe de Kanto. Lá, é possível encontrar Pokémon selvagens de Johto e ainda há uma nova jornada: recuperar o Ruby Plate e o Sapphire Plate para entregar para Celio, o supervisor do Pokémon Network Center na One Island, e poder conectar Pokémon FireRed e LeafGreen com Pokémon Ruby, Sapphire e Emerald, Pokémon Colosseum e Pokémon.'
+        'Trailer' => '7Df6iOkYdHI'
+        'Imagem' => ''
+        'Data' => '2004-08-29'
+        'Id_tipojogo' => '1'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => '5285680.jpeg'
+        ]
+        'type' => [
+            'Imagem' => 'image/jpeg'
+        ]
+        'tmp_name' => [
+            'Imagem' => 'C:\\wamp64\\tmp\\php9AAE.tmp'
+        ]
+        'error' => [
+            'Imagem' => 0
+        ]
+        'size' => [
+            'Imagem' => 134788
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'hgltlt174mfvv7cg3foh1tapv1'
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => '36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"na8N0Bm2rk48GXx8WdHMnftyfdZm78k4\";}'
+    'advanced-frontend' => 'v7mh1q8s55qq1dl19uq6qm7eor'
+    '_csrf-frontend' => 'e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '137192'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryHM9yvd7fBQ1WRiTW'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=hgltlt174mfvv7cg3foh1tapv1; _identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22na8N0Bm2rk48GXx8WdHMnftyfdZm78k4%22%3B%7D; advanced-frontend=v7mh1q8s55qq1dl19uq6qm7eor; _csrf-frontend=e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '10612'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610393145.796
+    'REQUEST_TIME' => 1610393145
+]
+2021-01-11 19:26:08 [::1][1][hgltlt174mfvv7cg3foh1tapv1][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\controllers\JogosController::Imagem in C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\Projeto2020\backend\controllers\JogosController.php(104): yii\base\Component->__get('Imagem')
+#1 [internal function]: backend\controllers\JogosController->actionCreate()
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('create', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('jogos/create', Array)
+#6 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2021-01-11 19:26:08 [::1][1][hgltlt174mfvv7cg3foh1tapv1][info][application] $_GET = [
+    'r' => 'jogos/create'
+]
+
+$_POST = [
+    '_csrf-backend' => 'XB2dsOsVz0mNZBiTu_qW_tG3z3BtcG-OKbtSi_ZJlUMyfKX-21eie_8PLKv8ou7GhtOHPQMWG_dP3wjmwXH-dw=='
+    'Jogos' => [
+        'Nome' => 'Home Jogos Pokémon FireRed e LeafGreen Pokémon FireRed e LeafGreen'
+        'Descricao' => 'O jogo se inicia em Pallet Town, onde o personagem sai para pegar seu primeiro Pokémon com o professor Carvalho. Ao mesmo tempo, seu rival de infância também pega um. Assim inicia-se sua jornada para capturar todos os Pokémon e se tornar um campeão. No meio do caminho, o jogador tem de vencer oito líderes de ginásio para poder entrar e desafiar a Elite dos 4. Também durante sua jornada, encontra e enfrenta a Equipe Rocket, que quer pegar e modificar geneticamente os Pokémon, e seu líder Giovanni. A medida que vai capturando, treinando seus Pokémon e enfrentando Líderes de Ginásio, o protagonista descobre o plano da Equipe Rocket. Ao derrotar Giovanni na Silph Co. em Saffron City e em seu ginásio em Viridian City, ele desaparece. Logo vem o desafio da Elite dos 4. O jogador descobre que seu rival se torna o campeão e você deve derrotá-lo. Após vencer a liga e obter pelo menos 60 Pokémon na Pokédex, é hora de explorar as Sevii Islands, uma nova região longe de Kanto. Lá, é possível encontrar Pokémon selvagens de Johto e ainda há uma nova jornada: recuperar o Ruby Plate e o Sapphire Plate para entregar para Celio, o supervisor do Pokémon Network Center na One Island, e poder conectar Pokémon FireRed e LeafGreen com Pokémon Ruby, Sapphire e Emerald, Pokémon Colosseum e Pokémon.'
+        'Trailer' => '7Df6iOkYdHI'
+        'Imagem' => ''
+        'Data' => '2004-08-29'
+        'Id_tipojogo' => '1'
+    ]
+]
+
+$_FILES = [
+    'Jogos' => [
+        'name' => [
+            'Imagem' => '5285680.jpeg'
+        ]
+        'type' => [
+            'Imagem' => 'image/jpeg'
+        ]
+        'tmp_name' => [
+            'Imagem' => 'C:\\wamp64\\tmp\\phpF448.tmp'
+        ]
+        'error' => [
+            'Imagem' => 0
+        ]
+        'size' => [
+            'Imagem' => 134788
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'hgltlt174mfvv7cg3foh1tapv1'
+    '_identity-backend' => '5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"F2_v997ZflzhGaY63aKMiY-MCHYNKogP\",2592000]\";}'
+    '_csrf-backend' => '36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"na8N0Bm2rk48GXx8WdHMnftyfdZm78k4\";}'
+    'advanced-frontend' => 'v7mh1q8s55qq1dl19uq6qm7eor'
+    '_csrf-frontend' => 'e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/Projeto2020/backend/web/index.php'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '137192'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryHM9yvd7fBQ1WRiTW'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=hgltlt174mfvv7cg3foh1tapv1; _identity-backend=5cee650a50ec5d949362bb25587a8983b56274b129b79fb5227dd07537d76958a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22F2_v997ZflzhGaY63aKMiY-MCHYNKogP%22%2C2592000%5D%22%3B%7D; _csrf-backend=36c370522f24d78aaa1d742b728278f7901f359da75a95be1ea575e808dab3f7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22na8N0Bm2rk48GXx8WdHMnftyfdZm78k4%22%3B%7D; advanced-frontend=v7mh1q8s55qq1dl19uq6qm7eor; _csrf-frontend=e80808b1d46f1adf6085ad2028984085cade1830305b7ad7aae8a15bf21517e5a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22MxM7ATVYR2_rmctFQrL-QdsvNn-Pnmya%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '10632'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=jogos%2Fcreate'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=jogos%2Fcreate'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610393168.743
+    'REQUEST_TIME' => 1610393168
+]

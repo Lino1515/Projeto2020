@@ -1,10 +1,10 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Review;
+use frontend\models\Review;
 
 /**
  * ReviewSearch represents the model behind the search form of `app\models\Review`.

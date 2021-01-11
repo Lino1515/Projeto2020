@@ -25,12 +25,12 @@ class ComentariosController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']

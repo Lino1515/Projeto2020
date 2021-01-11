@@ -102,17 +102,15 @@ class JogosController extends Controller {
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-                if ($model->Imagem != "") {
-                    /* echo "elo";
-                      exit; */
-                    $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+                $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+
+                if ($model->Imagem != null) {
                     $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
                     $image_path = 'Imagens/imagem_backend/' . $image_name;
                     $model->Imagem->saveAs($image_path);
                     $model->Imagem = $image_path;
+                    $model->save();
                 } else {
-                    /* echo "elo2";
-                      exit; */
                     $model->Imagem = null;
                 }
 
@@ -145,24 +143,25 @@ class JogosController extends Controller {
     public function actionUpdate($id) {
         if (Yii::$app->user->can('admin')) {
             $model = $this->findModel($id);
-            $saveImagem = $this->findModel($id);
-            $saveImagem = $saveImagem->Imagem;
+            /*$saveImagem = $this->findModel($id);
+            $saveImagem = $saveImagem->Imagem;*/
             $tipojogo = Tipojogo::find()->all();
-            if ($model->load(Yii::$app->request->post())) {
 
-                if ($model->Imagem != '') {
-                    unlink($saveImagem);
-                    $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+                $model->Imagem = UploadedFile::getInstance($model, 'Imagem');
+                if ($model->Imagem != null) {
                     $image_name = '' . $model->Data . $model->Nome . '.' . $model->Imagem->extension;
-                    var_dump($image_name);
-                    exit;
                     $image_path = 'Imagens/imagem_backend/' . $image_name;
                     $model->Imagem->saveAs($image_path);
                     $model->Imagem = $image_path;
+                    $model->save();
+                    var_dump($model->Imagem);
+                    exit;
                 } else {
-                    $model->Imagem = $saveImagem;
+                    $model->Imagem = null;
                 }
-                $model->save();
+
                 return $this->redirect(['view', 'id' => $model->Id]);
             }
 

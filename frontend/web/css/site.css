@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background: #222;
+    background: #EBEBEB;
 }
 
 .wrap {
@@ -121,7 +121,7 @@ a.desc:after {
 }
 #pagina_principal
 {
-   font-size: 20px;
+    font-size: 20px;
 }
 #Search
 {
@@ -156,4 +156,171 @@ a.desc:after {
 #Coming_Soon
 {
     color:white;
+}
+
+/* CODIGO PARA MAIN SIDEBAR + CONTENT_TEXT */
+.sidebarmain{
+    float:left;
+    width:15%;
+    height: 100%; 
+    min-height:400px; 
+    margin-bottom: -5000px; 
+    padding-bottom: 5000px; 
+    background-color: #222;
+    padding-top: 2.7%;
+    position: fixed;
+}
+
+.content_text{
+    margin-left: 15%;
+    margin-top: 0%;
+    margin-bottom: -5000px; 
+    padding-bottom: 5000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.sidebarstyle{
+    border: 0px;
+    background-color:#222; 
+    border-radius: 0px;
+    border-color: #9d9d9d; 
+    color: white;
+}
+.sidebarmain a{
+    color: #9d9d9d;
+}
+.sidebarmain .table{
+    border: 0px;
+    border-radius: 0px;
+}
+.sidebarmain .panel{
+    background-color:#222; 
+}
+.panel-default{
+    background-color:#222!important;
+    border:0px;
+}
+.sidebarmain ul{
+    background-color:#222!important; 
+}
+.sidebarmain ul li ul{
+    background-color:black!important; 
+}
+.titulo-index-brackend h1{
+    float:left;
+    width: 100%;
+    background: white;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+}
+.button-index-brackend a{
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+    margin-top: 30px;
+
+}
+.button-index-brackend{
+    padding-bottom: 32px;
+}
+.search-index-brackend {
+    float:left;
+    width: 100%;
+    background: white;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 5px;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+
+}
+.grid-index-brackend{
+    width: 100%;
+    background: white;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 20px;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+}
+.truncate{
+    max-width: 500px!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.truncate-user{
+    max-width: 200px!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.truncate:hover{
+    overflow: visible;
+    white-space: normal;
+    width: auto;
+}
+.button-search{    
+    padding-bottom: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.button-search button{    
+    width: 60%;
+    height: 100%;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.button-search a{    
+    height: 100%;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+    margin-top: 24px;
+}
+.descricao-index-brackend{
+    text-indent: 50px;
+    line-height: 1.6;
+}
+.imagem-veiw-backend{
+    width: 60%;
+    background: white;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 20px;
+    border: 1px #9D9C99 solid;
+    border-radius: 5px;
+}
+.text-form{
+    min-height: 100%;
+}
+.jogo-data-form input{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
 }
