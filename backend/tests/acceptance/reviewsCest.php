@@ -1,19 +1,11 @@
 <?php
 
-namespace backend\tests\functional;
+namespace backend\tests\acceptance;
 
-use backend\tests\FunctionalTester;
+use backend\tests\AcceptanceTester;
 use common\fixtures\UserFixture;
 
 class reviewsCest {
-    /* public function _before(FunctionalTester $I) {
-
-      }
-
-      // tests
-      public function tryToTest(FunctionalTester $I) {
-
-      } */
 
     public function _fixtures() {
         return [
@@ -24,16 +16,7 @@ class reviewsCest {
         ];
     }
 
-    /* public function _before(FunctionalTester $I)
-      {
-      }
-
-      // tests
-      public function tryToTest(FunctionalTester $I)
-      {
-      } */
-
-    public function checkPage(FunctionalTester $I) {
+    public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
@@ -42,21 +25,35 @@ class reviewsCest {
         //$I->see('Incorrect username or password');
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=review%2Findex');
-        $I->see('Reviews');
+        $I->see('Review');
+        $I->click('Review');
+        $I->see('» Criar reviews');
+        $I->see('» Lista reviews');
+        $I->click('» Lista reviews');
     }
 
-    public function checkCriarEmpty(FunctionalTester $I) {
+    public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-
+        //$I->see('Incorrect username or password');
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=review%2Fcreate');
+        $I->see('Review');
+        $I->click('Review');
+        $I->see('» Criar reviews');
+        $I->see('» Lista reviews');
+        $I->click('» Lista reviews');
+
+        $I->see('Criar Novo');
+        $I->click('Criar Novo');
+
         $I->see('Criar Review');
+        $I->see('Descrição:');
+        $I->see('Jogo:');
+        $I->see('Score:');
 
         $I->submitForm('#enviarform', [
             'Review[Data]' => '',
@@ -70,17 +67,28 @@ class reviewsCest {
         $I->see('Id Jogo cannot be blank.');
     }
 
-    public function checkCriarValido(FunctionalTester $I) {
+    public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=review%2Fcreate');
+        $I->see('Review');
+        $I->click('Review');
+        $I->see('» Criar reviews');
+        $I->see('» Lista reviews');
+        $I->click('» Lista reviews');
+
+        $I->see('Criar Novo');
+        $I->click('Criar Novo');
+
         $I->see('Criar Review');
+        $I->see('Descrição:');
+        $I->see('Jogo:');
+        $I->see('Score:');
 
         $I->submitForm('#enviarform', [
             'Review[Descricao]' => 'TesteDescricao',
@@ -91,17 +99,28 @@ class reviewsCest {
         $I->seeRecord('\app\models\Review', array('Id_jogo' => '1', 'Descricao' => 'TesteDescricao'));
     }
 
-    public function checkCriarBadScore(FunctionalTester $I) {
+    public function checkCriarBadScore(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=review%2Fcreate');
+        $I->see('Review');
+        $I->click('Review');
+        $I->see('» Criar reviews');
+        $I->see('» Lista reviews');
+        $I->click('» Lista reviews');
+
+        $I->see('Criar Novo');
+        $I->click('Criar Novo');
+
         $I->see('Criar Review');
+        $I->see('Descrição:');
+        $I->see('Jogo:');
+        $I->see('Score:');
 
         $I->submitForm('#enviarform', [
             'Review[Descricao]' => 'TesteDescricao',

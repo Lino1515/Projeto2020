@@ -1,19 +1,11 @@
 <?php
 
-namespace backend\tests\functional;
+namespace backend\tests\acceptance;
 
-use backend\tests\FunctionalTester;
+use backend\tests\AcceptanceTester;
 use common\fixtures\UserFixture;
 
-class comentariosCest {
-    /* public function _before(FunctionalTester $I) {
-
-      }
-
-      // tests
-      public function tryToTest(FunctionalTester $I) {
-
-      } */
+class TipojogoCest {
 
     public function _fixtures() {
         return [
@@ -24,30 +16,24 @@ class comentariosCest {
         ];
     }
 
-    /* public function _before(FunctionalTester $I)
-      {
-      }
-
-      // tests
-      public function tryToTest(FunctionalTester $I)
-      {
-      } */
-
-    public function checkPage(FunctionalTester $I) {
+    public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=comentarios%2Findex');
-
-        $I->see('Comentários');
+        $I->see('Tipo Jogo');
+        $I->click('Tipo Jogo');
+        $I->see('Lista');
+        $I->see('Criar');
+        $I->see('» Lista');
+        $I->click('» Lista');
     }
 
-    public function checkCriarEmpty(FunctionalTester $I) {
+    public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
@@ -56,16 +42,25 @@ class comentariosCest {
 
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=comentarios%2Fcreate');
+        $I->see('Tipo Jogo');
+        $I->click('Tipo Jogo');
+        $I->see('Lista');
+        $I->see('Criar');
+        $I->see('» Lista');
+        $I->click('» Lista');
 
-        $I->see('Criar Comentários');
+        $I->see('Tipo de jogos');
+        $I->click('a[name="criartipojogo"]');
+        $I->see('Criar tipo de jogo');
+        $I->see('Nome:');
+        $I->see('Descrição:');
 
         $I->click('Guardar');
+        $I->see('Nome cannot be blank.');
         $I->see('Descricao cannot be blank.');
-        $I->see('Id Jogo cannot be blank.');
     }
 
-    public function checkCriarValido(FunctionalTester $I) {
+    public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
         $I->fillField('Username', 'erau');
@@ -74,16 +69,23 @@ class comentariosCest {
 
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=comentarios%2Fcreate');
+        $I->see('Tipo Jogo');
+        $I->click('Tipo Jogo');
+        $I->see('Lista');
+        $I->see('Criar');
+        $I->see('» Lista');
+        $I->click('» Lista');
 
-        $I->see('Criar Comentários');
+        $I->see('Tipo de jogos');
+        $I->click('a[name="criartipojogo"]');
+        $I->see('Criar tipo de jogo');
 
         $I->submitForm('#enviarform', [
-            'Comentarios[Descricao]' => 'TesteDescricao',
-            'Comentarios[Id_jogo]]' => '1',
+            'Tipojogo[Nome]' => 'TesteNome',
+            'Tipojogo[Descricao]' => 'TesteDescrição',
         ]);
 
-        $I->seeRecord('\app\models\Comentarios', array('Id_jogo' => '1', 'Descricao' => 'TesteDescricao'));
+        $I->seeRecord('\app\models\Tipojogo', array('Nome' => 'TesteNome'));
     }
 
 }

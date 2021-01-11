@@ -1,8 +1,8 @@
 <?php
 
-namespace backend\tests\functional;
+namespace backend\tests\acceptance;
 
-use backend\tests\FunctionalTester;
+use backend\tests\AcceptanceTester;
 use common\fixtures\UserFixture;
 
 /**
@@ -26,20 +26,20 @@ class LoginCest {
         ];
     }
 
-    public function checkLoginUserEmpty(FunctionalTester $I) {
+    public function checkLoginUserEmpty(AcceptanceTester $I) {
         $I->amOnPage('/site/login');
         $I->fillField('Username', '');
         $I->fillField('Password', '');
         $I->click('login-button');
-        
+
         $I->see('Username cannot be blank.');
         $I->see('Password cannot be blank.');
     }
 
     /**
-     * @param FunctionalTester $I
+     * @param AcceptanceTester $I
      */
-    public function checkLoginUserBadPassword(FunctionalTester $I) {
+    public function checkLoginUserBadPassword(AcceptanceTester $I) {
         $I->amOnPage('/site/login');
         $I->fillField('Username', 'dinas');
         $I->fillField('Password', 'dinas');
@@ -47,7 +47,7 @@ class LoginCest {
         $I->see('Incorrect username or password');
     }
 
-    public function checkLoginUserCorrect(FunctionalTester $I) {
+    public function checkLoginUserCorrect(AcceptanceTester $I) {
         $I->amOnPage('/site/login');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');

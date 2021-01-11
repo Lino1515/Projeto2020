@@ -1,8 +1,8 @@
 <?php
 
-namespace backend\tests\functional;
+namespace backend\tests\acceptance;
 
-use backend\tests\FunctionalTester;
+use backend\tests\AcceptanceTester;
 use common\fixtures\UserFixture;
 
 class jogosCest {
@@ -16,30 +16,25 @@ class jogosCest {
         ];
     }
 
-    public function _before(FunctionalTester $I) {
-        //$I->amOnPage('/jogos/index');
+    public function _before(AcceptanceTester $I) {
+        
     }
 
-    // tests
-    /* public function tryToTest(FunctionalTester $I) {
-
-      } */
-    public function checkPage(FunctionalTester $I) {
+    public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
-
-
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=jogos%2Findex');
 
         $I->see('Jogos');
-        $I->see('Procurar:');
+        $I->click('Jogos');
+        $I->see('Lista');
+        $I->see('Criar');
     }
 
-    public function checkCriarEmpty(FunctionalTester $I) {
+    public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
@@ -47,7 +42,19 @@ class jogosCest {
 
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=jogos%2Fcreate');
+        $I->see('Jogos');
+        $I->click('Jogos');
+        $I->see('» Lista jogos');
+        $I->click('» Lista jogos');
+
+        $I->see('Criar Jogo');
+        $I->click('a[name="criarjogo"]');
+        $I->see('Nome:');
+        $I->see('Descrição:');
+        $I->see('Código do trailer:');
+        $I->see('Upload da imagem:');
+        $I->see('Data de lançamento:');
+        $I->see('Tipo de jogo:');
 
         $I->submitForm('#criarform', []);
 
@@ -58,15 +65,27 @@ class jogosCest {
         $I->see('Id Tipojogo cannot be blank');
     }
 
-    public function checkCriarValido(FunctionalTester $I) {
+    public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        
+
         $I->seeInCurrentUrl('index');
 
-        $I->amOnPage('Projeto2020/backend/web/index.php?r=jogos%2Fcreate');
+        $I->see('Jogos');
+        $I->click('Jogos');
+        $I->see('» Lista jogos');
+        $I->click('» Lista jogos');
+
+        $I->see('Criar Jogo');
+        $I->click('a[name="criarjogo"]');
+        $I->see('Nome:');
+        $I->see('Descrição:');
+        $I->see('Código do trailer:');
+        $I->see('Upload da imagem:');
+        $I->see('Data de lançamento:');
+        $I->see('Tipo de jogo:');
 
         $I->submitForm('#criarform', [
             'Jogos[Nome]' => 'TesteNome',

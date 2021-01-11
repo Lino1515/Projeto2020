@@ -31,15 +31,11 @@ class TipojogoCest {
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->see('Tipo Jogo');
-        $I->click('Tipo Jogo');
-        $I->see('Lista');
-        $I->see('Criar');
-        $I->see('» Lista');
-        $I->click('» Lista');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=tipojogo%2Findex');
+        $I->see('Tipo de jogos');
     }
 
     public function checkCriarEmpty(FunctionalTester $I) {
@@ -48,23 +44,14 @@ class TipojogoCest {
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->see('Tipo Jogo');
-        $I->click('Tipo Jogo');
-        $I->see('Lista');
-        $I->see('Criar');
-        $I->see('» Lista');
-        $I->click('» Lista');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate');
 
-        $I->see('Tipo de jogos');
-        $I->click('a[name="criartipojogo"]');
         $I->see('Criar tipo de jogo');
         $I->see('Nome:');
         $I->see('Descrição:');
-
-        //$I->see('Criar', 'button');
 
         $I->click('Guardar');
         $I->see('Nome cannot be blank.');
@@ -77,28 +64,15 @@ class TipojogoCest {
         $I->fillField('Username', 'erau');
         $I->fillField('Password', 'password_0');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+
         $I->seeInCurrentUrl('index');
 
-        $I->see('Tipo Jogo');
-        $I->click('Tipo Jogo');
-        $I->see('Lista');
-        $I->see('Criar');
-        $I->see('» Lista');
-        $I->click('» Lista');
-
-        $I->see('Tipo de jogos');
-        $I->click('a[name="criartipojogo"]');
-        $I->see('Criar tipo de jogo');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=tipojogo%2Fcreate');
 
         $I->submitForm('#enviarform', [
             'Tipojogo[Nome]' => 'TesteNome',
             'Tipojogo[Descricao]' => 'TesteDescrição',
         ]);
-
-        /* $I->see('TesteNome');
-          $I->see('Atualizar');
-          $I->see('Eliminar'); */
 
         $I->seeRecord('\app\models\Tipojogo', array('Nome' => 'TesteNome'));
     }

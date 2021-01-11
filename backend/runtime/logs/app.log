@@ -36942,3 +36942,63 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1610232912.494
     'REQUEST_TIME' => 1610232912
 ]
+2021-01-11 17:17:06 [127.0.0.1][-][mmfaj6jiqdtsv1dmcvd00u89pu][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException in C:\wamp64\www\Projeto2020\backend\controllers\ComentariosController.php:66
+Stack trace:
+#0 [internal function]: backend\controllers\ComentariosController->actionIndex()
+#1 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#4 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('comentarios/ind...', Array)
+#5 C:\wamp64\www\Projeto2020\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\wamp64\www\Projeto2020\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2021-01-11 17:17:06 [127.0.0.1][-][mmfaj6jiqdtsv1dmcvd00u89pu][info][application] $_GET = [
+    'r' => 'comentarios/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Java/1.8.0_111'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_ACCEPT' => 'text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Bitvise SSH Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php7.4.0;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.4.0 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.4.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/Projeto2020/backend/web/index.php'
+    'REMOTE_PORT' => '2318'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=comentarios%2Findex'
+    'REQUEST_URI' => '/Projeto2020/backend/web/index.php?r=comentarios%2Findex'
+    'SCRIPT_NAME' => '/Projeto2020/backend/web/index.php'
+    'PHP_SELF' => '/Projeto2020/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1610385426.542
+    'REQUEST_TIME' => 1610385426
+]
