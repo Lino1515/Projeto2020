@@ -19,8 +19,8 @@ class TipojogoCest {
     public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -36,8 +36,8 @@ class TipojogoCest {
     public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -63,8 +63,8 @@ class TipojogoCest {
     public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -85,7 +85,8 @@ class TipojogoCest {
             'Tipojogo[Descricao]' => 'TesteDescrição',
         ]);
 
-        $I->seeRecord('\app\models\Tipojogo', array('Nome' => 'TesteNome'));
+        $I->see('TesteNome');
+        $I->see('TesteDescrição');
     }
 
 }

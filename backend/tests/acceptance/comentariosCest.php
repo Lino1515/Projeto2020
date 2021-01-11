@@ -19,8 +19,8 @@ class comentariosCest {
     public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -37,8 +37,8 @@ class comentariosCest {
     public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -64,8 +64,8 @@ class comentariosCest {
     public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -87,8 +87,7 @@ class comentariosCest {
             'Comentarios[Descricao]' => 'TesteDescricao',
             'Comentarios[Id_jogo]]' => '1',
         ]);
-
-        $I->seeRecord('\app\models\Comentarios', array('Id_jogo' => '1', 'Descricao' => 'TesteDescricao'));
+        $I->see('TesteDescricao');
     }
 
 }

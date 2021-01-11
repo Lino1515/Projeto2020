@@ -19,10 +19,10 @@ class reviewsCest {
     public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+        
         $I->seeInCurrentUrl('index');
 
         $I->see('Review');
@@ -35,10 +35,10 @@ class reviewsCest {
     public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
-        //$I->see('Incorrect username or password');
+        
         $I->seeInCurrentUrl('index');
 
         $I->see('Review');
@@ -70,8 +70,8 @@ class reviewsCest {
     public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -96,14 +96,14 @@ class reviewsCest {
             'Review[Id_Jogo]' => '1',
         ]);
 
-        $I->seeRecord('\app\models\Review', array('Id_jogo' => '1', 'Descricao' => 'TesteDescricao'));
+        $I->see('TesteDescricao');
     }
 
     public function checkCriarBadScore(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->see('Please fill out the following fields to login:');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');

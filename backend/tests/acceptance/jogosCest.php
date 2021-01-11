@@ -22,8 +22,8 @@ class jogosCest {
 
     public function checkPage(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -36,8 +36,8 @@ class jogosCest {
 
     public function checkCriarEmpty(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -67,8 +67,8 @@ class jogosCest {
 
     public function checkCriarValido(AcceptanceTester $I) {
         $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->seeInCurrentUrl('index');
@@ -96,7 +96,8 @@ class jogosCest {
             'Jogos[Id_tipojogo]' => '1',
         ]);
 
-        $I->seeRecord('\app\models\Jogos', array('Nome' => 'TesteNome'));
+        $I->see('TesteNome');
+        $I->see('TesteDescrição');
     }
 
 }

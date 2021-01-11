@@ -27,7 +27,7 @@ class LoginCest {
     }
 
     public function checkLoginUserEmpty(AcceptanceTester $I) {
-        $I->amOnPage('/site/login');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->fillField('Username', '');
         $I->fillField('Password', '');
         $I->click('login-button');
@@ -40,7 +40,7 @@ class LoginCest {
      * @param AcceptanceTester $I
      */
     public function checkLoginUserBadPassword(AcceptanceTester $I) {
-        $I->amOnPage('/site/login');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
         $I->fillField('Username', 'dinas');
         $I->fillField('Password', 'dinas');
         $I->click('login-button');
@@ -48,15 +48,15 @@ class LoginCest {
     }
 
     public function checkLoginUserCorrect(AcceptanceTester $I) {
-        $I->amOnPage('/site/login');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->amOnPage('Projeto2020/backend/web/index.php?r=site%2Flogin');
+        $I->fillField('Username', 'dinas');
+        $I->fillField('Password', 'monca99per');
         $I->click('button[name="login-button"]');
 
         $I->see('Utilizadores');
         $I->see('Rreports');
         $I->see('Rutilizador');
-        $I->see('Logout (erau)');
+        $I->see('Logout (dinas)');
     }
 
 }
