@@ -63,22 +63,14 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    /* 'controller' => [
-                      'v1/tipoJogo',
-                      'v1/comentarios',
-                      'v1/comentariosreports',
-                      'v1/comentariosutilizador',
-                      'v1/jogos', 'v1/review',
-                      'v1/reviewreports',
-                      'v1/reviewutilizador'
-                      ], */
-                    'controller' => ['v1/tipojogo', 'v1/jogos', 'v1/comentarios', 'v1/comentariosreports', 'v1/comentariosutilizador', 'v1/review', 'v1/reviewreports', 'v1/reviewutilizador'],
-                    /* 'controller' => 'v1/comentariosreports',
-                      'controller' => 'v1/comentariosutilizador',
-                      'controller' => 'v1/jogos',
-                      'controller' => 'v1/review',
-                      'controller' => 'v1/reviewreports',
-                      'controller' => 'v1/reviewutilizador', */
+                    'controller' => ['v1/tipojogo', 'v1/jogos', 'v1/comentarios', 'v1/comentariosreports', 'v1/comentariosutilizador', 'v1/review', 'v1/reviewreports', 'v1/reviewutilizador', 'v1/user'],
+                    'tokens' => [
+                         '{id}' => '<id:\\d[\\d,]*>',
+                        //'{username}' => '<username:\\d[\\d,]*>',
+                        //'{type}' => '<type:\\w+>'
+                        '{username}' => '<username:[a-zA-Z0-9\\-]+>',
+                        '{password}' => '<password:[a-zA-Z0-9\\-]+>'
+                    ],
                     'pluralize' => false,
                     'extraPatterns' => [
                         'GET total' => 'total', //Obtem total de clientes                        
@@ -95,10 +87,8 @@ $config = [
                         'GET datadesc' => 'datadesc', //Obtem todos os resultados em desc por data
                         'GET nomeasc' => 'nomeasc', //Obtem todos os resultados em asc por nome
                         'GET nomedesc' => 'nomedesc', //Obtem todos os resultados em desc por nome
-                    /* 'tokens' => [
-                      '{id}' => '<id:\\d+>', //Standard ID
-                      '{limit}' => '<limit:\\d+>', //limit de procuras
-                      ], */
+                        'GET jogosandtipojogo' => 'jogosandtipojogo',
+                        'GET loginuser/{username}/{password}' => 'loginuser',
                     ],
                 ],
             ],

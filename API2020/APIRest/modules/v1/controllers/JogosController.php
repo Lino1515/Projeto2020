@@ -30,7 +30,7 @@ class JogosController extends ActiveController {
         $behaviors['authenticator'] = [
             'class' => CompositeAuth::className(),
             'authMethods' => [
-                    [
+                [
                     'class' => HttpBasicAuth::className(),
                     'auth' => [$this, 'auth']
                 ],
@@ -182,44 +182,60 @@ class JogosController extends ActiveController {
         return['results' => $results];
     }
 
+    public function actionJogosandtipojogo() {
+        $query = new \yii\db\Query();
+        $teste = $query->innerJoin('tipojogo', 'jogos.Id_tipojogo = tipojogo.Id')
+                ->from('Jogos')
+                ->select(['jogos.Id', 'jogos.Nome', 'jogos.Descricao', 'jogos.Data', 'jogos.Trailer', 'jogos.Imagem', 'jogos.Id_tipojogo', 'tipojogo.Nome AS NomeTipo'])
+                ->createCommand();
+        return $teste->query();
+    }
+
     //Ordena a melhor review do jogo com id $id
     public function actionTopreview($id) {
         $model = new $this->modelClass;
         $modelReview = new \app\modules\v1\models\Review;
-        $review = $modelReview::find()->limit(1)->where(['Id_jogo' => $id])->orderBy(['Score' => SORT_DESC])->all();
+        $review = $modelReview::find()->where(['Id_jogo' => $id])->orderBy(['Score' => SORT_DESC])->all();
         $jogo = $model::find()->where(['Id' => $id])->all();
         /* var_dump($jogo == null);
           exit; */
         if ($jogo != null and $review != null)
-            return['Jogo' => $jogo, 'Melhor review' => $review];
+        //return['Jogo' => $jogo, 'Review' => $review];
+            return $review;
         if ($review == null)
-            return['Jogo' => $jogo, 'Este jogo ainda nao tem reviews'];
+            return null;
         return['Nao foi possivel encontrar este jogo.'];
     }
 
     //Ordena a melhor comentario do jogo com id $id
     public function actionTopcomentario($id) {
+
         $model = new $this->modelClass;
         $modelComent = new \app\modules\v1\models\Comentarios;
         $modelComentUser = new \app\modules\v1\models\Comentariosutilizador;
-        $coment = $modelComent::find()->where(['Id_jogo' => $id])->all();
-        $countcomentuser = 0;
-        for ($i = 0; $i < count($coment); $i++) {
-//, 'Like_Dislike' => 1]
-            //$comentUser = $modelComentUser::find()->where(['Id_comentario' => $coment[$i]->attributes["Id"], 'Like_Dislike' => 1])->all();
-            if ($countcomentuser < $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count()) {
-                $countcomentuser = $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count();
-                $idComent = $coment[$i]->attributes["Id"];
-            }
-        }
+
+        //var_dump(count($coment));exit;
+        /* $countcomentuser = 0;
+          for ($i = 0; $i < count($coment); $i++) {
+          //, 'Like_Dislike' => 1]
+          //$comentUser = $modelComentUser::find()->where(['Id_comentario' => $coment[$i]->attributes["Id"], 'Like_Dislike' => 1])->all();
+          if ($countcomentuser < $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count()) {
+          $countcomentuser = $modelComentUser::find()->limit(1)->where(['Id_comentario' => $coment[$i]->attributes["Id"]])->count();
+          $idComent = $coment[$i]->attributes["Id"];
+          }
+          } */
+
         // $coment = $coment::find()->where(['Id' => $comentUser->attributes["Id_comentario"]])->all();
+
         $jogo = $model::find()->where(['Id' => $id])->all();
-        $coment = $modelComent::find()->where(['Id' => $idComent])->all();
+        $coment = $modelComent::find()->where(['Id_jogo' => $id])->orderBy('Data DESC')->all();
 
         if ($jogo != null and $coment != null)
-            return['Jogo' => $jogo, 'Melhor comentário' => $coment];
+        //return['Jogo' => $jogo, 'Comentario' => $coment];
+            return $coment;
         if ($coment == null)
-            return['Jogo' => $jogo, 'Este jogo ainda nao tem comentários'];
+        //return['Jogo' => $jogo, 'Este jogo ainda nao tem comentários'];
+            return null;
         return['Nao foi possivel encontrar este jogo.'];
     }
 

@@ -36,12 +36,13 @@ class Review extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['Data', 'Descricao', 'Score', 'Id_Jogo', 'Id_Utilizador'], 'required'],
-            [['Data'], 'safe'],
+            [['Id'], 'integer'],
+            [['Data'], 'date', 'format' => 'php:Y-m-d'],
             [['Descricao'], 'string'],
-            [['Score'], 'number'],
-            [['Id_jogo', 'Id_utilizador'], 'integer'],
-            [['Id_utilizador'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['Id_utilizador' => 'id']],
-            [['Id_jogo'], 'exist', 'skipOnError' => true, 'targetClass' => Jogos::className(), 'targetAttribute' => ['Id_jogo' => 'Id']],
+            [['Score'], 'number', 'min' => 0, 'max' => 10],
+            [['Id_Jogo', 'Id_Utilizador'], 'integer'],
+            [['Id_Utilizador'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['Id_Utilizador' => 'id']],
+            [['Id_Jogo'], 'exist', 'skipOnError' => true, 'targetClass' => Jogos::className(), 'targetAttribute' => ['Id_Jogo' => 'Id']],
         ];
     }
 
@@ -54,32 +55,26 @@ class Review extends \yii\db\ActiveRecord {
             'Data' => 'Data',
             'Descricao' => 'Descricao',
             'Score' => 'Score',
-            'Id_jogo' => 'Id Jogo',
-            'Id_utilizador' => 'Id Utilizador',
+            'Id_Jogo' => 'Id Jogo',
+            'Id_Utilizador' => 'Id Utilizador',
         ];
     }
 
     /**
-     * Gets query for [[Utilizador]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getUtilizador() {
-        return $this->hasOne(User::className(), ['id' => 'Id_utilizador']);
+        return $this->hasOne(User::className(), ['id' => 'Id_Utilizador']);
     }
 
     /**
-     * Gets query for [[Jogo]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getJogo() {
-        return $this->hasOne(Jogos::className(), ['Id' => 'Id_jogo']);
+        return $this->hasOne(Jogos::className(), ['Id' => 'Id_Jogo']);
     }
 
     /**
-     * Gets query for [[Reviewreports]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getReviewreports() {
@@ -87,8 +82,6 @@ class Review extends \yii\db\ActiveRecord {
     }
 
     /**
-     * Gets query for [[Utilizadors]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getUtilizadors() {
@@ -96,8 +89,6 @@ class Review extends \yii\db\ActiveRecord {
     }
 
     /**
-     * Gets query for [[Reviewutilizadors]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getReviewutilizadors() {
@@ -105,8 +96,6 @@ class Review extends \yii\db\ActiveRecord {
     }
 
     /**
-     * Gets query for [[Utilizadors0]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getUtilizadors0() {
