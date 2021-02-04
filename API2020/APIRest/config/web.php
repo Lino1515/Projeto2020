@@ -63,7 +63,7 @@ $config = [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => ['v1/tipojogo', 'v1/jogos', 'v1/comentarios', 'v1/comentariosreports', 'v1/comentariosutilizador', 'v1/review', 'v1/reviewreports', 'v1/reviewutilizador', 'v1/user'],
+                    'controller' => ['v1/tipojogo', 'v1/jogos', 'v1/comentarios', 'v1/comentariosreports', 'v1/comentariosutilizador', 'v1/review', 'v1/reviewreports', 'v1/reviewutilizador', 'v1/user','v1/uploadimagem'],
                     'tokens' => [
                          '{id}' => '<id:\\d[\\d,]*>',
                         //'{username}' => '<username:\\d[\\d,]*>',
@@ -80,6 +80,7 @@ $config = [
                         'GET bot' => 'bot', //Obtem o top de jogos actionTop
                         //TOP REVIEWS DE DETERMINADO JOGO
                         'GET topreview/{id}' => 'topreview', //Obtem o top de jogos actionTop
+                        'GET uploadimagem/{id}' => 'uploadimagem', //Obtem o top de jogos actionTop
                         //TOP COMENTARIO DE DETERMINADO JOGO
                         'GET topcomentario/{id}' => 'topcomentario', //Obtem o top de jogos actionTop
                         //ORDENAÇÃO
