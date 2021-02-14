@@ -10,15 +10,17 @@ use yii\widgets\ActiveForm;
 
 <div class="jogos-search">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+    <?php
+    $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+    ]);
+    ?>
 
     <!--< ?= $form->field($model, 'Id') ?>-->
 
     <div class="col-md-10 col-xs-12">
-    <?= $form->field($model, 'Nome')->label('Procurar:') ?>
+        <?= $form->field($model, 'Nome')->label('Procurar:') ?>
     </div>
 
     <!--< ?= $form->field($model, 'Descricao') ?>-->
@@ -29,7 +31,7 @@ use yii\widgets\ActiveForm;
 
     <!--< ?php // echo $form->field($model, 'Imagem') ?>-->
 
-   <!-- < ?php // echo $form->field($model, 'Id_tipojogo') ?>-->
+    <!-- < ?php // echo $form->field($model, 'Id_tipojogo') ?>-->
 
     <div class="button-search form-group col-md-2 col-xs-12">
         <?= Html::submitButton('Procurar', ['class' => 'btn btn-primary']) ?>

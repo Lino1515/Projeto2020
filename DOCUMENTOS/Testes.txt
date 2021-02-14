@@ -1,0 +1,35 @@
+C:\wamp64\www\Projeto2020\backend>
+
+..\vendor\bin\codecept run --steps
+..\vendor\bin\codecept run functional
+..\vendor\bin\codecept run unit
+
+CORRER SERVER PARA ACCEPT TEST
+yii serve --docroot="backend/web/" --port=8888
+yii serve --docroot="frontend/web/" --port=8888
+
+https://www.youtube.com/watch?v=BPArclYhkE0&ab_channel=PacktVideo
+
+CORRER SELENIUM
+no cmd d root projeto2020
+
+java -Dwebdriver.gecko.driver=./geckodriver -jar "selenium-server-standalone-3.141.59.jar" -port 0909
+
+
+Passos
+1º 
+Iniciar o servidor do yii
+Exemplo:
+yii serve --docroot="backend/web/" --port=8888~
+
+2º
+Correr o script do servidor SELENIUM
+exemplo:
+java -Dwebdriver.gecko.driver=./geckodriver -jar "selenium-server-standalone-3.141.59.jar" -port 0909
+
+3º
+Corrigir o erro
+[Facebook\WebDriver\Exception\SessionNotCreatedException] Unable to create new service: ChromeDriverService
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-071VL87', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: driver.version: unknown

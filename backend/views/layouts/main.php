@@ -94,41 +94,33 @@ AppAsset::register($this);
                                 ],
                             ],
                             [
-                                'label' => 'Creports',
-                                'items' => [
-                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/comentariosreports/index']],
-                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/comentariosreports/create']],
-                                ],
+                                'label' => 'Reviews Utilizador',
+                                'url' => ['/reviewutilizador/index'],
                             ],
                             [
-                                'label' => 'Cutilizador',
-                                'items' => [
-                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/comentariosutilizador/index']],
-                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/comentariosutilizador/create']],
-                                ],
+                                'label' => 'Reviews Reports',
+                                'url' => ['/reviewreports/index'],
                             ],
                             [
-                                'label' => 'Rutilizador',
-                                'items' => [
-                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/reviewutilizador/index']],
-                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/reviewutilizador/create']],
-                                ],
+                                'label' => 'Comentários Utilizador',
+                                'url' => ['/comentariosutilizador/index'],
                             ],
                             [
-                                'label' => 'Rreports',
-                                'items' => [
-                                    ['label' => 'Lista'/* , 'icon' => 'info-sign' */, 'url' => ['/reviewreports/index']],
-                                    ['label' => 'Criar'/* , 'icon' => 'phone' */, 'url' => ['/reviewreports/create']],
-                                ],
+                                'label' => 'Comentários Reports',
+                                'url' => ['/comentariosreports/index'],
                             ],
                             [
                                 'label' => 'Utilizadores',
                                 'url' => ['/user/index'],
-                            /* 'items' => [
-                              ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/user/index']],
-                              // ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/user/create']],
-                              ], */
                             ],
+                        /* [
+                          'label' => 'Carros',
+                          'url' => ['/carros/view'],
+                          /* 'items' => [
+                          ['label' => 'Lista', 'icon' => 'info-sign', 'url' => ['/user/index']],
+                          // ['label' => 'Criar', 'icon' => 'phone', 'url' => ['/user/create']],
+                          ], */
+                        /*  ], */
                         ],
                     ]);
                     ?>

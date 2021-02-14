@@ -35,23 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
             Html::a('Eliminar', ['delete', 'id' => $model->Id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                    'confirm' => 'Tem a certeza que pretende eliminar o tipo de jogo?',
                     'method' => 'post',
                 ],
             ])
             ?>
         </p>
     </div>
-    <!--< ?=
-    DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'Id',
-            'Nome',
-            'Descricao:ntext',
-        ],
-    ])
-    ?>-->
     <div class="titulo-index-brackend col-md-10 col-xs-12" style="padding-left: 0px;">
         <h1>Outros</h1>
     </div>

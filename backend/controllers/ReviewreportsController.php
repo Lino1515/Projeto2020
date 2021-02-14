@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\ForbiddenHttpException;
+
 /**
  * ReviewreportsController implements the CRUD actions for Reviewreports model.
  */
@@ -24,12 +25,12 @@ class ReviewreportsController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -75,8 +76,12 @@ class ReviewreportsController extends Controller {
      */
     public function actionView($Id_review, $Id_utilizador) {
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+            $searchModel = new ReviewreportsSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
             return $this->render('view', [
                         'model' => $this->findModel($Id_review, $Id_utilizador),
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
             ]);
         } else {
             throw new ForbiddenHttpException;

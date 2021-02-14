@@ -16,15 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
     </div>
 
-    <!--
-        <div class="button-index-brackend col-md-2 col-xs-12">
-            < ?= Html::a('Criar novo', ['create'], ['class' => 'btn btn-success']) ?>
-        </div>
-    
-        <div class="search-index-brackend col-md-12 col-xs-12">
-            <? php echo $this->render('_search', ['model' => $searchModel]); ?>
-        </div>-->
-
     <div class="grid-index-brackend col-md-12 col-xs-12">
         <?=
         GridView::widget([
@@ -33,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
                 //'Id_comentario',
-                    [
+                [
                     'attribute' => 'Id_comentario',
                     'label' => 'Comentario',
                     'format' => 'raw',
@@ -47,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'label' => 'Utilizador',
                     'value' => 'utilizador.username',
                 ],
-                    [
+                [
                     'attribute' => 'Like_Dislike',
                     'label' => 'Voto',
                     'value' => function($data) {
@@ -58,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 //'Like_Dislike',
                 [
-                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}', //{update}
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{delete}', //{update}
                     'buttons' => [
                         /* 'update' => function ($url, $model) {
                           return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
@@ -67,13 +58,13 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',
                                         'data' => [
-                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'confirm' => 'Tem a certeza que pretende eliminar?',
                                             'method' => 'post',
                             ]]);
                         },
-                        'view' => function ($url, $model) {
-                            return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
-                        },
+                    /* 'view' => function ($url, $model) {
+                      return Html::a('<span class="glyphicon glyphicon-eye-open btn btn-primary"></span>', $url);
+                      }, */
                     ],
                 ],
             ],

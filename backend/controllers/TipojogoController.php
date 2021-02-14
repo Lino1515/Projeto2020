@@ -25,12 +25,12 @@ class TipojogoController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -75,7 +75,8 @@ class TipojogoController extends Controller {
      */
     public function actionView($id) {
         if (Yii::$app->user->can('admin')) {
-            $searchModel = new TipojogoSearch();
+            
+            $searchModel = new TipojogoSearch();            
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
             return $this->render('view', [

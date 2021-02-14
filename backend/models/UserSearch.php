@@ -16,8 +16,8 @@ class UserSearch extends User {
      */
     public function rules() {
         return [
-                [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-                [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
+            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
         ];
     }
 
@@ -79,18 +79,25 @@ class UserSearch extends User {
             $obtemStatus = strtolower($this->username);
 
         if (strtolower($this->username) == 'admin' OR strtolower($this->username) == 'moderador' OR strtolower($this->username) == 'null') {
-            $patente = Authassignment::find()->where(['item_name' => $this->username])->all();
-            $patente = $patente[0]->user_id;
+
+            $patente = Authassignment::find()->where(['item_name' => strtolower($this->username)])->all();
+            if (empty($patente)) {
+                $patente = strtolower($this->username);
+            } else {
+                $patente = $patente[0]->user_id;
+            }
+            /* var_dump(count($patente));
+              exit; */
         } else {
             $patente = strtolower($this->username);
         }
         $query->join('left JOIN', 'auth_assignment', 'auth_assignment.user_id = user.id');
 
         $query->andFilterWhere(['OR',
-                ['like', 'LOWER(username)', strtolower($this->username)],
-                ['like', 'LOWER(email)', strtolower($this->username)],
-                ['like', 'LOWER(status)', $obtemStatus],
-                ['like', 'LOWER(auth_assignment.user_id)', $patente],
+            ['like', 'LOWER(username)', strtolower($this->username)],
+            ['like', 'LOWER(email)', strtolower($this->username)],
+            ['like', 'LOWER(status)', $obtemStatus],
+            ['like', 'LOWER(auth_assignment.user_id)', $patente],
                 //['like', 'LOWER(auth_key)', strtolower($this->username)],
                 //['like', 'LOWER(password_hash)', strtolower($this->username)],
                 //['like', 'LOWER(verification_token)', strtolower($this->username)],

@@ -25,12 +25,12 @@ class ComentariosreportsController extends Controller {
                 'class' => AccessControl::classname(),
                 'only' => ['create', 'update', 'delete', 'login', 'logout'],
                 'rules' => [
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['logout', 'create', 'update', 'delete', 'login'],
                         'roles' => ['@']
                     ],
-                        [
+                    [
                         'allow' => true,
                         'actions' => ['login'],
                         'roles' => ['?']
@@ -76,8 +76,14 @@ class ComentariosreportsController extends Controller {
      */
     public function actionView($Id_comentario, $Id_utilizador) {
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+            
+            $searchModel = new ComentariosreportsSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            
             return $this->render('view', [
                         'model' => $this->findModel($Id_comentario, $Id_utilizador),
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
             ]);
         } else {
             throw new ForbiddenHttpException;

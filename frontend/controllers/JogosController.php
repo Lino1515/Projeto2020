@@ -4,7 +4,9 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Jogos;
+//use app\models\Jogos;
 use frontend\models\JogosSearch;
+//use app\models\JogosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -33,12 +35,20 @@ class JogosController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
+
         $searchModel = new JogosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        //var_dump($dataProvider->models);exit;
+
+        $todosJogos = Jogos::find()->orderBy('Nome')->all();
+        $todosTipojogos = \frontend\models\Tipojogo::find()->orderBy('Nome')->all();
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
+                    'todosJogos' => $todosJogos,
+                    'todosTipojogos' => $todosTipojogos
         ]);
     }
 
@@ -52,9 +62,9 @@ class JogosController extends Controller {
 
         $coment = \frontend\models\Comentarios::find()->where(['Id_jogo' => $id])->orderBy('Data DESC')->all();
         $reviews = \frontend\models\Review::find()->where(['Id_jogo' => $id])->orderBy('Data DESC')->all();
-        
+
         //$comentUser = \frontend\models\comentariosutilizador::find()->where(['Id_jogo' => $id])->all();
-        
+
         $tipojogo = \frontend\models\Tipojogo::find()->orderBy('Nome')->asArray()->all();
 
         $modelComent = new \frontend\models\Comentarios();
@@ -64,12 +74,12 @@ class JogosController extends Controller {
 
         return $this->render('view', [
                     'model' => $this->findModel($id),
-                    'coment' => $coment,//done
+                    'coment' => $coment, //done
                     //'comentUser' => $comentUser,
-                    'reviews' => $reviews,//done
-                    'tipojogo' => $tipojogo,//done
-                    'modelComent' => $modelComent,//done
-                    'modelReview' => $modelReview,//done
+                    'reviews' => $reviews, //done
+                    'tipojogo' => $tipojogo, //done
+                    'modelComent' => $modelComent, //done
+                    'modelReview' => $modelReview, //done
                     'modelComentUser' => $modelComentUser,
                     'modelreviewUser' => $modelreviewUser,
         ]);

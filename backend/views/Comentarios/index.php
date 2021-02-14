@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',
                                         'data' => [
-                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'confirm' => 'Tem a certeza que pretende eliminar o comentário?',
                                             'method' => 'post',
                             ]]);
                         },

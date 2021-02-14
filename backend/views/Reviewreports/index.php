@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 //'Descricao:ntext',
                 [
-                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {update} {delete}',
+                    'class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}',//{update}
                     'buttons' => [
                         'update' => function ($url, $model) {
                             return Html::a('<span class="glyphicon glyphicon-pencil btn btn-success"></span>', $url);
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
                                         'class' => 'btn btn-danger',
                                         'data' => [
-                                            'confirm' => 'Tem a certeza que pretende eliminar o jogo?',
+                                            'confirm' => 'Tem a certeza que pretende eliminar?',
                                             'method' => 'post',
                             ]]);
                         },

@@ -118,7 +118,8 @@ class UserController extends Controller {
     public function actionUpdate($id) {
         if (Yii::$app->user->can('admin')) {
             $model = $this->findModel($id);
-
+            //fazer if para verificar se o id a usar usa o mesmo email e aceitar
+            //if 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }

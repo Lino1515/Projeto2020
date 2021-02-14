@@ -42,7 +42,7 @@ use app\models\Tipojog;
     </div>
 
     <div class="form-group col-md-12">
-        <?= Html::submitButton('Criar', ['class' => 'btn btn-success', 'id' => 'criarform']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success', 'id' => 'criarform']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -75,8 +75,14 @@ class ComentariosController extends Controller {
      */
     public function actionView($id) {
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+            
+            $searchModel = new ComentariosSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            
             return $this->render('view', [
                         'model' => $this->findModel($id),
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
             ]);
         } else {
             throw new ForbiddenHttpException;
@@ -113,6 +119,7 @@ class ComentariosController extends Controller {
      */
     public function actionUpdate($id) {
         if (Yii::$app->user->can('admin') or Yii::$app->user->can('moderador')) {
+
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {

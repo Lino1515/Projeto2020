@@ -156,8 +156,6 @@ class JogosController extends Controller {
                     $model->Imagem->saveAs($image_path);
                     $model->Imagem = $image_path;
                     $model->save();
-                    var_dump($model->Imagem);
-                    exit;
                 } else {
                     $model->Imagem = null;
                 }

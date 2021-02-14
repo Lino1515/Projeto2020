@@ -4,18 +4,17 @@ namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Jogos;
+use frontend\models\Jogos;
 
 /**
  * JogosSearch represents the model behind the search form of `app\models\Jogos`.
  */
-class JogosSearch extends Jogos
-{
+class JogosSearch extends Jogos {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['Id', 'Id_tipojogo'], 'integer'],
             [['Nome', 'Descricao', 'Data', 'Trailer', 'Imagem'], 'safe'],
@@ -25,8 +24,7 @@ class JogosSearch extends Jogos
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -38,8 +36,7 @@ class JogosSearch extends Jogos
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Jogos::find();
 
         // add conditions that should always apply here
@@ -63,11 +60,30 @@ class JogosSearch extends Jogos
             'Id_tipojogo' => $this->Id_tipojogo,
         ]);
 
-        $query->andFilterWhere(['like', 'Nome', $this->Nome])
-            ->andFilterWhere(['like', 'Descricao', $this->Descricao])
-            ->andFilterWhere(['like', 'Trailer', $this->Trailer])
-            ->andFilterWhere(['like', 'Imagem', $this->Imagem]);
+        /* $query->andFilterWhere(['like', 'LOWER(Nome)', strtolower($this->Nome)]),
+          ->andFilterWhere(['like', 'LOWER(Descricao)', strtolower($this->Nome]))
+          ->andFilterWhere(['like', 'LOWER(Trailer)', strtolower($this->Trailer])
+          ->andFilterWhere(['like', 'LOWER(Imagem)', strtolower($this->Imagem]); */
 
+        if ($this->Nome == "") {
+            $tipojogomodel = $this->Nome;
+        } else {
+            $str = strtolower($this->Nome);
+            $tipojogomodel = Tipojogo::find()->where(['LOWER(Nome)' => $str])->all();
+            if ($tipojogomodel == null) {
+                $tipojogomodel = $this->Nome;
+            } else {
+                $tipojogomodel = $tipojogomodel[0]->Id;
+            }
+        }
+        $query->andFilterWhere(['OR',
+            ['like', 'LOWER(Nome)', strtolower($this->Nome)],
+            ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+            ['like', 'LOWER(Trailer)', strtolower($this->Nome)],
+            ['like', 'LOWER(Imagem)', strtolower($this->Nome)],
+            ['like', 'Id_tipojogo', $tipojogomodel],
+        ]);
         return $dataProvider;
     }
+
 }

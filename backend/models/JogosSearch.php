@@ -16,8 +16,8 @@ class JogosSearch extends Jogos {
      */
     public function rules() {
         return [
-                [['Id', 'Id_tipojogo'], 'integer'],
-                [['Nome', 'Descricao', 'Data', 'Trailer', 'Imagem'], 'safe'],
+            [['Id', 'Id_tipojogo'], 'integer'],
+            [['Nome', 'Descricao', 'Data', 'Trailer', 'Imagem'], 'safe'],
         ];
     }
 
@@ -68,26 +68,31 @@ class JogosSearch extends Jogos {
         if ($this->Nome == "") {
             $tipojogomodel = $this->Nome;
         } else {
-            $tipojogomodel = Tipojogo::find()->where(['Nome' => $this->Nome])->all();
-           /* var_dump($this->Nome);
-            var_dump($tipojogomodel);
-            echo 'ELO';
-            exit;*/
+            $str = strtolower($this->Nome);
+            $tipojogomodel = Tipojogo::find()->where(['LOWER(Nome)' => $str])->all();
+            /* var_dump($tipojogomodel);
+              exit; */
+            /* var_dump($this->Nome);
+              var_dump($tipojogomodel);
+              echo 'ELO';
+              exit; */
             if ($tipojogomodel == null) {
                 $tipojogomodel = $this->Nome;
             } else {
                 $tipojogomodel = $tipojogomodel[0]->Id;
             }
         }
-          if ($this->Descricao == "") {
+        /* var_dump($tipojogomodel);
+          exit; */
+       /* if ($this->Descricao == "") {
             $tipojogomodel = "";
-        }
+        }*/
         $query->andFilterWhere(['OR',
-                ['like', 'LOWER(Nome)', strtolower($this->Nome)],
-                ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
-                ['like', 'LOWER(Trailer)', strtolower($this->Nome)],
-                ['like', 'LOWER(Imagem)', strtolower($this->Nome)],
-                ['like', 'LOWER(Id_tipojogo)', strtolower($tipojogomodel)],
+            ['like', 'LOWER(Nome)', strtolower($this->Nome)],
+            ['like', 'LOWER(Descricao)', strtolower($this->Nome)],
+            ['like', 'LOWER(Trailer)', strtolower($this->Nome)],
+            ['like', 'LOWER(Imagem)', strtolower($this->Nome)],
+            ['like', 'Id_tipojogo', $tipojogomodel],
         ]);
         return $dataProvider;
     }
