@@ -20,23 +20,21 @@ use Yii;
  * @property Comentariosutilizador[] $comentariosutilizadors
  * @property User[] $utilizadors0
  */
-class Comentarios extends \yii\db\ActiveRecord
-{
+class Comentarios extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'comentarios';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['Data', 'Descricao', 'Id_utilizador', 'Id_jogo'], 'required'],
+            [['Data', 'Descricao', 'Id_utilizador', 'Id_jogo'], 'required', 'message' => ''],
             [['Data'], 'safe'],
             [['Descricao'], 'string'],
             [['Id_utilizador', 'Id_jogo'], 'integer'],
@@ -48,8 +46,7 @@ class Comentarios extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'Id' => 'ID',
             'Data' => 'Data',
@@ -64,8 +61,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getUtilizador()
-    {
+    public function getUtilizador() {
         return $this->hasOne(User::className(), ['id' => 'Id_utilizador']);
     }
 
@@ -74,8 +70,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getJogo()
-    {
+    public function getJogo() {
         return $this->hasOne(Jogos::className(), ['Id' => 'Id_jogo']);
     }
 
@@ -84,8 +79,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getComentariosreports()
-    {
+    public function getComentariosreports() {
         return $this->hasMany(Comentariosreports::className(), ['Id_comentario' => 'Id']);
     }
 
@@ -94,8 +88,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getUtilizadors()
-    {
+    public function getUtilizadors() {
         return $this->hasMany(User::className(), ['id' => 'Id_utilizador'])->viaTable('comentariosreports', ['Id_comentario' => 'Id']);
     }
 
@@ -104,8 +97,7 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getComentariosutilizadors()
-    {
+    public function getComentariosutilizadors() {
         return $this->hasMany(Comentariosutilizador::className(), ['Id_comentario' => 'Id']);
     }
 
@@ -114,8 +106,8 @@ class Comentarios extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getUtilizadors0()
-    {
+    public function getUtilizadors0() {
         return $this->hasMany(User::className(), ['id' => 'Id_utilizador'])->viaTable('comentariosutilizador', ['Id_comentario' => 'Id']);
     }
+
 }

@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Reviewreports;
-use app\models\ReviewreportSearch;
+use frontend\models\Reviewreports;
+use frontend\models\ReviewreportSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,7 +68,8 @@ class ReviewreportsController extends Controller
         $model = new Reviewreports();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
+            return $this->goBack((!empty(Yii::$app->request->referrer) ? Yii::$app->request->referrer : null));
+            //return $this->redirect(['view', 'Id_review' => $model->Id_review, 'Id_utilizador' => $model->Id_utilizador]);
         }
 
         return $this->render('create', [

@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Comentariosreports;
-use app\models\ComentariosreportsSearch;
+use frontend\models\Comentariosreports;
+use frontend\models\ComentariosreportsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,13 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * ComentariosreportsController implements the CRUD actions for Comentariosreports model.
  */
-class ComentariosreportsController extends Controller
-{
+class ComentariosreportsController extends Controller {
+
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -33,14 +32,13 @@ class ComentariosreportsController extends Controller
      * Lists all Comentariosreports models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new ComentariosreportsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -51,10 +49,9 @@ class ComentariosreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Id_comentario, $Id_utilizador)
-    {
+    public function actionView($Id_comentario, $Id_utilizador) {
         return $this->render('view', [
-            'model' => $this->findModel($Id_comentario, $Id_utilizador),
+                    'model' => $this->findModel($Id_comentario, $Id_utilizador),
         ]);
     }
 
@@ -63,16 +60,16 @@ class ComentariosreportsController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Comentariosreports();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
+            return $this->goBack((!empty(Yii::$app->request->referrer) ? Yii::$app->request->referrer : null));
+            //return $this->redirect(['view', 'Id_comentario' => $model->Id_comentario, 'Id_utilizador' => $model->Id_utilizador]);
         }
 
         return $this->render('create', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -84,8 +81,7 @@ class ComentariosreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Id_comentario, $Id_utilizador)
-    {
+    public function actionUpdate($Id_comentario, $Id_utilizador) {
         $model = $this->findModel($Id_comentario, $Id_utilizador);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -93,7 +89,7 @@ class ComentariosreportsController extends Controller
         }
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -105,8 +101,7 @@ class ComentariosreportsController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Id_comentario, $Id_utilizador)
-    {
+    public function actionDelete($Id_comentario, $Id_utilizador) {
         $this->findModel($Id_comentario, $Id_utilizador)->delete();
 
         return $this->redirect(['index']);
@@ -120,12 +115,12 @@ class ComentariosreportsController extends Controller
      * @return Comentariosreports the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Id_comentario, $Id_utilizador)
-    {
+    protected function findModel($Id_comentario, $Id_utilizador) {
         if (($model = Comentariosreports::findOne(['Id_comentario' => $Id_comentario, 'Id_utilizador' => $Id_utilizador])) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

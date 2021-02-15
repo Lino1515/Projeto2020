@@ -71,6 +71,8 @@ class JogosController extends Controller {
         $modelReview = new \frontend\models\Review();
         $modelComentUser = new \frontend\models\comentariosutilizador();
         $modelreviewUser = new \frontend\models\Reviewutilizador();
+        $modeloComentaroiosReports = new \frontend\models\Comentariosreports;
+        $modeloReviewReports = new \frontend\models\Reviewreports();
 
         return $this->render('view', [
                     'model' => $this->findModel($id),
@@ -82,6 +84,8 @@ class JogosController extends Controller {
                     'modelReview' => $modelReview, //done
                     'modelComentUser' => $modelComentUser,
                     'modelreviewUser' => $modelreviewUser,
+                    'modeloComentaroiosReports' => $modeloComentaroiosReports,
+                    'modeloReviewReports' => $modeloReviewReports,
         ]);
     }
 

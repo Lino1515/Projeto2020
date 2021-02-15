@@ -37,7 +37,7 @@ class Review extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Data', 'Descricao', 'Score', 'Id_Jogo', 'Id_Utilizador'], 'required'],
+            [['Data', 'Descricao', 'Score', 'Id_Jogo', 'Id_Utilizador'], 'required', 'message' => ''],
             [['Data'], 'safe'],
             [['Descricao'], 'string'],
             [['Score'], 'number'],
